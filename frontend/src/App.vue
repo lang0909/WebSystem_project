@@ -3,15 +3,49 @@
     <div class="logo_cont">
       <img class="logo" src="./assets/background.jpg">
     </div>
-    <input type="text" name="playerName" class="search_playerName" placeholder="선수이름">
-    <button type="button" class="search_button">검색</button>
-    <!-- <div id="nav">
+    <div class="search_cont">
+      <input type="text" v-model="playerName" class="search_playerName" placeholder="선수이름">
+      <button type="button" class="search_button" v-on:click="clicked">검색</button>
+    </div>
+    <div v-if="player_name.length">
+      <div v-for="player in player_name" class="player">
+        <div>
+          {{player.id}}   {{player.name}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div>
     <router-view/> -->
-  </div>
 </template>
+
+<script>
+import Search from './components/Search.vue'
+
+export default {
+  components: {
+    'search': Search
+  },
+  data() {
+    return{
+      playerName: '',
+      player_name: []
+    }
+  },
+  methods: {
+    clicked() {
+      this.$http.get(`/api/${this.playerName}`)
+      .then((response)=>{
+        console.log(response.data);
+        this.player_name = response.data;
+      })
+    }
+  }
+}
+</script>
 
 <style>
 .logo{
@@ -20,6 +54,10 @@
 }
 
 .logo_cont{
+  background-color: rgb(44, 62, 80);
+}
+
+.search_cont{
   background-color: rgb(44, 62, 80);
 }
 
