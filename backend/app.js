@@ -16,7 +16,7 @@ db.on('open',function(){
     console.log('open');
 })
 var spidSchema = mongoose.Schema({
-    id: Number,
+    id: String,
     name: String
 })
 
@@ -40,5 +40,12 @@ app.get('/api/:playerName',function(req,res,next){
         res.send(result_value);
     });
 });
+
+app.get('/season/:num',function(req,res,next){
+    const temp = req.params.num;
+    res.sendFile(path.join(__dirname+'/season/'+temp));
+})
+
+app.get('/season')
 
 module.exports = app;

@@ -10,7 +10,8 @@
     <div v-if="player_name.length">
       <div v-for="player in player_name" class="player">
         <div>
-          {{player.id}}   {{player.name}}
+          <img v-bind:src="'/season/'+player.id.substring(0,3)+'.JPG'">
+          {{player.name}}
         </div>
       </div>
     </div>
