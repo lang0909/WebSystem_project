@@ -11,8 +11,8 @@
       <div v-for="player in player_name" class="player">
         <div>
           <!-- <button type="button" v-value="player.id" v-on:click="player_clicked">선택</button> -->
-          <span :style="{'background-image': 'url('+'/season_background/'+player.id.substring(0,3)+'.png)'}" calss="back">
-            <img v-bind:src="'/season/'+player.id.substring(0,3)+'.JPG'" class="back_img">
+          <span>
+            <img v-bind:src="'/players/'+player.id" class="back_img" :style="{'background-image': 'url('+'/season_background/'+player.id.substring(0,3)+'.png)'}">
           </span>
           <span>
             <img v-bind:src="'/season/'+player.id.substring(0,3)+'.JPG'" class="img_cont">
@@ -57,14 +57,17 @@ export default {
 </script>
 
 <style>
+.back_img{
+  width:30px;
+  height: 30px;
+  background-size: cover;
+}
+
 .back{
   width: 50px;
   height: 50px;
 }
 
-.back_img{
-  background-position: 0;
-}
 
 .player{
   height: 40px;
