@@ -46,6 +46,19 @@ app.get('/season/:num',function(req,res,next){
     res.sendFile(path.join(__dirname+'/season/'+temp));
 })
 
-app.get('/season')
+app.get('/season_background/:num',function(req,res,next){
+    const temp = req.params.num;
+    res.sendFile(path.join(__dirname+'/season_background/'+temp));
+})
+
+app.get('/play_image/:id', function(req,res,next){
+    const temp_value = app.get(`https://fo4.dn.nexoncdn.co.kr/live/externalAssets/common/players/p${req.params.id}.png`,function(req,res,next){
+        req.headers={
+            "Authorization": eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50X2lkIjoiODIyMjE4NjgzIiwiYXV0aF9pZCI6IjIiLCJ0b2tlbl90eXBlIjoiQWNjZXNzVG9rZW4iLCJzZXJ2aWNlX2lkIjoiNDMwMDExNDgxIiwiWC1BcHAtUmF0ZS1MaW1pdCI6IjIwMDAwOjEwIiwibmJmIjoxNTY3MDkxNjMzLCJleHAiOjE2MzAxNjM2MzMsImlhdCI6MTU2NzA5MTYzM30.rcv7fksQgEq-DElMRcUJAYEndUMjmLQU7OKjGpH5gVE
+        }
+        console.log(res.body.data);
+        return res.body.data;
+    })
+})
 
 module.exports = app;

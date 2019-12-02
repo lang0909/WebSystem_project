@@ -10,8 +10,16 @@
     <div v-if="player_name.length">
       <div v-for="player in player_name" class="player">
         <div>
-          <img v-bind:src="'/season/'+player.id.substring(0,3)+'.JPG'">
-          {{player.name}}
+          <!-- <button type="button" v-value="player.id" v-on:click="player_clicked">선택</button> -->
+          <span :style="{'background-image': 'url('+'/season_background/'+player.id.substring(0,3)+'.png)'}" calss="back">
+            <img v-bind:src="'/season/'+player.id.substring(0,3)+'.JPG'" class="back_img">
+          </span>
+          <span>
+            <img v-bind:src="'/season/'+player.id.substring(0,3)+'.JPG'" class="img_cont">
+          </span>
+          <span class="name_cont">
+            {{player.name}}
+          </span>
         </div>
       </div>
     </div>
@@ -49,13 +57,31 @@ export default {
 </script>
 
 <style>
+.back{
+  width: 50px;
+  height: 50px;
+}
+
+.back_img{
+  background-position: 0;
+}
+
+.player{
+  height: 40px;
+}
+
+.name_cont{
+  vertical-align: super;
+}
+
+.img_cont{
+  width: 25px;
+  height: 25px;
+}
+
 .logo{
   width: 100%;
   height: 300px;
-}
-
-.logo_cont{
-  background-color: rgb(44, 62, 80);
 }
 
 .search_cont{
