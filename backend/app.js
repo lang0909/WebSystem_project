@@ -8,20 +8,44 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var mongoose = require('mongoose')
-mongoose.connect("mongodb://localhost:27017/fifaonline-spid",{useUnifiedTopology: true, useNewUrlParser: true});
-var db = mongoose.connection;
-db.on('error',function(err){
-    console.log(err);
-});
-db.on('open',function(){
-    console.log('open');
-})
+// mongoose.connect("mongodb://localhost:27017/fifaonline-spid",{useUnifiedTopology: true, useNewUrlParser: true});
+// var db = mongoose.connection;
+// db.on('error',function(err){
+//     console.log(err);
+// });
+// db.on('open',function(){
+//     console.log('open');
+// })
 var spidSchema = mongoose.Schema({
     id: String,
     name: String
 })
 
-var spidModel = mongoose.model('spid',spidSchema,'spid');
+var top10000Schema = mongoose.Schema({
+    spId: Number,
+    spPosition: Number,
+    status: {
+        shoot: Number,
+        effectiveShoot: Number,
+        assist: Number,
+        goal: Number,
+        dribble: Number,
+        passTry: Number,
+        passSuccess: Number,
+        block: Number,
+        tackle: Number,
+        matchCount: Number
+    },
+    createDate: String
+})
+
+// var spidModel = mongoose.model('spid',spidSchema,'spid');
+
+var conn = mongoose.createConnection('mongodb://localhost/fifaonline-spid',{useUnifiedTopology: true, useNewUrlParser: true});
+var conn2 = mongoose.createConnection('mongodb://localhost/fifaonline-top10000',{useUnifiedTopology: true, useNewUrlParser: true});
+var spidModel = conn.model('spid', spidSchema,'spid');
+var top10000Model = conn2.model('topRankerUsingAverage', top10000Schema,'topRankerUsingAverage');
+
 
 var app = express();
 
@@ -64,6 +88,12 @@ app.get('/players/:id', function(req,res,next){
     }else{
         res.sendFile(path.join(__dirname+'/players/not_found.png'));
     }
+})
+
+app.get('/top_record/:id',function(req,res,next){
+    top10000Model.find({spId: req.params.id},(err,result)=>{
+        res.send(result);
+    })
 })
 
 module.exports = app;
