@@ -10,8 +10,8 @@
     <div v-if="player_name.length">
       <div v-for="player in player_name" class="player">
         <div>
-          <!-- <button type="button" v-value="player.id" v-on:click="player_clicked">선택</button> -->
           <span>
+            <button type="button" v-bind:value="player.id" v-on:click="player_clicked" class="player_btn">선택</button>
             <img v-bind:src="'/players/'+player.id" class="back_img" :style="{'background-image': 'url('+'/season_background/'+player.id.substring(0,3)+'.png)'}">
           </span>
           <span>
@@ -48,15 +48,21 @@ export default {
     clicked() {
       this.$http.get(`/api/${this.playerName}`)
       .then((response)=>{
-        console.log(response.data);
         this.player_name = response.data;
       })
+    },
+    player_clicked(){
+
     }
   }
 }
 </script>
 
 <style>
+.player_btn{
+  vertical-align: super;
+}
+
 .back_img{
   width:30px;
   height: 30px;

@@ -35,7 +35,6 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 app.get('/api/:playerName',function(req,res,next){
-    console.log("start");
     const query = new RegExp(req.params.playerName);
     spidModel.find({name: query},(err,result_value)=>{
         res.send(result_value);
