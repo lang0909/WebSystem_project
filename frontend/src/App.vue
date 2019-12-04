@@ -23,6 +23,14 @@
         </div>
       </div>
     </div>
+    <div v-if="top10000.length">
+      <tr v-for="top in top10000" class="top10000">
+        <td>
+          <line-chart :data="top.status" :name="top.spPosition" :options="{responsive: false, maintainAspectRatio: false}">
+          </line-chart>
+        </td>
+      </tr>
+    </div>
   </div>
   <!-- <div id="nav">
       <router-link to="/">Home</router-link> |
@@ -58,7 +66,7 @@ export default {
         this.top10000 = response.data;
       })
     }
-  }
+  },
 }
 </script>
 

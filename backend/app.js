@@ -8,14 +8,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var mongoose = require('mongoose')
-// mongoose.connect("mongodb://localhost:27017/fifaonline-spid",{useUnifiedTopology: true, useNewUrlParser: true});
-// var db = mongoose.connection;
-// db.on('error',function(err){
-//     console.log(err);
-// });
-// db.on('open',function(){
-//     console.log('open');
-// })
+
 var spidSchema = mongoose.Schema({
     id: String,
     name: String
@@ -38,8 +31,6 @@ var top10000Schema = mongoose.Schema({
     },
     createDate: String
 })
-
-// var spidModel = mongoose.model('spid',spidSchema,'spid');
 
 var conn = mongoose.createConnection('mongodb://localhost/fifaonline-spid',{useUnifiedTopology: true, useNewUrlParser: true});
 var conn2 = mongoose.createConnection('mongodb://localhost/fifaonline-top10000',{useUnifiedTopology: true, useNewUrlParser: true});
