@@ -19,7 +19,7 @@ Vue.component('line-chart',{
           backgroundColor: '#f87979',
           data: this.data
         }
-      ]
+      ],
     }, this.options)
   }
 })

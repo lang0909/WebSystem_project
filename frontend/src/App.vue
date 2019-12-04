@@ -24,11 +24,13 @@
       </div>
     </div>
     <div v-if="top10000.length">
+      <hr />
       <tr v-for="top in top10000" class="top10000">
-        <td>
-          <line-chart :data="top.status" :name="top.spPosition" :options="{responsive: false, maintainAspectRatio: false}">
+        <div class="chart_cont">
+          <line-chart :data="[top.status.shoot, top.status.effectiveShoot, 
+          top.status.assist, top.status.goal, top.status.dribble, top.status.passTry, top.status.passSuccess, top.status.block, top.status.tackle]" :name="top.spPosition" :options="{responsive: false, maintainAspectRatio: false}">
           </line-chart>
-        </td>
+        </div>
       </tr>
     </div>
   </div>
@@ -71,6 +73,15 @@ export default {
 </script>
 
 <style>
+canvas{
+  height: 300px;
+  width: 300px;
+}
+
+.top10000{
+  display: inline-block;
+}
+
 .player_btn{
   vertical-align: super;
 }
