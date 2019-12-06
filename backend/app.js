@@ -32,10 +32,18 @@ var top10000Schema = mongoose.Schema({
     createDate: String
 })
 
+var commentSchema = mongoose.Schema({
+    spId: Number,
+    spPosition: Number,
+    content: String
+})
+
 var conn = mongoose.createConnection('mongodb://localhost/fifaonline-spid',{useUnifiedTopology: true, useNewUrlParser: true});
 var conn2 = mongoose.createConnection('mongodb://localhost/fifaonline-top10000',{useUnifiedTopology: true, useNewUrlParser: true});
+var conn1 = mongoose.createConnection('mongodb://localhost/test',{useUnifiedTopology: true, useNewUrlParser: true});
 var spidModel = conn.model('spid', spidSchema,'spid');
 var top10000Model = conn2.model('topRankerUsingAverage', top10000Schema,'topRankerUsingAverage');
+var commentModel = conn1.model('comm',commentSchema,'comment');
 
 
 var app = express();
@@ -84,6 +92,27 @@ app.get('/players/:id', function(req,res,next){
 app.get('/top_record/:id',function(req,res,next){
     top10000Model.find({spId: req.params.id},(err,result)=>{
         res.send(result);
+    })
+})
+
+app.get('/top_record/:id/comment', function(req,res,next){
+    commentModel.find({spId: req.params.id.substring(0,8) , spPosition: req.params.id.substring(9,req.params.id.length)},(err,result)=>{
+        res.send(result);
+    })
+})
+
+app.post('/top_record/:id/comment', function(req,res,next){
+    var obj ={
+        spId: req.params.id.substring(0,9),
+        spPosition: req.param.id.substring(9,req.params.id.length),
+        content: req.body.content
+    }
+    commentModel.collection.insertOne(obj,(err,docs)=>{
+        if(err){
+            console.log(err);
+        }else{
+            console.info(docs);
+        }
     })
 })
 
