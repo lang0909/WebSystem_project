@@ -33,8 +33,8 @@ var top10000Schema = mongoose.Schema({
 })
 
 var commentSchema = mongoose.Schema({
-    spId: Number,
-    spPosition: Number,
+    spId: String,
+    spPosition: String,
     content: String
 })
 
@@ -96,22 +96,25 @@ app.get('/top_record/:id',function(req,res,next){
 })
 
 app.get('/top_record/:id/comment', function(req,res,next){
-    commentModel.find({spId: req.params.id.substring(0,8) , spPosition: req.params.id.substring(9,req.params.id.length)},(err,result)=>{
+    commentModel.find({spId: req.params.id.substring(0,9)}).find({spPosition: req.params.id.substring(9,req.params.id.length)},(err,result)=>{
         res.send(result);
     })
 })
 
 app.post('/top_record/:id/comment', function(req,res,next){
+    console.log(req.params.id);
+    const temp1 = req.params.id.substring(0,9);
+    const temp2 = req.params.id.substring(9,req.params.id.length);
     var obj ={
-        spId: req.params.id.substring(0,9),
-        spPosition: req.param.id.substring(9,req.params.id.length),
+        spId: temp1,
+        spPosition: temp2,
         content: req.body.content
     }
-    commentModel.collection.insertOne(obj,(err,docs)=>{
+    commentModel.insertMany(obj,(err,docs)=>{
         if(err){
-            console.log(err);
+            res.send(err);
         }else{
-            console.info(docs);
+            res.send(docs);
         }
     })
 })

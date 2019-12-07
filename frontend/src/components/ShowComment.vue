@@ -17,24 +17,20 @@
 <script>
 export default {
     created: function(){
-        const id = this.$route.params.id;
-        this.$http.get(`/top_record/${id}/comment`)
-        .then((response)=>{
-            this.comments = response.data;
-        })
-    },
-    created: function(){
         const spid = this.$route.params.id.substring(0,9);
         const po = parseInt(this.$route.params.id.substring(9,this.$route.params.id.length),0);
         this.$http.get(`/top_record/${spid}`)
         .then((response)=>{
             const top10000 = response.data;
-            console.log(top10000);
             const temp = top10000.filter(function(temp){
                 return temp.spPosition === po
             })
-            console.log(temp);
-            this.top = temp;            
+            this.top = temp;
+        })
+        const id = this.$route.params.id;
+        this.$http.get(`/top_record/${id}/comment`)
+        .then((response)=>{
+            this.comments = response.data;
         })
     },
     methods:{
