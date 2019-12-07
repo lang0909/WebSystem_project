@@ -7,7 +7,7 @@ import VueCharts from 'vue-chartjs'
 
 Vue.prototype.$http = axios;
 Vue.config.productionTip = false
-Vue.component('line-chart',{
+Vue.component('bar-chart',{
   extends: VueCharts.Bar,
   props: ['data', 'options', 'name','background_value'],
   mounted(){
