@@ -23,7 +23,9 @@
         </div>
       </div>
     </div>
-    <result v-if="this.spid!=0" :data="this.spid" class="charts"></result>
+    <div v-if="this.spid!=this.spid2">
+      <result :data="this.spid" class="charts"></result>
+    </div>
   </div>
 </template>
 
@@ -39,6 +41,7 @@ export default {
       playerName: '',
       player_name: [],
       spid: '',
+      spid2: '',
     }
   },
   methods: {
@@ -49,6 +52,7 @@ export default {
       })
     },
     player_clicked(id){
+      this.spid2 = this.spid;
       this.spid = id;
     }
     // player_clicked(id){

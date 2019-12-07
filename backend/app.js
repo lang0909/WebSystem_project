@@ -90,7 +90,7 @@ app.get('/players/:id', function(req,res,next){
 })
 
 app.get('/top_record/:id',function(req,res,next){
-    top10000Model.find({spId: req.params.id},(err,result)=>{
+    top10000Model.find({spId: req.params.id}).find({"status.matchCount": {$gt: 36}} ,(err,result)=>{
         res.send(result);
     })
 })
@@ -102,7 +102,6 @@ app.get('/top_record/:id/comment', function(req,res,next){
 })
 
 app.post('/top_record/:id/comment', function(req,res,next){
-    console.log(req.params.id);
     const temp1 = req.params.id.substring(0,9);
     const temp2 = req.params.id.substring(9,req.params.id.length);
     var obj ={
