@@ -4,7 +4,7 @@
         <tr v-for="top in top10000" class="top10000">
             <router-link :to="{name: 'show', params:{ id: String(top.spId)+String(top.spPosition)}}">
                 <line-chart :data="[top.status.shoot, top.status.effectiveShoot, 
-                top.status.assist, top.status.goal, top.status.dribble, top.status.passTry, top.status.passSuccess, top.status.block, top.status.tackle]" :name="top.spPosition" :options="{responsive: false, maintainAspectRatio: false}">
+                top.status.assist, top.status.goal, top.status.dribble, top.status.passTry, top.status.passSuccess, top.status.block, top.status.tackle]" :name="top.spPosition" :options="{responsive: false, maintainAspectRatio: false}" :background_value="top.maxIndex">
                 </line-chart>
             </router-link>
             <br>
@@ -64,17 +64,7 @@ export default {
                     temp.maxIndex.push(8);
                 }
             })
-            console.log(this.top10000);
         })
-        // this.top10000[this.top10000.indexOf(Math.max.apply(Math, this.top10000.map(function(o) { return o.status.shoot; })))].maxIndex.push(0);
-        // this.top10000[this.top10000.indexOf(Math.max.apply(Math, this.top10000.map(function(o) { return o.status.effectiveShoot; })))].maxIndex.push(1);
-        // this.top10000[this.top10000.indexOf(Math.max.apply(Math, this.top10000.map(function(o) { return o.status.assist; })))].maxIndex.push(2);
-        // this.top10000[this.top10000.indexOf(Math.max.apply(Math, this.top10000.map(function(o) { return o.status.goal; })))].maxIndex.push(3);
-        // this.top10000[this.top10000.indexOf(Math.max.apply(Math, this.top10000.map(function(o) { return o.status.dribble; })))].maxIndex.push(4);
-        // this.top10000[this.top10000.indexOf(Math.max.apply(Math, this.top10000.map(function(o) { return o.status.passTry; })))].maxIndex.push(5);
-        // this.top10000[this.top10000.indexOf(Math.max.apply(Math, this.top10000.map(function(o) { return o.status.passSuccess; })))].maxIndex.push(6);
-        // this.top10000[this.top10000.indexOf(Math.max.apply(Math, this.top10000.map(function(o) { return o.status.block; })))].maxIndex.push(7);
-        // this.top10000[this.top10000.indexOf(Math.max.apply(Math, this.top10000.map(function(o) { return o.status.tackle; })))].maxIndex.push(8);
     },
     props: ['data'],
     data(){

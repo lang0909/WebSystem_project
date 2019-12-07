@@ -1,7 +1,7 @@
 <template>
     <div class="cont">
         <div v-if="this.top!=0">
-            <line-chart :data="[this.top[0].status.shoot, this.top[0].status.effectiveShoot,this.top[0].status.assist, this.top[0].status.goal, this.top[0].status.dribble, this.top[0].status.passTry, this.top[0].status.passSuccess, this.top[0].status.block, this.top[0].status.tackle]" :name="this.top[0].spPosition" :options="{responsive: false, maintainAspectRatio: false}">
+            <line-chart :data="[this.top[0].status.shoot, this.top[0].status.effectiveShoot,this.top[0].status.assist, this.top[0].status.goal, this.top[0].status.dribble, this.top[0].status.passTry, this.top[0].status.passSuccess, this.top[0].status.block, this.top[0].status.tackle]" :name="this.top[0].spPosition" :options="{responsive: false, maintainAspectRatio: false}" :background_value="this.top[0].maxIndex">
             </line-chart>
         </div>
         <input type="text" placeholder="Please Input Comment" v-model="comment_value" class="input_comment"><br>
@@ -26,6 +26,7 @@ export default {
                 return temp.spPosition === po
             })
             this.top = temp;
+            this.top[0].maxIndex = [];
         })
         const id = this.$route.params.id;
         this.$http.get(`/top_record/${id}/comment`)
