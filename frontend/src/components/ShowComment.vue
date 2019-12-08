@@ -40,7 +40,7 @@ export default {
                 const id = this.$route.params.id;
                 this.$http.post(`/top_record/${id}/comment`,{
                     content: this.comment_value
-                }).then((response)=>console.log(response))
+                }).then(alert("등록되었습니다"))
             }
             else{
                 alert("no valid")
