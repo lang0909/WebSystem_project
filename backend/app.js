@@ -90,7 +90,7 @@ app.get('/players/:id', function(req,res,next){
 })
 
 app.get('/top_record/:id',function(req,res,next){
-    top10000Model.find({spId: req.params.id}).find({"status.matchCount": {$gt: 36}} ,(err,result)=>{
+    top10000Model.find({spId: req.params.id}).find({"status.matchCount": {$gt: 300}} ,(err,result)=>{
         res.send(result);
     })
 })
@@ -115,6 +115,15 @@ app.post('/top_record/:id/comment', function(req,res,next){
         }else{
             res.send(docs);
         }
+    })
+})
+
+app.get('/toprecord/:poandst', function(req,res,next){
+    const temp = req.params.poandst.split(',');
+    const temp1 = 'status.'+temp[1];
+    const option = {sort: {[temp1]: -1}, limit: 5};
+    top10000Model.find({spPosition: temp[0], "status.matchCount": {$gt: 300}}, null, option, (err,result)=>{
+        res.send(result);
     })
 })
 

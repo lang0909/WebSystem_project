@@ -7,6 +7,18 @@
                 top.status.assist, top.status.goal, top.status.dribble, top.status.passTry, top.status.passSuccess, top.status.block, top.status.tackle]" :name="top.spPosition" :options="{responsive: false, maintainAspectRatio: false}" :background_value="top.maxIndex">
                 </bar-chart>
             </router-link>
+            <select v-on:change="changeItem(top.spPosition,$event)">
+                <option>select data</option>
+                <option value="shoot">shoot</option>
+                <option value="effectiveShoot">effectiveShoot</option>
+                <option value="assist">assist</option>
+                <option value="goal">goal</option>
+                <option value="dribble">dribble</option>
+                <option value="passTry">passTry</option>
+                <option value="passSuccess">passSuccess</option>
+                <option value="block">block</option>
+                <option value="tackle">tackle</option>
+            </select>
             <br>
         </tr>
     </div>
@@ -67,9 +79,22 @@ export default {
         })
     },
     props: ['data'],
+    methods:{
+        changeItem: function changeItem(position, event){
+            const temp = [];
+            temp.push(position);
+            temp.push(event.target.value);
+            this.$http.get(`/toprecord/${temp}`)
+            .then((response)=>{
+                this.new_record = response.data;
+                console.log(this.new_record);
+            })
+        }
+    },
     data(){
         return{
-            top10000: ''
+            top10000: '',
+            new_record: '',
         }
     },
 }
