@@ -1,26 +1,49 @@
 <template>
-    <div v-if="top10000.length">
+    <div>
         <hr />
-        <tr v-for="top in top10000" class="top10000">
-            <router-link :to="{name: 'show', params:{ id: String(top.spId)+String(top.spPosition)}}">
-                <bar-chart :data="[top.status.shoot, top.status.effectiveShoot, 
-                top.status.assist, top.status.goal, top.status.dribble, top.status.passTry, top.status.passSuccess, top.status.block, top.status.tackle]" :name="top.spPosition" :options="{responsive: false, maintainAspectRatio: false}" :background_value="top.maxIndex">
-                </bar-chart>
-            </router-link>
-            <select v-on:change="changeItem(top.spPosition,$event)">
-                <option>select data</option>
-                <option value="shoot">shoot</option>
-                <option value="effectiveShoot">effectiveShoot</option>
-                <option value="assist">assist</option>
-                <option value="goal">goal</option>
-                <option value="dribble">dribble</option>
-                <option value="passTry">passTry</option>
-                <option value="passSuccess">passSuccess</option>
-                <option value="block">block</option>
-                <option value="tackle">tackle</option>
-            </select>
-            <br>
-        </tr>
+        <select v-on:change="changePosition($event)">
+            <option>select position</option><option value="1">SW</option><option value="2">RWB</option><option value="3">RB</option><option value="4">RCB</option>
+            <option value="5">CB</option><option value="6">LCB</option><option value="7">LB</option><option value="8">LWB</option><option value="9">RDM</option>
+            <option value="10">CDM</option><option value="11">LDM</option><option value="12">RM</option><option value="13">RCM</option><option value="14">CM</option>
+            <option value="15">LCM</option><option value="16">LM</option><option value="17">RAM</option><option value="18">CAM</option><option value="19">LAM</option>
+            <option value="20">RF</option><option value="21">CF</option><option value="22">LF</option><option value="23">RW</option><option value="24">RS</option>
+            <option value="25">ST</option><option value="26">LS</option><option value="27">LW</option><option value="28">SUB</option>
+        </select>
+        <select v-on:change="changeData($event)">
+            <option>select data</option>
+            <option value="shoot">shoot</option>
+            <option value="effectiveShoot">effectiveShoot</option>
+            <option value="assist">assist</option>
+            <option value="goal">goal</option>
+            <option value="dribble">dribble</option>
+            <option value="passTry">passTry</option>
+            <option value="passSuccess">passSuccess</option>
+            <option value="block">block</option>
+            <option value="tackle">tackle</option>
+        </select>
+        <div v-for="new_rec in new_record" class="player">
+            <div>
+                <span>
+                    <img v-bind:src="'/players/'+new_rec.spId" class="back_img" :style="{'background-image': 'url('+'/season_background/'+new_rec.spId.toString().substring(0,3)+'.png)'}">
+                </span>
+                <span>
+                    <img v-bind:src="'/season/'+new_rec.spId.toString().substring(0,3)+'.JPG'" class="img_cont">
+                </span>
+                <span class="name_cont">
+                    {{new_rec.spId}}
+                </span>
+            </div>
+        </div>
+        <div v-if="top10000.length">
+            <tr v-for="top in top10000" class="top10000">
+                <router-link :to="{name: 'show', params:{ id: String(top.spId)+String(top.spPosition)}}">
+                    <bar-chart :data="[top.status.shoot, top.status.effectiveShoot, 
+                    top.status.assist, top.status.goal, top.status.dribble, top.status.passTry, top.status.passSuccess, top.status.block, top.status.tackle]" :name="top.spPosition" :options="{responsive: false, maintainAspectRatio: false}" :background_value="top.maxIndex">
+                    </bar-chart>
+                </router-link>
+                <br>
+            </tr>
+        </div>
     </div>
 </template>
 
@@ -80,21 +103,25 @@ export default {
     },
     props: ['data'],
     methods:{
-        changeItem: function changeItem(position, event){
+        changeData: function changeData(event){
             const temp = [];
-            temp.push(position);
+            temp.push(this.temp_position);
             temp.push(event.target.value);
             this.$http.get(`/toprecord/${temp}`)
             .then((response)=>{
                 this.new_record = response.data;
                 console.log(this.new_record);
             })
+        },
+        changePosition: function changePosition(event){
+            this.temp_position = event.target.value;
         }
     },
     data(){
         return{
             top10000: '',
             new_record: '',
+            temp_position: ''
         }
     },
 }

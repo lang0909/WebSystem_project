@@ -11,6 +11,7 @@
       <div v-for="player in player_name" class="player">
         <div>
           <span>
+            <button type="button" v-bind:value="player.id" class="player_btn">담기</button>
             <button type="button" v-bind:value="player.id" v-on:click="player_clicked(player.id)" class="player_btn">선택</button>
             <img v-bind:src="'/players/'+player.id" class="back_img" :style="{'background-image': 'url('+'/season_background/'+player.id.substring(0,3)+'.png)'}">
           </span>
