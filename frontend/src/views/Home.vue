@@ -11,7 +11,7 @@
       <div v-for="player in player_name" class="player">
         <div>
           <span>
-            <button type="button" v-bind:value="player.id" class="player_btn">담기</button>
+            <button type="button" v-bind:value="player.id" v-on:click="player_keep(player.id)" class="player_btn">담기</button>
             <button type="button" v-bind:value="player.id" v-on:click="player_clicked(player.id)" class="player_btn">선택</button>
             <img v-bind:src="'/players/'+player.id" class="back_img" :style="{'background-image': 'url('+'/season_background/'+player.id.substring(0,3)+'.png)'}">
           </span>
@@ -24,25 +24,51 @@
         </div>
       </div>
     </div>
-    <div v-if="this.spid!=this.spid2">
-      <result :data="this.spid" class="charts"></result>
+    <div v-if="this.playerkeep.length">
+      <button type="button" v-on:click="player_compare()" class="compare_btn">비교하기</button>
+      <div v-for="player in this.playerkeep" class="ply">
+        <div>
+          <span>
+            <img v-bind:src="'/players/'+player" class="back_img" :style="{'background-image': 'url('+'/season_background/'+player.substring(0,3)+'.png)'}">
+          </span>
+          <span>
+            <img v-bind:src="'/season/'+player.substring(0,3)+'.JPG'" class="img_cont">
+          </span>
+          <span class="name_cont">
+            {{player}}
+          </span>
+        </div>
+      </div>
+    </div>
+    <div v-if="this.compare_change">
+      <compare :data="this.compare_content" :key="this.compare_change" class="compare"></compare>
+    </div>
+    <div v-if="this.spid">
+      <result :data="this.spid" :key="this.result_change" class="charts"></result>
     </div>
   </div>
 </template>
 
 <script>
 import RRR from '../components/resultChart.vue'
+import SSS from '../components/MultiChart.vue'
 
 export default {
   components: {
-    'result': RRR
+    'result': RRR,
+    'compare': SSS
   },
   data() {
     return{
       playerName: '',
       player_name: [],
+      playerkeep: [],
       spid: '',
-      spid2: '',
+      result_change: 0,
+      compare_change: 0,
+      compare_content: [],
+      compare_content1: '',
+      compare_content2: '',
     }
   },
   methods: {
@@ -53,15 +79,41 @@ export default {
       })
     },
     player_clicked(id){
-      this.spid2 = this.spid;
       this.spid = id;
+      this.result_change = this.result_change+1;
+    },
+    player_keep(id){
+      if(this.playerkeep.length==2){
+        alert("더 이상 추가할 수 없습니다.");
+      }else if(this.playerkeep.length==1){
+        this.playerkeep.push(id);
+        this.$http.get(`/top_record/${this.playerkeep[0]}`)
+        .then((response)=>{
+            this.compare_content1 = response.data;
+        })
+        this.$http.get(`/top_record/${this.playerkeep[1]}`)
+        .then((response)=>{
+            this.compare_content2 = response.data;
+        })
+      }else if(this.playerkeep.length==0){
+        this.playerkeep.push(id);
+      }
+    },
+    player_compare(){
+      var fff = [];
+      for(let i=0;i<this.compare_content1.length;i++){
+        for(let j=0;j<this.compare_content2.length;j++){
+          if(this.compare_content1[i].spPosition === this.compare_content2[j].spPosition){
+            fff.push(this.compare_content1[i]);
+            fff.push(this.compare_content2[j]);                   
+            this.compare_content.push(fff);
+            fff = [];
+          }
+        }
+      }
+      this.playerkeep=[];
+      this.compare_change = this.compare_change+1;
     }
-    // player_clicked(id){
-    //   this.$http.get(`/top_record/${id}`)
-    //   .then((response)=>{
-    //     this.top = response.data;
-    //   })
-    // }
   },
 }
 </script>

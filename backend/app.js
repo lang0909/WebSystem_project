@@ -38,12 +38,19 @@ var commentSchema = mongoose.Schema({
     content: String
 })
 
+var formationSchema = mongoose.Schema({
+    formation: Number,
+    position: [Number]
+})
+
 var conn = mongoose.createConnection('mongodb://localhost/fifaonline-spid',{useUnifiedTopology: true, useNewUrlParser: true});
 var conn2 = mongoose.createConnection('mongodb://localhost/fifaonline-top10000',{useUnifiedTopology: true, useNewUrlParser: true});
 var conn1 = mongoose.createConnection('mongodb://localhost/test',{useUnifiedTopology: true, useNewUrlParser: true});
+var conn3 = mongoose.createConnection('mongodb://localhost/Desktop',{useUnifiedTopology: true, useNewUrlParser: true});
 var spidModel = conn.model('spid', spidSchema,'spid');
 var top10000Model = conn2.model('topRankerUsingAverage', top10000Schema,'topRankerUsingAverage');
 var commentModel = conn1.model('comm',commentSchema,'comment');
+var formationModel = conn3.model('formation',formationSchema,'formation');
 
 
 var app = express();
@@ -123,6 +130,12 @@ app.get('/toprecord/:poandst', function(req,res,next){
     const temp1 = 'status.'+temp[1];
     const option = {sort: {[temp1]: -1}, limit: 5};
     top10000Model.find({spPosition: temp[0], "status.matchCount": {$gt: 300}}, null, option, (err,result)=>{
+        res.send(result);
+    })
+})
+
+app.get('/formation/:fmt',function(req,res,next){
+    formationModel.find({formation: req.params.fmt},(err,result)=>{
         res.send(result);
     })
 })
