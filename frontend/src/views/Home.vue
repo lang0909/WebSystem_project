@@ -8,23 +8,25 @@
       <button type="button" class="search_button" v-on:click="clicked">검색</button>
     </div>
     <div v-if="player_name.length">
-      <div v-for="player in player_name" class="player">
-        <div>
+      <span v-for="player in player_name" class="player">
           <span>
-            <button type="button" v-bind:value="player.id" v-on:click="player_keep(player.id)" class="player_btn">담기</button>
-            <button type="button" v-bind:value="player.id" v-on:click="player_clicked(player.id)" class="player_btn">선택</button>
             <img v-bind:src="'/players/'+player.id" class="back_img" :style="{'background-image': 'url('+'/season_background/'+player.id.substring(0,3)+'.png)'}">
           </span>
-          <span>
-            <img v-bind:src="'/season/'+player.id.substring(0,3)+'.JPG'" class="img_cont">
-          </span>
-          <span class="name_cont">
-            {{player.name}}
-          </span>
-        </div>
-      </div>
+          <div class="name_cont">
+            <span>
+              <img v-bind:src="'/season/'+player.id.substring(0,3)+'.JPG'" class="img_cont">
+              {{player.name}}
+            </span>
+          </div>
+          <div>
+            <button type="button" v-bind:value="player.id" v-on:click="player_keep(player.id)" class="player_btn">담기</button>
+            <button type="button" v-bind:value="player.id" v-on:click="player_clicked(player.id)" class="player_btn">선택</button>
+          </div>
+      </span>
     </div>
-    <br><br>
+    <br>
+    <hr width=”100%” color=”gray” noshade />
+    <br>
     <div v-if="this.playerkeep.length">
       <button type="button" v-on:click="player_compare()" class="compare_btn">비교하기</button>
         <div v-for="player in this.playerkeep" class="ply">
@@ -127,11 +129,17 @@ export default {
 
 .player_btn{
   vertical-align: super;
+  width: 50px;
+}
+.logo{
+  max-width: 650px;
+  max-height: 370px;
+  height: auto;
 }
 
 .back_img{
-  width:30px;
-  height: 30px;
+  width:90px;
+  height: 90px;
   background-size: cover;
 }
 
@@ -142,26 +150,41 @@ export default {
 
 
 .player{
-  height: 40px;
+  width: 150px;
+  height: 200px;
+  margin-bottom: 40px;
+  display: inline-block;
+}
+
+.ply{
+  width: 150px;
+  height: 200px;
+  margin-bottom: 40px;
+  display: inline-block;
 }
 
 .name_cont{
-  vertical-align: super;
-  color: black;
+  vertical-align:middle;
+  font-size: 20px;
 }
 
 .img_cont{
-  width: 25px;
-  height: 25px;
+  width: 32px;
+  height: 32px;
+  vertical-align:middle;
+  padding-bottom: 8px;
+  padding-left: 2px;
 }
 
 .logo{
   width: 100%;
-  height: 300px;
+  max-width: 650px;
+  max-height: 370px;
+  height: auto;
 }
 
 .search_playerName{
-  width: 400px;
+  width: 580px;
   height: 30px;
   margin: 10px;
 }
@@ -170,6 +193,10 @@ export default {
   width: 50px;
   height: 30px;
   margin: 5px;
+}
+.compare_btn{
+  display: inline-block;
+  vertical-align: super;
 }
 
 #app {

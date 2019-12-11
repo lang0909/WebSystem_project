@@ -3,416 +3,416 @@
         <div class="field">
             <div class="lw">
                 <select v-on:change="changeLW($event)">
-                    <option selected>LW</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
+                    <option disabled>LW</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
                     <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
                 </select>
                 <div v-for="player in this.position_value[27]">
                     <div>
                         <span>
-                            <img v-bind:src="'/players/'+player.spId" class="back_img" :style="{'background-image': 'url('+'/season_background/'+player.spId.toString().substring(0,3)+'.png)'}">
+                            <img v-bind:src="'/players/'+player.spId" class="back_image" :style="{'background-image': 'url('+'/season_background/'+player.spId.toString().substring(0,3)+'.png)'}">
                         </span>
                         <span>
-                            <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="img_cont">
+                            <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="image_cont">
                         </span>
                     </div>                    
                 </div>        
             </div>
             <div class="ls">
                 <select v-on:change="changeLS($event)">
-                    <option selected>LS</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
+                    <option disabled>LS</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
                     <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
                 </select>
                 <div v-for="player in this.position_value[26]">
                     <div>
                         <span>
-                            <img v-bind:src="'/players/'+player.spId" class="back_img" :style="{'background-image': 'url('+'/season_background/'+player.spId.toString().substring(0,3)+'.png)'}">
+                            <img v-bind:src="'/players/'+player.spId" class="back_image" :style="{'background-image': 'url('+'/season_background/'+player.spId.toString().substring(0,3)+'.png)'}">
                         </span>
                         <span>
-                            <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="img_cont">
+                            <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="image_cont">
                         </span>
                     </div>                   
                 </div>
             </div>
             <div class="st">
                 <select v-on:change="changeST($event)">
-                    <option selected>ST</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
+                    <option disabled>ST</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
                     <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
                 </select>
                 <div v-for="player in this.position_value[25]">
                     <div>
                         <span>
-                            <img v-bind:src="'/players/'+player.spId" class="back_img" :style="{'background-image': 'url('+'/season_background/'+player.spId.toString().substring(0,3)+'.png)'}">
+                            <img v-bind:src="'/players/'+player.spId" class="back_image" :style="{'background-image': 'url('+'/season_background/'+player.spId.toString().substring(0,3)+'.png)'}">
                         </span>
                         <span>
-                            <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="img_cont">
+                            <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="image_cont">
                         </span>
                     </div>                   
                 </div>
             </div>
             <div class="rs">
                 <select v-on:change="changeRS($event)">
-                    <option selected>RS</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
+                    <option disabled>RS</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
                     <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
                 </select>
                 <div v-for="player in this.position_value[24]">
                     <div>
                         <span>
-                            <img v-bind:src="'/players/'+player.spId" class="back_img" :style="{'background-image': 'url('+'/season_background/'+player.spId.toString().substring(0,3)+'.png)'}">
+                            <img v-bind:src="'/players/'+player.spId" class="back_image" :style="{'background-image': 'url('+'/season_background/'+player.spId.toString().substring(0,3)+'.png)'}">
                         </span>
                         <span>
-                            <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="img_cont">
+                            <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="image_cont">
                         </span>
                     </div>                    
                 </div>
             </div>
             <div class="rw">
                 <select v-on:change="changeRW($event)">
-                    <option selected>RW</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
+                    <option disabled>RW</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
                     <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
                 </select>
                 <div v-for="player in this.position_value[23]">
                     <div>
                         <span>
-                            <img v-bind:src="'/players/'+player.spId" class="back_img" :style="{'background-image': 'url('+'/season_background/'+player.spId.toString().substring(0,3)+'.png)'}">
+                            <img v-bind:src="'/players/'+player.spId" class="back_image" :style="{'background-image': 'url('+'/season_background/'+player.spId.toString().substring(0,3)+'.png)'}">
                         </span>
                         <span>
-                            <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="img_cont">
+                            <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="image_cont">
                         </span>
                     </div>                    
                 </div>
             </div>
             <div class="lf">
                 <select v-on:change="changeLF($event)">
-                    <option selected>LF</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
+                    <option disabled>LF</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
                     <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
                 </select>
                 <div v-for="player in this.position_value[22]">
                     <div>
                         <span>
-                            <img v-bind:src="'/players/'+player.spId" class="back_img" :style="{'background-image': 'url('+'/season_background/'+player.spId.toString().substring(0,3)+'.png)'}">
+                            <img v-bind:src="'/players/'+player.spId" class="back_image" :style="{'background-image': 'url('+'/season_background/'+player.spId.toString().substring(0,3)+'.png)'}">
                         </span>
                         <span>
-                            <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="img_cont">
+                            <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="image_cont">
                         </span>
                     </div>                    
                 </div>
             </div>
             <div class="cf">
                 <select v-on:change="changeCF($event)">
-                    <option selected>CF</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
+                    <option disabled>CF</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
                     <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
                 </select>
                 <div v-for="player in this.position_value[21]">
                     <div>
                         <span>
-                            <img v-bind:src="'/players/'+player.spId" class="back_img" :style="{'background-image': 'url('+'/season_background/'+player.spId.toString().substring(0,3)+'.png)'}">
+                            <img v-bind:src="'/players/'+player.spId" class="back_image" :style="{'background-image': 'url('+'/season_background/'+player.spId.toString().substring(0,3)+'.png)'}">
                         </span>
                         <span>
-                            <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="img_cont">
+                            <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="image_cont">
                         </span>
                     </div>                    
                 </div>
             </div>
             <div class="rf">
                 <select v-on:change="changeRF($event)">
-                    <option selected>RF</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
+                    <option disabled>RF</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
                     <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
                 </select>
                 <div v-for="player in this.position_value[20]">
                     <div>
                         <span>
-                            <img v-bind:src="'/players/'+player.spId" class="back_img" :style="{'background-image': 'url('+'/season_background/'+player.spId.toString().substring(0,3)+'.png)'}">
+                            <img v-bind:src="'/players/'+player.spId" class="back_image" :style="{'background-image': 'url('+'/season_background/'+player.spId.toString().substring(0,3)+'.png)'}">
                         </span>
                         <span>
-                            <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="img_cont">
+                            <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="image_cont">
                         </span>
                     </div>                    
                 </div>
             </div>
             <div class="lam">
                 <select v-on:change="changeLAM($event)">
-                    <option selected>LAM</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
+                    <option disabled>LAM</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
                     <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
                 </select>
                 <div v-for="player in this.position_value[19]">
                     <div>
                         <span>
-                            <img v-bind:src="'/players/'+player.spId" class="back_img" :style="{'background-image': 'url('+'/season_background/'+player.spId.toString().substring(0,3)+'.png)'}">
+                            <img v-bind:src="'/players/'+player.spId" class="back_image" :style="{'background-image': 'url('+'/season_background/'+player.spId.toString().substring(0,3)+'.png)'}">
                         </span>
                         <span>
-                            <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="img_cont">
+                            <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="image_cont">
                         </span>
                     </div>                    
                 </div>
             </div>
             <div class="cam">
                 <select v-on:change="changeCAM($event)">
-                    <option selected>CAM</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
+                    <option disabled>CAM</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
                     <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
                 </select>
                 <div v-for="player in this.position_value[18]">
                     <div>
                         <span>
-                            <img v-bind:src="'/players/'+player.spId" class="back_img" :style="{'background-image': 'url('+'/season_background/'+player.spId.toString().substring(0,3)+'.png)'}">
+                            <img v-bind:src="'/players/'+player.spId" class="back_image" :style="{'background-image': 'url('+'/season_background/'+player.spId.toString().substring(0,3)+'.png)'}">
                         </span>
                         <span>
-                            <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="img_cont">
+                            <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="image_cont">
                         </span>
                     </div>                    
                 </div>
             </div>
             <div class="ram">
                 <select v-on:change="changeRAM($event)">
-                    <option selected>RAM</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
+                    <option disabled>RAM</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
                     <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
                 </select>
                 <div v-for="player in this.position_value[17]">
                     <div>
                         <span>
-                            <img v-bind:src="'/players/'+player.spId" class="back_img" :style="{'background-image': 'url('+'/season_background/'+player.spId.toString().substring(0,3)+'.png)'}">
+                            <img v-bind:src="'/players/'+player.spId" class="back_image" :style="{'background-image': 'url('+'/season_background/'+player.spId.toString().substring(0,3)+'.png)'}">
                         </span>
                         <span>
-                            <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="img_cont">
+                            <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="image_cont">
                         </span>
                     </div>                    
                 </div>
             </div>
             <div class="lm">
                 <select v-on:change="changeLM($event)">
-                    <option selected>LM</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
+                    <option disabled>LM</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
                     <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
                 </select>
                 <div v-for="player in this.position_value[16]">
                     <div>
                         <span>
-                            <img v-bind:src="'/players/'+player.spId" class="back_img" :style="{'background-image': 'url('+'/season_background/'+player.spId.toString().substring(0,3)+'.png)'}">
+                            <img v-bind:src="'/players/'+player.spId" class="back_image" :style="{'background-image': 'url('+'/season_background/'+player.spId.toString().substring(0,3)+'.png)'}">
                         </span>
                         <span>
-                            <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="img_cont">
+                            <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="image_cont">
                         </span>
                     </div>                    
                 </div>
             </div>
             <div class="lcm">
                 <select v-on:change="changeLCM($event)">
-                    <option selected>LCM</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
+                    <option disabled>LCM</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
                     <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
                 </select>
                 <div v-for="player in this.position_value[15]">
                     <div>
                         <span>
-                            <img v-bind:src="'/players/'+player.spId" class="back_img" :style="{'background-image': 'url('+'/season_background/'+player.spId.toString().substring(0,3)+'.png)'}">
+                            <img v-bind:src="'/players/'+player.spId" class="back_image" :style="{'background-image': 'url('+'/season_background/'+player.spId.toString().substring(0,3)+'.png)'}">
                         </span>
                         <span>
-                            <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="img_cont">
+                            <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="image_cont">
                         </span>
                     </div>                    
                 </div>
             </div>
             <div class="cm">
                 <select v-on:change="changeCM($event)">
-                    <option selected>CM</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
+                    <option disabled>CM</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
                     <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
                 </select>
                 <div v-for="player in this.position_value[14]">
                     <div>
                         <span>
-                            <img v-bind:src="'/players/'+player.spId" class="back_img" :style="{'background-image': 'url('+'/season_background/'+player.spId.toString().substring(0,3)+'.png)'}">
+                            <img v-bind:src="'/players/'+player.spId" class="back_image" :style="{'background-image': 'url('+'/season_background/'+player.spId.toString().substring(0,3)+'.png)'}">
                         </span>
                         <span>
-                            <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="img_cont">
+                            <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="image_cont">
                         </span>
                     </div>                    
                 </div>
             </div>
             <div class="rcm">
                 <select v-on:change="changeRCM($event)">
-                    <option selected>RCM</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
+                    <option disabled>RCM</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
                     <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
                 </select>
                 <div v-for="player in this.position_value[13]">
                     <div>
                         <span>
-                            <img v-bind:src="'/players/'+player.spId" class="back_img" :style="{'background-image': 'url('+'/season_background/'+player.spId.toString().substring(0,3)+'.png)'}">
+                            <img v-bind:src="'/players/'+player.spId" class="back_image" :style="{'background-image': 'url('+'/season_background/'+player.spId.toString().substring(0,3)+'.png)'}">
                         </span>
                         <span>
-                            <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="img_cont">
+                            <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="image_cont">
                         </span>
                     </div>                    
                 </div>
             </div>
             <div class="rm">
                 <select v-on:change="changeRM($event)">
-                    <option selected>RM</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
+                    <option disabled>RM</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
                     <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
                 </select>
                 <div v-for="player in this.position_value[12]">
                     <div>
                         <span>
-                            <img v-bind:src="'/players/'+player.spId" class="back_img" :style="{'background-image': 'url('+'/season_background/'+player.spId.toString().substring(0,3)+'.png)'}">
+                            <img v-bind:src="'/players/'+player.spId" class="back_image" :style="{'background-image': 'url('+'/season_background/'+player.spId.toString().substring(0,3)+'.png)'}">
                         </span>
                         <span>
-                            <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="img_cont">
+                            <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="image_cont">
                         </span>
                     </div>                    
                 </div>
             </div>
             <div class="ldm">
                 <select v-on:change="changeLDM($event)">
-                    <option selected>LDM</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
+                    <option disabled>LDM</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
                     <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
                 </select>
                 <div v-for="player in this.position_value[11]">
                     <div>
                         <span>
-                            <img v-bind:src="'/players/'+player.spId" class="back_img" :style="{'background-image': 'url('+'/season_background/'+player.spId.toString().substring(0,3)+'.png)'}">
+                            <img v-bind:src="'/players/'+player.spId" class="back_image" :style="{'background-image': 'url('+'/season_background/'+player.spId.toString().substring(0,3)+'.png)'}">
                         </span>
                         <span>
-                            <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="img_cont">
+                            <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="image_cont">
                         </span>
                     </div>                    
                 </div>
             </div>
             <div class="cdm">
                 <select v-on:change="changeCDM($event)">
-                    <option selected>CDM</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
+                    <option disabled>CDM</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
                     <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
                 </select>
                 <div v-for="player in this.position_value[10]">
                     <div>
                         <span>
-                            <img v-bind:src="'/players/'+player.spId" class="back_img" :style="{'background-image': 'url('+'/season_background/'+player.spId.toString().substring(0,3)+'.png)'}">
+                            <img v-bind:src="'/players/'+player.spId" class="back_image" :style="{'background-image': 'url('+'/season_background/'+player.spId.toString().substring(0,3)+'.png)'}">
                         </span>
                         <span>
-                            <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="img_cont">
+                            <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="image_cont">
                         </span>
                     </div>                    
                 </div>
             </div>
             <div class="rdm">
                 <select v-on:change="changeRDM($event)">
-                    <option selected>RDM</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
+                    <option disabled>RDM</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
                     <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
                 </select>
                 <div v-for="player in this.position_value[9]">
                     <div>
                         <span>
-                            <img v-bind:src="'/players/'+player.spId" class="back_img" :style="{'background-image': 'url('+'/season_background/'+player.spId.toString().substring(0,3)+'.png)'}">
+                            <img v-bind:src="'/players/'+player.spId" class="back_image" :style="{'background-image': 'url('+'/season_background/'+player.spId.toString().substring(0,3)+'.png)'}">
                         </span>
                         <span>
-                            <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="img_cont">
+                            <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="image_cont">
                         </span>
                     </div>                    
                 </div>
             </div>
             <div class="lwb">
                 <select v-on:change="changeLWB($event)">
-                    <option selected>LWB</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
+                    <option disabled>LWB</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
                     <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
                 </select>
                 <div v-for="player in this.position_value[8]">
                     <div>
                         <span>
-                            <img v-bind:src="'/players/'+player.spId" class="back_img" :style="{'background-image': 'url('+'/season_background/'+player.spId.toString().substring(0,3)+'.png)'}">
+                            <img v-bind:src="'/players/'+player.spId" class="back_image" :style="{'background-image': 'url('+'/season_background/'+player.spId.toString().substring(0,3)+'.png)'}">
                         </span>
                         <span>
-                            <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="img_cont">
+                            <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="image_cont">
                         </span>
                     </div>                    
                 </div>
             </div>
             <div class="lb">
                 <select v-on:change="changeLB($event)">
-                    <option selected>LB</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
+                    <option disabled>LB</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
                     <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
                 </select>
                 <div v-for="player in this.position_value[7]">
                     <div>
                         <span>
-                            <img v-bind:src="'/players/'+player.spId" class="back_img" :style="{'background-image': 'url('+'/season_background/'+player.spId.toString().substring(0,3)+'.png)'}">
+                            <img v-bind:src="'/players/'+player.spId" class="back_image" :style="{'background-image': 'url('+'/season_background/'+player.spId.toString().substring(0,3)+'.png)'}">
                         </span>
                         <span>
-                            <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="img_cont">
+                            <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="image_cont">
                         </span>
                     </div>                    
                 </div>
             </div>
             <div class="lcb">
                 <select v-on:change="changeLCB($event)">
-                    <option selected>LCB</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
+                    <option disabled>LCB</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
                     <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
                 </select>
                 <div v-for="player in this.position_value[6]">
                     <div>
                         <span>
-                            <img v-bind:src="'/players/'+player.spId" class="back_img" :style="{'background-image': 'url('+'/season_background/'+player.spId.toString().substring(0,3)+'.png)'}">
+                            <img v-bind:src="'/players/'+player.spId" class="back_image" :style="{'background-image': 'url('+'/season_background/'+player.spId.toString().substring(0,3)+'.png)'}">
                         </span>
                         <span>
-                            <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="img_cont">
+                            <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="image_cont">
                         </span>
                     </div>                    
                 </div>
             </div>
             <div class="cb">
                 <select v-on:change="changeCB($event)">
-                    <option selected>CB</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
+                    <option disabled>CB</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
                     <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
                 </select>
                 <div v-for="player in this.position_value[5]">
                     <div>
                         <span>
-                            <img v-bind:src="'/players/'+player.spId" class="back_img" :style="{'background-image': 'url('+'/season_background/'+player.spId.toString().substring(0,3)+'.png)'}">
+                            <img v-bind:src="'/players/'+player.spId" class="back_image" :style="{'background-image': 'url('+'/season_background/'+player.spId.toString().substring(0,3)+'.png)'}">
                         </span>
                         <span>
-                            <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="img_cont">
+                            <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="image_cont">
                         </span>
                     </div>                    
                 </div>
             </div>
             <div class="rcb">
                 <select v-on:change="changeRCB($event)">
-                    <option selected>RCB</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
+                    <option disabled>RCB</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
                     <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
                 </select>
                 <div v-for="player in this.position_value[4]">
                     <div>
                         <span>
-                            <img v-bind:src="'/players/'+player.spId" class="back_img" :style="{'background-image': 'url('+'/season_background/'+player.spId.toString().substring(0,3)+'.png)'}">
+                            <img v-bind:src="'/players/'+player.spId" class="back_image" :style="{'background-image': 'url('+'/season_background/'+player.spId.toString().substring(0,3)+'.png)'}">
                         </span>
                         <span>
-                            <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="img_cont">
+                            <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="image_cont">
                         </span>
                     </div>                    
                 </div>
             </div>
             <div class="rb">
                 <select v-on:change="changeRB($event)">
-                    <option selected>RB</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
+                    <option disabled>RB</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
                     <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
                 </select>
                 <div v-for="player in this.position_value[3]">
                     <div>
                         <span>
-                            <img v-bind:src="'/players/'+player.spId" class="back_img" :style="{'background-image': 'url('+'/season_background/'+player.spId.toString().substring(0,3)+'.png)'}">
+                            <img v-bind:src="'/players/'+player.spId" class="back_image" :style="{'background-image': 'url('+'/season_background/'+player.spId.toString().substring(0,3)+'.png)'}">
                         </span>
                         <span>
-                            <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="img_cont">
+                            <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="image_cont">
                         </span>
                     </div>                    
                 </div>
             </div>
             <div class="rwb">
                 <select v-on:change="changeRWB($event)">
-                    <option selected>RWB</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
+                    <option disabled>RWB</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
                     <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
                 </select>
                 <div v-for="player in this.position_value[2]">
                     <div>
                         <span>
-                            <img v-bind:src="'/players/'+player.spId" class="back_img" :style="{'background-image': 'url('+'/season_background/'+player.spId.toString().substring(0,3)+'.png)'}">
+                            <img v-bind:src="'/players/'+player.spId" class="back_image" :style="{'background-image': 'url('+'/season_background/'+player.spId.toString().substring(0,3)+'.png)'}">
                         </span>
                         <span>
-                            <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="img_cont">
+                            <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="image_cont">
                         </span>
                     </div>                    
                 </div>
@@ -694,6 +694,19 @@ export default {
     z-index: 30;
     text-align: center;
 }
+
+.image_cont{
+  width: 25px;
+  height: 25px;
+}
+
+
+.back_image{
+  width:30px;
+  height: 30px;
+  background-size: cover;
+}
+
 
 .name_cont{
     color: black;
