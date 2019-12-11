@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <div>
+    <div class="entire">
       포메이션:
       <select v-on:change="changeFormation($event)">
           <option>select formation</option><option value="343">3-4-3</option><option value="3412">3-4-1-2</option><option value="32212">3-2-2-1-2</option><option value="31213">3-1-2-1-3</option>
@@ -35,3 +35,7 @@ export default {
   },
 }
 </script>
+
+<style>
+
+</style>

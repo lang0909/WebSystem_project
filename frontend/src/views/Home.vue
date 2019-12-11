@@ -24,8 +24,9 @@
         </div>
       </div>
     </div>
+    <br><br>
+    <button type="button" v-on:click="player_compare()" class="compare_btn">비교하기</button>
     <div v-if="this.playerkeep.length">
-      <button type="button" v-on:click="player_compare()" class="compare_btn">비교하기</button>
       <div v-for="player in this.playerkeep" class="ply">
         <div>
           <span>

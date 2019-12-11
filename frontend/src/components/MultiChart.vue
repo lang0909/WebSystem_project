@@ -1,9 +1,10 @@
 <template>
     <div>
         <hr />
-        <tr v-for="compare in this.compare_value" class="compare">
+        <tr v-for="compare in this.data" class="compare">
             <compare-bar-chart :data="compare" :options="{responsive: false, maintainAspectRatio: false}">
             </compare-bar-chart>
+            <router-view></router-view>
             <br>
         </tr>
     </div>
