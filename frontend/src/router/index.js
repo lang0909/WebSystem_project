@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import axios from 'axios'
 import Show from '../components/ShowComment.vue'
-import About from '../views/About.vue'
+import Recommend from '../views/Recommend.vue'
 import Result from '../components/resultChart.vue'
 import Compare from '../components/MultiChart.vue'
 
@@ -18,9 +18,9 @@ const routes = [
     component: Home
   },
   {
-    path: '/about',
-    name: 'about',
-    component: About
+    path: '/recommend',
+    name: 'recommend',
+    component: Recommend
   },
   {
     path: '/top_record/:spid',

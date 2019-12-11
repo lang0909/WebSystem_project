@@ -76,7 +76,6 @@ export default {
     data(){
         return{
             top10000: '',
-            new_record: '',
             temp_position: ''
         }
     },

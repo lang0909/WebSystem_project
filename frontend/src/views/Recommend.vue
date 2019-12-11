@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <div class="recommend">
     <div class="entire">
       포메이션:
       <select v-on:change="changeFormation($event)">

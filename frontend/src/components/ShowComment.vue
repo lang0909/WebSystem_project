@@ -1,9 +1,7 @@
 <template>
     <div class="cont">
-        <div v-if="this.top!=0">
-            <bar-chart :data="[this.top[0].status.shoot, this.top[0].status.effectiveShoot,this.top[0].status.assist, this.top[0].status.goal, this.top[0].status.dribble, this.top[0].status.passTry, this.top[0].status.passSuccess, this.top[0].status.block, this.top[0].status.tackle]" :name="this.top[0].spPosition" :options="{responsive: false, maintainAspectRatio: false}" :background_value="this.top[0].maxIndex">
-            </bar-chart>
-        </div>
+        <bar-chart :data="[this.top[0].status.shoot, this.top[0].status.effectiveShoot,this.top[0].status.assist, this.top[0].status.goal, this.top[0].status.dribble, this.top[0].status.passTry, this.top[0].status.passSuccess, this.top[0].status.block, this.top[0].status.tackle]" :name="this.top[0].spPosition" :options="{responsive: false, maintainAspectRatio: false}" :background_value="this.top[0].maxIndex">
+        </bar-chart>
         <input type="text" placeholder="Please Input Comment" v-model="comment_value" class="input_comment"><br>
         <button v-on:click="submit_comment">Apply comment</button>
         <div v-if="comments.length">
@@ -16,7 +14,7 @@
 
 <script>
 export default {
-    created: function(){
+    created(){
         const spid = this.$route.params.id.substring(0,9);
         const po = parseInt(this.$route.params.id.substring(9,this.$route.params.id.length),0);
         this.$http.get(`/top_record/${spid}`)
@@ -40,7 +38,7 @@ export default {
                 const id = this.$route.params.id;
                 this.$http.post(`/top_record/${id}/comment`,{
                     content: this.comment_value
-                }).then(alert("등록되었습니다"),this.comment_value='')
+                }).then(alert("등록되었습니다"))
             }
             else{
                 alert("no valid")
