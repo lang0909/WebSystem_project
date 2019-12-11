@@ -449,7 +449,7 @@ export default {
             const temp =[];
             temp.push(27);
             temp.push(event.target.value);
-            this.$http.get(`/toprecord/${temp}`)
+            this.$http.get(`/top_record_combine/${temp}`)
             .then((response)=>{
                 this.position_value.splice(27,1 ,response.data);
             })
@@ -458,7 +458,7 @@ export default {
             const temp =[];
             temp.push(26);
             temp.push(event.target.value);
-            this.$http.get(`/toprecord/${temp}`)
+            this.$http.get(`/top_record_combine/${temp}`)
             .then((response)=>{
                 this.position_value.splice(26,1 ,response.data);
             })
@@ -467,7 +467,7 @@ export default {
             const temp =[];
             temp.push(25);
             temp.push(event.target.value);
-            this.$http.get(`/toprecord/${temp}`)
+            this.$http.get(`/top_record_combine/${temp}`)
             .then((response)=>{
                 this.position_value.splice(25,1 ,response.data);
             })
@@ -476,7 +476,7 @@ export default {
             const temp =[];
             temp.push(24);
             temp.push(event.target.value);
-            this.$http.get(`/toprecord/${temp}`)
+            this.$http.get(`/top_record_combine/${temp}`)
             .then((response)=>{
                 this.position_value.splice(24,1 ,response.data);
             })
@@ -485,7 +485,7 @@ export default {
             const temp =[];
             temp.push(23);
             temp.push(event.target.value);
-            this.$http.get(`/toprecord/${temp}`)
+            this.$http.get(`/top_record_combine/${temp}`)
             .then((response)=>{
                 this.position_value.splice(23,1 ,response.data);
             })
@@ -494,7 +494,7 @@ export default {
             const temp =[];
             temp.push(22);
             temp.push(event.target.value);
-            this.$http.get(`/toprecord/${temp}`)
+            this.$http.get(`/top_record_combine/${temp}`)
             .then((response)=>{
                 this.position_value.splice(22,1 ,response.data);
             })
@@ -503,7 +503,7 @@ export default {
             const temp =[];
             temp.push(21);
             temp.push(event.target.value);
-            this.$http.get(`/toprecord/${temp}`)
+            this.$http.get(`/top_record_combine/${temp}`)
             .then((response)=>{
                 this.position_value.splice(21,1 ,response.data);
             })
@@ -512,7 +512,7 @@ export default {
             const temp =[];
             temp.push(20);
             temp.push(event.target.value);
-            this.$http.get(`/toprecord/${temp}`)
+            this.$http.get(`/top_record_combine/${temp}`)
             .then((response)=>{
                 this.position_value.splice(20,1 ,response.data);
             })
@@ -521,7 +521,7 @@ export default {
             const temp =[];
             temp.push(19);
             temp.push(event.target.value);
-            this.$http.get(`/toprecord/${temp}`)
+            this.$http.get(`/top_record_combine/${temp}`)
             .then((response)=>{
                 this.position_value.splice(19,1 ,response.data);
             })
@@ -530,7 +530,7 @@ export default {
             const temp =[];
             temp.push(18);
             temp.push(event.target.value);
-            this.$http.get(`/toprecord/${temp}`)
+            this.$http.get(`/top_record_combine/${temp}`)
             .then((response)=>{
                 this.position_value.splice(18,1 ,response.data);
             })
@@ -539,7 +539,7 @@ export default {
             const temp =[];
             temp.push(17);
             temp.push(event.target.value);
-            this.$http.get(`/toprecord/${temp}`)
+            this.$http.get(`/top_record_combine/${temp}`)
             .then((response)=>{
                 this.position_value.splice(17,1 ,response.data);
             })
@@ -548,7 +548,7 @@ export default {
             const temp =[];
             temp.push(16);
             temp.push(event.target.value);
-            this.$http.get(`/toprecord/${temp}`)
+            this.$http.get(`/top_record_combine/${temp}`)
             .then((response)=>{
                 this.position_value.splice(16,1 ,response.data);
             })
@@ -557,7 +557,7 @@ export default {
             const temp =[];
             temp.push(15);
             temp.push(event.target.value);
-            this.$http.get(`/toprecord/${temp}`)
+            this.$http.get(`/top_record_combine/${temp}`)
             .then((response)=>{
                 this.position_value.splice(15,1 ,response.data);
             })
@@ -566,7 +566,7 @@ export default {
             const temp =[];
             temp.push(14);
             temp.push(event.target.value);
-            this.$http.get(`/toprecord/${temp}`)
+            this.$http.get(`/top_record_combine/${temp}`)
             .then((response)=>{
                 this.position_value.splice(14,1 ,response.data);
             })
@@ -575,7 +575,7 @@ export default {
             const temp =[];
             temp.push(13);
             temp.push(event.target.value);
-            this.$http.get(`/toprecord/${temp}`)
+            this.$http.get(`/top_record_combine/${temp}`)
             .then((response)=>{
                 this.position_value.splice(13,1 ,response.data);
             })
@@ -584,7 +584,7 @@ export default {
             const temp =[];
             temp.push(12);
             temp.push(event.target.value);
-            this.$http.get(`/toprecord/${temp}`)
+            this.$http.get(`/top_record_combine/${temp}`)
             .then((response)=>{
                 this.position_value.splice(12,1 ,response.data);
             })
@@ -593,7 +593,7 @@ export default {
             const temp =[];
             temp.push(11);
             temp.push(event.target.value);
-            this.$http.get(`/toprecord/${temp}`)
+            this.$http.get(`/top_record_combine/${temp}`)
             .then((response)=>{
                 this.position_value.splice(11,1 ,response.data);
             })
@@ -602,7 +602,7 @@ export default {
             const temp =[];
             temp.push(10);
             temp.push(event.target.value);
-            this.$http.get(`/toprecord/${temp}`)
+            this.$http.get(`/top_record_combine/${temp}`)
             .then((response)=>{
                 this.position_value.splice(10,1 ,response.data);
             })
@@ -611,7 +611,7 @@ export default {
             const temp =[];
             temp.push(9);
             temp.push(event.target.value);
-            this.$http.get(`/toprecord/${temp}`)
+            this.$http.get(`/top_record_combine/${temp}`)
             .then((response)=>{
                 this.position_value.splice(9,1 ,response.data);
             })
@@ -620,7 +620,7 @@ export default {
             const temp =[];
             temp.push(8);
             temp.push(event.target.value);
-            this.$http.get(`/toprecord/${temp}`)
+            this.$http.get(`/top_record_combine/${temp}`)
             .then((response)=>{
                 this.position_value.splice(8,1 ,response.data);
             })
@@ -629,7 +629,7 @@ export default {
             const temp =[];
             temp.push(7);
             temp.push(event.target.value);
-            this.$http.get(`/toprecord/${temp}`)
+            this.$http.get(`/top_record_combine/${temp}`)
             .then((response)=>{
                 this.position_value.splice(7,1 ,response.data);
             })
@@ -638,7 +638,7 @@ export default {
             const temp =[];
             temp.push(6);
             temp.push(event.target.value);
-            this.$http.get(`/toprecord/${temp}`)
+            this.$http.get(`/top_record_combine/${temp}`)
             .then((response)=>{
                 this.position_value.splice(6,1 ,response.data);
             })
@@ -647,7 +647,7 @@ export default {
             const temp =[];
             temp.push(5);
             temp.push(event.target.value);
-            this.$http.get(`/toprecord/${temp}`)
+            this.$http.get(`/top_record_combine/${temp}`)
             .then((response)=>{
                 this.position_value.splice(5,1 ,response.data);
             })
@@ -656,7 +656,7 @@ export default {
             const temp =[];
             temp.push(4);
             temp.push(event.target.value);
-            this.$http.get(`/toprecord/${temp}`)
+            this.$http.get(`/top_record_combine/${temp}`)
             .then((response)=>{
                 this.position_value.splice(4,1 ,response.data);
             })
@@ -665,7 +665,7 @@ export default {
             const temp =[];
             temp.push(3);
             temp.push(event.target.value);
-            this.$http.get(`/toprecord/${temp}`)
+            this.$http.get(`/top_record_combine/${temp}`)
             .then((response)=>{
                 this.position_value.splice(3,1 ,response.data);
             })
@@ -674,7 +674,7 @@ export default {
             const temp =[];
             temp.push(2);
             temp.push(event.target.value);
-            this.$http.get(`/toprecord/${temp}`)
+            this.$http.get(`/top_record_combine/${temp}`)
             .then((response)=>{
                 this.position_value.splice(2,1 ,response.data);
             })

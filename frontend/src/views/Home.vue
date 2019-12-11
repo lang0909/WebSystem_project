@@ -37,9 +37,6 @@
             <span>
               <img v-bind:src="'/season/'+player.substring(0,3)+'.JPG'" class="img_cont">
             </span>
-            <span class="name_cont">
-              {{player}}
-            </span>
           </div>
         </div>
     </div>
@@ -53,13 +50,13 @@
 </template>
 
 <script>
-import RRR from '../components/resultChart.vue'
-import SSS from '../components/MultiChart.vue'
+import Result from '../components/resultChart.vue'
+import Multi from '../components/MultiChart.vue'
 
 export default {
   components: {
-    'result': RRR,
-    'compare': SSS
+    'result': Result,
+    'compare': Multi
   },
   data() {
     return{
