@@ -23,6 +23,9 @@ export default {
         this.$http.get(`/top_record/${this.data}`)
         .then((response)=>{
             this.top10000 = response.data;
+            if(this.top10000.length==0){
+                alert("정보의 양이 적거나 없습니다");
+            }
             this.top10000.filter(function(temp){
                 temp.maxIndex = [];
             })
