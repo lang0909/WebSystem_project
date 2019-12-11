@@ -25,21 +25,21 @@
       </div>
     </div>
     <br><br>
-    <button type="button" v-on:click="player_compare()" class="compare_btn">비교하기</button>
     <div v-if="this.playerkeep.length">
-      <div v-for="player in this.playerkeep" class="ply">
-        <div>
-          <span>
-            <img v-bind:src="'/players/'+player" class="back_img" :style="{'background-image': 'url('+'/season_background/'+player.substring(0,3)+'.png)'}">
-          </span>
-          <span>
-            <img v-bind:src="'/season/'+player.substring(0,3)+'.JPG'" class="img_cont">
-          </span>
-          <span class="name_cont">
-            {{player}}
-          </span>
+      <button type="button" v-on:click="player_compare()" class="compare_btn">비교하기</button>
+        <div v-for="player in this.playerkeep" class="ply">
+          <div>
+            <span>
+              <img v-bind:src="'/players/'+player" class="back_img" :style="{'background-image': 'url('+'/season_background/'+player.substring(0,3)+'.png)'}">
+            </span>
+            <span>
+              <img v-bind:src="'/season/'+player.substring(0,3)+'.JPG'" class="img_cont">
+            </span>
+            <span class="name_cont">
+              {{player}}
+            </span>
+          </div>
         </div>
-      </div>
     </div>
     <div v-if="this.compare_change">
       <compare :data="this.compare_content" :key="this.compare_change" class="compare"></compare>
@@ -102,6 +102,7 @@ export default {
     },
     player_compare(){
       var fff = [];
+      this.compare_content = [];
       for(let i=0;i<this.compare_content1.length;i++){
         for(let j=0;j<this.compare_content2.length;j++){
           if(this.compare_content1[i].spPosition === this.compare_content2[j].spPosition){
@@ -111,6 +112,9 @@ export default {
             fff = [];
           }
         }
+      }
+      if(this.compare_content.length==0){
+        alert("비교가능한 포지션이 없습니다.");
       }
       this.playerkeep=[];
       this.compare_change = this.compare_change+1;
@@ -143,6 +147,7 @@ export default {
 
 .name_cont{
   vertical-align: super;
+  color: black;
 }
 
 .img_cont{

@@ -128,7 +128,7 @@ app.post('/top_record/:id/comment', function(req,res,next){
 app.get('/toprecord/:poandst', function(req,res,next){
     const temp = req.params.poandst.split(',');
     const temp1 = 'status.'+temp[1];
-    const option = {sort: {[temp1]: -1}, limit: 5};
+    const option = {sort: {[temp1]: -1}, limit: 3};
     top10000Model.find({spPosition: temp[0], "status.matchCount": {$gt: 300}}, null, option, (err,result)=>{
         res.send(result);
     })
@@ -136,6 +136,13 @@ app.get('/toprecord/:poandst', function(req,res,next){
 
 app.get('/formation/:fmt',function(req,res,next){
     formationModel.find({formation: req.params.fmt},(err,result)=>{
+        res.send(result);
+    })
+})
+
+app.get('/find/:spid',function(req,res,next){
+    console.log(req.params.spid);
+    spidModel.find({id: req.params.spid.toString()},(err,result)=>{
         res.send(result);
     })
 })
