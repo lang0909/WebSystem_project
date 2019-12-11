@@ -1,6 +1,13 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import axios from 'axios'
+import Show from '../components/ShowComment.vue'
+import Recommend from '../views/Recommend.vue'
+import Result from '../components/resultChart.vue'
+import Compare from '../components/MultiChart.vue'
+
+Vue.prototype.$http = axios
 
 Vue.use(VueRouter)
 
@@ -11,14 +18,24 @@ const routes = [
     component: Home
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: function () {
-      return import(/* webpackChunkName: "about" */ '../views/About.vue')
-    }
+    path: '/recommend',
+    name: 'recommend',
+    component: Recommend
+  },
+  {
+    path: '/top_record/:spid',
+    name: 'result',
+    component: Result
+  },
+  {
+    path: '/top_record/:id/comment',
+    name: 'show',
+    component: Show
+  },
+  {
+    path: '/compare',
+    name: 'compare',
+    component: Compare
   }
 ]
 
