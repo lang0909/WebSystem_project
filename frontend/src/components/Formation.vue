@@ -3,7 +3,7 @@
         <div class="field">
             <div class="lw">
                 <select v-on:change="changeLW($event)">
-                    <option disabled>LW</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
+                    <option>LW</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
                     <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
                 </select>
                 <div v-for="player in this.position_value[27]">
@@ -19,7 +19,7 @@
             </div>
             <div class="ls">
                 <select v-on:change="changeLS($event)">
-                    <option disabled>LS</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
+                    <option>LS</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
                     <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
                 </select>
                 <div v-for="player in this.position_value[26]">
@@ -35,7 +35,7 @@
             </div>
             <div class="st">
                 <select v-on:change="changeST($event)">
-                    <option disabled>ST</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
+                    <option>ST</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
                     <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
                 </select>
                 <div v-for="player in this.position_value[25]">
@@ -51,7 +51,7 @@
             </div>
             <div class="rs">
                 <select v-on:change="changeRS($event)">
-                    <option disabled>RS</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
+                    <option>RS</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
                     <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
                 </select>
                 <div v-for="player in this.position_value[24]">
@@ -67,7 +67,7 @@
             </div>
             <div class="rw">
                 <select v-on:change="changeRW($event)">
-                    <option disabled>RW</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
+                    <option>RW</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
                     <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
                 </select>
                 <div v-for="player in this.position_value[23]">
@@ -83,7 +83,7 @@
             </div>
             <div class="lf">
                 <select v-on:change="changeLF($event)">
-                    <option disabled>LF</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
+                    <option>LF</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
                     <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
                 </select>
                 <div v-for="player in this.position_value[22]">
@@ -99,7 +99,7 @@
             </div>
             <div class="cf">
                 <select v-on:change="changeCF($event)">
-                    <option disabled>CF</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
+                    <option>CF</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
                     <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
                 </select>
                 <div v-for="player in this.position_value[21]">
@@ -115,7 +115,7 @@
             </div>
             <div class="rf">
                 <select v-on:change="changeRF($event)">
-                    <option disabled>RF</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
+                    <option>RF</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
                     <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
                 </select>
                 <div v-for="player in this.position_value[20]">
@@ -131,7 +131,7 @@
             </div>
             <div class="lam">
                 <select v-on:change="changeLAM($event)">
-                    <option disabled>LAM</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
+                    <option>LAM</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
                     <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
                 </select>
                 <div v-for="player in this.position_value[19]">
@@ -147,7 +147,7 @@
             </div>
             <div class="cam">
                 <select v-on:change="changeCAM($event)">
-                    <option disabled>CAM</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
+                    <option>CAM</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
                     <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
                 </select>
                 <div v-for="player in this.position_value[18]">
@@ -163,7 +163,7 @@
             </div>
             <div class="ram">
                 <select v-on:change="changeRAM($event)">
-                    <option disabled>RAM</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
+                    <option>RAM</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
                     <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
                 </select>
                 <div v-for="player in this.position_value[17]">
@@ -179,7 +179,7 @@
             </div>
             <div class="lm">
                 <select v-on:change="changeLM($event)">
-                    <option disabled>LM</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
+                    <option>LM</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
                     <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
                 </select>
                 <div v-for="player in this.position_value[16]">
@@ -195,7 +195,7 @@
             </div>
             <div class="lcm">
                 <select v-on:change="changeLCM($event)">
-                    <option disabled>LCM</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
+                    <option>LCM</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
                     <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
                 </select>
                 <div v-for="player in this.position_value[15]">
@@ -211,7 +211,7 @@
             </div>
             <div class="cm">
                 <select v-on:change="changeCM($event)">
-                    <option disabled>CM</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
+                    <option>CM</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
                     <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
                 </select>
                 <div v-for="player in this.position_value[14]">
@@ -227,7 +227,7 @@
             </div>
             <div class="rcm">
                 <select v-on:change="changeRCM($event)">
-                    <option disabled>RCM</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
+                    <option>RCM</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
                     <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
                 </select>
                 <div v-for="player in this.position_value[13]">
@@ -243,7 +243,7 @@
             </div>
             <div class="rm">
                 <select v-on:change="changeRM($event)">
-                    <option disabled>RM</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
+                    <option>RM</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
                     <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
                 </select>
                 <div v-for="player in this.position_value[12]">
@@ -259,7 +259,7 @@
             </div>
             <div class="ldm">
                 <select v-on:change="changeLDM($event)">
-                    <option disabled>LDM</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
+                    <option>LDM</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
                     <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
                 </select>
                 <div v-for="player in this.position_value[11]">
@@ -275,7 +275,7 @@
             </div>
             <div class="cdm">
                 <select v-on:change="changeCDM($event)">
-                    <option disabled>CDM</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
+                    <option>CDM</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
                     <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
                 </select>
                 <div v-for="player in this.position_value[10]">
@@ -291,7 +291,7 @@
             </div>
             <div class="rdm">
                 <select v-on:change="changeRDM($event)">
-                    <option disabled>RDM</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
+                    <option>RDM</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
                     <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
                 </select>
                 <div v-for="player in this.position_value[9]">
@@ -307,7 +307,7 @@
             </div>
             <div class="lwb">
                 <select v-on:change="changeLWB($event)">
-                    <option disabled>LWB</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
+                    <option>LWB</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
                     <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
                 </select>
                 <div v-for="player in this.position_value[8]">
@@ -323,7 +323,7 @@
             </div>
             <div class="lb">
                 <select v-on:change="changeLB($event)">
-                    <option disabled>LB</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
+                    <option>LB</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
                     <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
                 </select>
                 <div v-for="player in this.position_value[7]">
@@ -339,7 +339,7 @@
             </div>
             <div class="lcb">
                 <select v-on:change="changeLCB($event)">
-                    <option disabled>LCB</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
+                    <option>LCB</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
                     <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
                 </select>
                 <div v-for="player in this.position_value[6]">
@@ -355,7 +355,7 @@
             </div>
             <div class="cb">
                 <select v-on:change="changeCB($event)">
-                    <option disabled>CB</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
+                    <option>CB</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
                     <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
                 </select>
                 <div v-for="player in this.position_value[5]">
@@ -371,7 +371,7 @@
             </div>
             <div class="rcb">
                 <select v-on:change="changeRCB($event)">
-                    <option disabled>RCB</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
+                    <option>RCB</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
                     <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
                 </select>
                 <div v-for="player in this.position_value[4]">
@@ -387,7 +387,7 @@
             </div>
             <div class="rb">
                 <select v-on:change="changeRB($event)">
-                    <option disabled>RB</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
+                    <option>RB</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
                     <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
                 </select>
                 <div v-for="player in this.position_value[3]">
@@ -403,7 +403,7 @@
             </div>
             <div class="rwb">
                 <select v-on:change="changeRWB($event)">
-                    <option disabled>RWB</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
+                    <option>RWB</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
                     <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
                 </select>
                 <div v-for="player in this.position_value[2]">

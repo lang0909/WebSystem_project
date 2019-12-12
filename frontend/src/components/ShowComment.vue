@@ -3,8 +3,8 @@
         <bar-chart :data="[this.top[0].status.shoot, this.top[0].status.effectiveShoot,this.top[0].status.assist, this.top[0].status.goal, this.top[0].status.dribble, this.top[0].status.passTry, this.top[0].status.passSuccess, this.top[0].status.block, this.top[0].status.tackle]" :name="this.top[0].spPosition" :options="{responsive: false, maintainAspectRatio: false}" :background_value="this.top[0].maxIndex">
         </bar-chart>
         <input type="text" placeholder="Please Input Comment" v-model="comment_value" class="input_comment"><br>
-        <button v-on:click="submit_comment">Apply comment</button>
-        <div v-if="comments.length">
+        <button v-on:click="submit_comment" style="margin : 3px;">Apply comment</button>
+        <div v-if="comments.length" class="mylist">
             <div v-for="comment in comments" class="comment">
                 {{comment.content}}
             </div>
@@ -38,7 +38,12 @@ export default {
                 const id = this.$route.params.id;
                 this.$http.post(`/top_record/${id}/comment`,{
                     content: this.comment_value
-                }).then(alert("등록되었습니다"))
+                }).then(
+                  this.$http.get(`/top_record/${id}/comment`)
+                  .then((response)=>{
+                    this.comments = response.data;
+                    alert('등록되었습니다');
+                  }));
             }
             else{
                 alert("no valid")
@@ -64,4 +69,12 @@ export default {
     width: 300px;
     height: 50px;
 }
+
+.mylist{
+  background-color: gainsboro;
+}
+.mylist div {
+    border-bottom: 1px solid #efefef; 
+}
+
 </style>

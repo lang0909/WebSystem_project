@@ -162,7 +162,7 @@ export default {
 
 .name_cont{
   vertical-align:middle;
-  font-size: 20px;
+  font-size: 14px;
 }
 
 .img_cont{
