@@ -23,7 +23,7 @@ cd frontend
 npm install
 cd ../
 cd backend
-npm intall
+npm install
 cd ../
 cd frontend
 npm run build
