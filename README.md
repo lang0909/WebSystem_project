@@ -36,7 +36,7 @@ npm start
 [FIFAONLINE PLAYER IMAGE](<https://drive.google.com/open?id=1Ajcyl4F8UVHaTOO-SsnB67WbMAhJdQNq>)
 
 #### 데이터 다운로드 후 압축풀고 mongodb import
-[Data](<https://drive.google.com/open?id=1TggGYoC655N9dZ_-k4Z3XcSW5r6YxFPf>)
+[Data](<https://drive.google.com/open?id=1mPCiwb-JIZR5M6x7s_p1QsOvTwmmESQ3>)
 
 ```bash
 mongoimport --db bin --collection spid --type json --file spid.json
