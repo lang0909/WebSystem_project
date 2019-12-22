@@ -36,12 +36,17 @@ npm start
 [FIFAONLINE PLAYER IMAGE](<https://drive.google.com/open?id=1Ajcyl4F8UVHaTOO-SsnB67WbMAhJdQNq>)
 
 #### 데이터 다운로드 후 압축풀고 mongodb import
-[TopRankerUsingData](<https://drive.google.com/open?id=1bCP2IcEyF6BN0YFBfpZf7bAfXreVjz-w>)
+[Data](<https://drive.google.com/open?id=1TggGYoC655N9dZ_-k4Z3XcSW5r6YxFPf>)
 
 ```bash
-mongoimport --db fifaonline-spid --collection spid --type json --file spid.json
+mongoimport --db bin --collection spid --type json --file spid.json
 
-mongoimport --db fifaonline-top10000 --collection topRankerUsingAverage --type json --file topRankerUsingAverage.json
+mongoimport --db Desktop --collection topRankerUsingAverage --type json --file topRankerUsingAverage.json
+
+mongoimport --db Formation --collection formation --type json --file formation.json
 ```
+
+#### localhost 접속주소
+localhost:3000
 
 ## 기능 설명
