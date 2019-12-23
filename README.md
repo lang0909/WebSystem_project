@@ -39,7 +39,7 @@ npm start
 [Data](<https://drive.google.com/open?id=1mPCiwb-JIZR5M6x7s_p1QsOvTwmmESQ3>)
 
 ```bash
-mongoimport --db bin --collection spid --type json --file spid.json
+mongoimport --db bin --collection spid --type json --file spid.json --jsonArray
 
 mongoimport --db Desktop --collection topRankerUsingAverage --type json --file topRankerUsingAverage.json
 
