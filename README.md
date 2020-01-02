@@ -33,10 +33,10 @@ npm start
 ```
 
 #### 선수이미지 다운로드 후 ../backend/ 에 저장
-[FIFAONLINE PLAYER IMAGE](<https://drive.google.com/open?id=1Ajcyl4F8UVHaTOO-SsnB67WbMAhJdQNq>)
+[FIFAONLINE PLAYER IMAGE](<https://github.com/lang0909/FIFAONLINE_PLAYER_IMAGE>)
 
 #### 데이터 다운로드 후 압축풀고 mongodb import
-[Data](<https://drive.google.com/open?id=1mPCiwb-JIZR5M6x7s_p1QsOvTwmmESQ3>)
+[Data](<https://github.com/lang0909/FIFAONLINE_DATA>)
 
 ```bash
 mongoimport --db bin --collection spid --type json --file spid.json --jsonArray
