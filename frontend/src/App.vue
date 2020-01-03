@@ -5,6 +5,9 @@
       <router-link to="/recommend">Recommend</router-link>
     </div>
     <router-view></router-view>
+    <footer id="foot">
+      Data based on NEXON DEVELOPERS
+    </footer>
   </div>
 </template>
 
@@ -15,6 +18,11 @@ export default {
 </script>
 
 <style>
+#foot{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
 
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
