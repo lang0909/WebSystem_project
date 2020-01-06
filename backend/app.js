@@ -83,15 +83,18 @@ app.get('/season_background/:num', function(req, res, next) {
 
 app.get('/players/:id', function(req, res, next) {
     const temp1 = path.join(__dirname + '/players/p' + req.params.id + '.png');
-    const temp2 = path.join(__dirname + '/playersAction/p' + parseInt(req.params.id.substring(3, req.params.id.length), 0) + '.png');
-    const temp3 = path.join(__dirname + '/players/p' + parseInt(req.params.id.substring(3, req.params.id.length), 0) + '.png');
+    const temp2 = path.join(__dirname + '/playersAction/p' + req.params.id + '.png');
+    const temp3 = path.join(__dirname + '/playersAction/p' + parseInt(req.params.id.substring(3, req.params.id.length), 0) + '.png');
+    const temp4 = path.join(__dirname + '/players/p' + parseInt(req.params.id.substring(3, req.params.id.length), 0) + '.png');
     if (fs.existsSync(temp1) === true) {
         res.sendFile(temp1);
     } else if (fs.existsSync(temp2) === true) {
         res.sendFile(temp2);
-    } else if (fs.existsSync(temp3) === true) {
+    } else if (fs.existsSync(temp3) === true && parseInt(req.params.id.substring(0,3),0)>=300) {
         res.sendFile(temp3);
-    } else {
+    } else if (fs.existsSync(temp4) === true){
+        res.sendFile(temp4);
+    } else{
         res.sendFile(path.join(__dirname + '/players/not_found.png'));
     }
 })
