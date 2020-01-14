@@ -73,10 +73,6 @@ export default {
   },
   methods: {
     async clicked() {
-      // this.$http.get(`/api/${this.playerName}`)
-      // .then((response)=>{
-      //   this.player_name = response.data;
-      // })
       this.player_name = await this.$store.dispatch('searchPlayerInfo',{playerName: this.playerName})
     },
     player_clicked(id){
@@ -88,15 +84,7 @@ export default {
         alert("더 이상 추가할 수 없습니다.");
       }else if(this.playerkeep.length==1){
         this.playerkeep.push(id);
-        // this.$http.get(`/top_record/${this.playerkeep[0]}`)
-        // .then((response)=>{
-        //     this.compare_content1 = response.data;
-        // })
         this.compare_content1 = await this.$store.dispatch('searchTopRecord',{ spid: this.playerkeep[0] })
-        // this.$http.get(`/top_record/${this.playerkeep[1]}`)
-        // .then((response)=>{
-        //     this.compare_content2 = response.data;
-        // })
         this.compare_content2 = await this.$store.dispatch('searchTopRecord',{ spid: this.playerkeep[1]})
       }else if(this.playerkeep.length==0){
         this.playerkeep.push(id);
