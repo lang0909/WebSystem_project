@@ -14,6 +14,9 @@
                         <span>
                             <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="image_cont">
                         </span>
+                        <span class="name_font">
+                            {{player.name}}
+                        </span>
                     </div>                    
                 </div>        
             </div>
@@ -29,6 +32,9 @@
                         </span>
                         <span>
                             <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="image_cont">
+                        </span>
+                        <span class="name_font">
+                            {{player.name}}
                         </span>
                     </div>                   
                 </div>
@@ -46,6 +52,9 @@
                         <span>
                             <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="image_cont">
                         </span>
+                        <span class="name_font">
+                            {{player.name}}
+                        </span>
                     </div>                   
                 </div>
             </div>
@@ -61,6 +70,9 @@
                         </span>
                         <span>
                             <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="image_cont">
+                        </span>
+                        <span class="name_font">
+                            {{player.name}}
                         </span>
                     </div>                    
                 </div>
@@ -78,6 +90,9 @@
                         <span>
                             <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="image_cont">
                         </span>
+                        <span class="name_font">
+                            {{player.name}}
+                        </span>
                     </div>                    
                 </div>
             </div>
@@ -93,6 +108,9 @@
                         </span>
                         <span>
                             <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="image_cont">
+                        </span>
+                        <span class="name_font">
+                            {{player.name}}
                         </span>
                     </div>                    
                 </div>
@@ -110,6 +128,9 @@
                         <span>
                             <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="image_cont">
                         </span>
+                        <span class="name_font">
+                            {{player.name}}
+                        </span>
                     </div>                    
                 </div>
             </div>
@@ -125,6 +146,9 @@
                         </span>
                         <span>
                             <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="image_cont">
+                        </span>
+                        <span class="name_font">
+                            {{player.name}}
                         </span>
                     </div>                    
                 </div>
@@ -142,6 +166,9 @@
                         <span>
                             <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="image_cont">
                         </span>
+                        <span class="name_font">
+                            {{player.name}}
+                        </span>
                     </div>                    
                 </div>
             </div>
@@ -157,6 +184,9 @@
                         </span>
                         <span>
                             <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="image_cont">
+                        </span>
+                        <span class="name_font">
+                            {{player.name}}
                         </span>
                     </div>                    
                 </div>
@@ -174,6 +204,9 @@
                         <span>
                             <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="image_cont">
                         </span>
+                        <span class="name_font">
+                            {{player.name}}
+                        </span>
                     </div>                    
                 </div>
             </div>
@@ -189,6 +222,9 @@
                         </span>
                         <span>
                             <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="image_cont">
+                        </span>
+                        <span class="name_font">
+                            {{player.name}}
                         </span>
                     </div>                    
                 </div>
@@ -206,6 +242,9 @@
                         <span>
                             <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="image_cont">
                         </span>
+                        <span class="name_font">
+                            {{player.name}}
+                        </span>
                     </div>                    
                 </div>
             </div>
@@ -221,6 +260,9 @@
                         </span>
                         <span>
                             <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="image_cont">
+                        </span>
+                        <span class="name_font">
+                            {{player.name}}
                         </span>
                     </div>                    
                 </div>
@@ -238,6 +280,9 @@
                         <span>
                             <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="image_cont">
                         </span>
+                        <span class="name_font">
+                            {{player.name}}
+                        </span>
                     </div>                    
                 </div>
             </div>
@@ -253,6 +298,9 @@
                         </span>
                         <span>
                             <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="image_cont">
+                        </span>
+                        <span class="name_font">
+                            {{player.name}}
                         </span>
                     </div>                    
                 </div>
@@ -270,6 +318,9 @@
                         <span>
                             <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="image_cont">
                         </span>
+                        <span class="name_font">
+                            {{player.name}}
+                        </span>
                     </div>                    
                 </div>
             </div>
@@ -285,6 +336,9 @@
                         </span>
                         <span>
                             <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="image_cont">
+                        </span>
+                        <span class="name_font">
+                            {{player.name}}
                         </span>
                     </div>                    
                 </div>
@@ -302,6 +356,9 @@
                         <span>
                             <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="image_cont">
                         </span>
+                        <span class="name_font">
+                            {{player.name}}
+                        </span>
                     </div>                    
                 </div>
             </div>
@@ -317,6 +374,9 @@
                         </span>
                         <span>
                             <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="image_cont">
+                        </span>
+                        <span class="name_font">
+                            {{player.name}}
                         </span>
                     </div>                    
                 </div>
@@ -334,6 +394,9 @@
                         <span>
                             <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="image_cont">
                         </span>
+                        <span class="name_font">
+                            {{player.name}}
+                        </span>
                     </div>                    
                 </div>
             </div>
@@ -349,6 +412,9 @@
                         </span>
                         <span>
                             <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="image_cont">
+                        </span>
+                        <span class="name_font">
+                            {{player.name}}
                         </span>
                     </div>                    
                 </div>
@@ -366,6 +432,9 @@
                         <span>
                             <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="image_cont">
                         </span>
+                        <span class="name_font">
+                            {{player.name}}
+                        </span>
                     </div>                    
                 </div>
             </div>
@@ -381,6 +450,9 @@
                         </span>
                         <span>
                             <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="image_cont">
+                        </span>
+                        <span class="name_font">
+                            {{player.name}}
                         </span>
                     </div>                    
                 </div>
@@ -398,6 +470,9 @@
                         <span>
                             <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="image_cont">
                         </span>
+                        <span class="name_font">
+                            {{player.name}}
+                        </span>
                     </div>                    
                 </div>
             </div>
@@ -413,6 +488,9 @@
                         </span>
                         <span>
                             <img v-bind:src="'/season/'+player.spId.toString().substring(0,3)+'.JPG'" class="image_cont">
+                        </span>
+                        <span class="name_font">
+                            {{player.name}}
                         </span>
                     </div>                    
                 </div>
@@ -445,239 +523,291 @@ export default {
         }
     },
     methods:{
-        changeLW: function(event){
+        changeLW: async function(event){
             const temp =[];
             temp.push(27);
             temp.push(event.target.value);
-            this.$http.get(`/top_record_combine/${temp}`)
-            .then((response)=>{
-                this.position_value.splice(27,1 ,response.data);
-            })
+            const temp_value = await this.$store.dispatch('searchPositionTop3',{ spidPosition: temp })
+            for(let i=0;i<temp_value.length;i++){
+                const name_temp = await this.$store.dispatch('findPlayerName',{ spid: temp_value[i].spId })
+                temp_value[i].name = name_temp[0].name;
+            }
+            this.position_value.splice(27,1,temp_value);
         },
-        changeLS: function(event){
+        changeLS: async function(event){
             const temp =[];
             temp.push(26);
             temp.push(event.target.value);
-            this.$http.get(`/top_record_combine/${temp}`)
-            .then((response)=>{
-                this.position_value.splice(26,1 ,response.data);
-            })
+            const temp_value = await this.$store.dispatch('searchPositionTop3',{ spidPosition: temp })
+            for(let i=0;i<temp_value.length;i++){
+                const name_temp = await this.$store.dispatch('findPlayerName',{ spid: temp_value[i].spId })
+                temp_value[i].name = name_temp[0].name;
+            }
+            this.position_value.splice(26,1,temp_value);
         },
-        changeST: function(event){
+        changeST: async function(event){
             const temp =[];
             temp.push(25);
             temp.push(event.target.value);
-            this.$http.get(`/top_record_combine/${temp}`)
-            .then((response)=>{
-                this.position_value.splice(25,1 ,response.data);
-            })
+            const temp_value = await this.$store.dispatch('searchPositionTop3',{ spidPosition: temp })
+            for(let i=0;i<temp_value.length;i++){
+                const name_temp = await this.$store.dispatch('findPlayerName',{ spid: temp_value[i].spId })
+                temp_value[i].name = name_temp[0].name;
+            }
+            this.position_value.splice(25,1,temp_value);
         },
-        changeRS: function(event){
+        changeRS: async function(event){
             const temp =[];
             temp.push(24);
             temp.push(event.target.value);
-            this.$http.get(`/top_record_combine/${temp}`)
-            .then((response)=>{
-                this.position_value.splice(24,1 ,response.data);
-            })
+            const temp_value = await this.$store.dispatch('searchPositionTop3',{ spidPosition: temp })
+            for(let i=0;i<temp_value.length;i++){
+                const name_temp = await this.$store.dispatch('findPlayerName',{ spid: temp_value[i].spId })
+                temp_value[i].name = name_temp[0].name;
+            }
+            this.position_value.splice(24,1,temp_value);
         },
-        changeRW: function(event){
+        changeRW: async function(event){
             const temp =[];
             temp.push(23);
             temp.push(event.target.value);
-            this.$http.get(`/top_record_combine/${temp}`)
-            .then((response)=>{
-                this.position_value.splice(23,1 ,response.data);
-            })
+            const temp_value = await this.$store.dispatch('searchPositionTop3',{ spidPosition: temp })
+            for(let i=0;i<temp_value.length;i++){
+                const name_temp = await this.$store.dispatch('findPlayerName',{ spid: temp_value[i].spId })
+                temp_value[i].name = name_temp[0].name;
+            }
+            this.position_value.splice(23,1,temp_value);
         },
-        changeLF: function(event){
+        changeLF: async function(event){
             const temp =[];
             temp.push(22);
             temp.push(event.target.value);
-            this.$http.get(`/top_record_combine/${temp}`)
-            .then((response)=>{
-                this.position_value.splice(22,1 ,response.data);
-            })
+            const temp_value = await this.$store.dispatch('searchPositionTop3',{ spidPosition: temp })
+            for(let i=0;i<temp_value.length;i++){
+                const name_temp = await this.$store.dispatch('findPlayerName',{ spid: temp_value[i].spId })
+                temp_value[i].name = name_temp[0].name;
+            }
+            this.position_value.splice(22,1,temp_value);
         },
-        changeCF: function(event){
+        changeCF: async function(event){
             const temp =[];
             temp.push(21);
             temp.push(event.target.value);
-            this.$http.get(`/top_record_combine/${temp}`)
-            .then((response)=>{
-                this.position_value.splice(21,1 ,response.data);
-            })
+            const temp_value = await this.$store.dispatch('searchPositionTop3',{ spidPosition: temp })
+            for(let i=0;i<temp_value.length;i++){
+                const name_temp = await this.$store.dispatch('findPlayerName',{ spid: temp_value[i].spId })
+                temp_value[i].name = name_temp[0].name;
+            }
+            this.position_value.splice(21,1,temp_value);
         },
-        changeRF: function(event){
+        changeRF: async function(event){
             const temp =[];
             temp.push(20);
             temp.push(event.target.value);
-            this.$http.get(`/top_record_combine/${temp}`)
-            .then((response)=>{
-                this.position_value.splice(20,1 ,response.data);
-            })
+            const temp_value = await this.$store.dispatch('searchPositionTop3',{ spidPosition: temp })
+            for(let i=0;i<temp_value.length;i++){
+                const name_temp = await this.$store.dispatch('findPlayerName',{ spid: temp_value[i].spId })
+                temp_value[i].name = name_temp[0].name;
+            }
+            this.position_value.splice(20,1,temp_value);
         },
-        changeLAM: function(event){
+        changeLAM: async function(event){
             const temp =[];
             temp.push(19);
             temp.push(event.target.value);
-            this.$http.get(`/top_record_combine/${temp}`)
-            .then((response)=>{
-                this.position_value.splice(19,1 ,response.data);
-            })
+            const temp_value = await this.$store.dispatch('searchPositionTop3',{ spidPosition: temp })
+            for(let i=0;i<temp_value.length;i++){
+                const name_temp = await this.$store.dispatch('findPlayerName',{ spid: temp_value[i].spId })
+                temp_value[i].name = name_temp[0].name;
+            }
+            this.position_value.splice(19,1,temp_value);
         },
-        changeCAM: function(event){
+        changeCAM: async function(event){
             const temp =[];
             temp.push(18);
             temp.push(event.target.value);
-            this.$http.get(`/top_record_combine/${temp}`)
-            .then((response)=>{
-                this.position_value.splice(18,1 ,response.data);
-            })
+            const temp_value = await this.$store.dispatch('searchPositionTop3',{ spidPosition: temp })
+            for(let i=0;i<temp_value.length;i++){
+                const name_temp = await this.$store.dispatch('findPlayerName',{ spid: temp_value[i].spId })
+                temp_value[i].name = name_temp[0].name;
+            }
+            this.position_value.splice(18,1,temp_value);
         },
-        changeRAM: function(event){
+        changeRAM: async function(event){
             const temp =[];
             temp.push(17);
             temp.push(event.target.value);
-            this.$http.get(`/top_record_combine/${temp}`)
-            .then((response)=>{
-                this.position_value.splice(17,1 ,response.data);
-            })
+            const temp_value = await this.$store.dispatch('searchPositionTop3',{ spidPosition: temp })
+            for(let i=0;i<temp_value.length;i++){
+                const name_temp = await this.$store.dispatch('findPlayerName',{ spid: temp_value[i].spId })
+                temp_value[i].name = name_temp[0].name;
+            }
+            this.position_value.splice(17,1,temp_value);
         },
-        changeLM: function(event){
+        changeLM: async function(event){
             const temp =[];
             temp.push(16);
             temp.push(event.target.value);
-            this.$http.get(`/top_record_combine/${temp}`)
-            .then((response)=>{
-                this.position_value.splice(16,1 ,response.data);
-            })
+            const temp_value = await this.$store.dispatch('searchPositionTop3',{ spidPosition: temp })
+            for(let i=0;i<temp_value.length;i++){
+                const name_temp = await this.$store.dispatch('findPlayerName',{ spid: temp_value[i].spId })
+                temp_value[i].name = name_temp[0].name;
+            }
+            this.position_value.splice(16,1,temp_value);
         },
-        changeLCM: function(event){
+        changeLCM: async function(event){
             const temp =[];
             temp.push(15);
             temp.push(event.target.value);
-            this.$http.get(`/top_record_combine/${temp}`)
-            .then((response)=>{
-                this.position_value.splice(15,1 ,response.data);
-            })
+            const temp_value = await this.$store.dispatch('searchPositionTop3',{ spidPosition: temp })
+            for(let i=0;i<temp_value.length;i++){
+                const name_temp = await this.$store.dispatch('findPlayerName',{ spid: temp_value[i].spId })
+                temp_value[i].name = name_temp[0].name;
+            }
+            this.position_value.splice(15,1,temp_value);
         },
-        changeCM: function(event){
+        changeCM: async function(event){
             const temp =[];
             temp.push(14);
             temp.push(event.target.value);
-            this.$http.get(`/top_record_combine/${temp}`)
-            .then((response)=>{
-                this.position_value.splice(14,1 ,response.data);
-            })
+            const temp_value = await this.$store.dispatch('searchPositionTop3',{ spidPosition: temp })
+            for(let i=0;i<temp_value.length;i++){
+                const name_temp = await this.$store.dispatch('findPlayerName',{ spid: temp_value[i].spId })
+                temp_value[i].name = name_temp[0].name;
+            }
+            this.position_value.splice(14,1,temp_value);
         },
-        changeRCM: function(event){
+        changeRCM: async function(event){
             const temp =[];
             temp.push(13);
             temp.push(event.target.value);
-            this.$http.get(`/top_record_combine/${temp}`)
-            .then((response)=>{
-                this.position_value.splice(13,1 ,response.data);
-            })
+            const temp_value = await this.$store.dispatch('searchPositionTop3',{ spidPosition: temp })
+            for(let i=0;i<temp_value.length;i++){
+                const name_temp = await this.$store.dispatch('findPlayerName',{ spid: temp_value[i].spId })
+                temp_value[i].name = name_temp[0].name;
+            }
+            this.position_value.splice(13,1,temp_value);
         },
-        changeRM: function(event){
+        changeRM: async function(event){
             const temp =[];
             temp.push(12);
             temp.push(event.target.value);
-            this.$http.get(`/top_record_combine/${temp}`)
-            .then((response)=>{
-                this.position_value.splice(12,1 ,response.data);
-            })
+            const temp_value = await this.$store.dispatch('searchPositionTop3',{ spidPosition: temp })
+            for(let i=0;i<temp_value.length;i++){
+                const name_temp = await this.$store.dispatch('findPlayerName',{ spid: temp_value[i].spId })
+                temp_value[i].name = name_temp[0].name;
+            }
+            this.position_value.splice(12,1,temp_value);
         },
-        changeLDM: function(event){
+        changeLDM: async function(event){
             const temp =[];
             temp.push(11);
             temp.push(event.target.value);
-            this.$http.get(`/top_record_combine/${temp}`)
-            .then((response)=>{
-                this.position_value.splice(11,1 ,response.data);
-            })
+            const temp_value = await this.$store.dispatch('searchPositionTop3',{ spidPosition: temp })
+            for(let i=0;i<temp_value.length;i++){
+                const name_temp = await this.$store.dispatch('findPlayerName',{ spid: temp_value[i].spId })
+                temp_value[i].name = name_temp[0].name;
+            }
+            this.position_value.splice(11,1,temp_value);
         },
-        changeCDM: function(event){
+        changeCDM: async function(event){
             const temp =[];
             temp.push(10);
             temp.push(event.target.value);
-            this.$http.get(`/top_record_combine/${temp}`)
-            .then((response)=>{
-                this.position_value.splice(10,1 ,response.data);
-            })
+            const temp_value = await this.$store.dispatch('searchPositionTop3',{ spidPosition: temp })
+            for(let i=0;i<temp_value.length;i++){
+                const name_temp = await this.$store.dispatch('findPlayerName',{ spid: temp_value[i].spId })
+                temp_value[i].name = name_temp[0].name;
+            }
+            this.position_value.splice(10,1,temp_value);
         },
-        changeRDM: function(event){
+        changeRDM: async function(event){
             const temp =[];
             temp.push(9);
             temp.push(event.target.value);
-            this.$http.get(`/top_record_combine/${temp}`)
-            .then((response)=>{
-                this.position_value.splice(9,1 ,response.data);
-            })
+            const temp_value = await this.$store.dispatch('searchPositionTop3',{ spidPosition: temp })
+            for(let i=0;i<temp_value.length;i++){
+                const name_temp = await this.$store.dispatch('findPlayerName',{ spid: temp_value[i].spId })
+                temp_value[i].name = name_temp[0].name;
+            }
+            this.position_value.splice(9,1,temp_value);
         },
-        changeLWB: function(event){
+        changeLWB: async function(event){
             const temp =[];
             temp.push(8);
             temp.push(event.target.value);
-            this.$http.get(`/top_record_combine/${temp}`)
-            .then((response)=>{
-                this.position_value.splice(8,1 ,response.data);
-            })
+            const temp_value = await this.$store.dispatch('searchPositionTop3',{ spidPosition: temp })
+            for(let i=0;i<temp_value.length;i++){
+                const name_temp = await this.$store.dispatch('findPlayerName',{ spid: temp_value[i].spId })
+                temp_value[i].name = name_temp[0].name;
+            }
+            this.position_value.splice(8,1,temp_value);
         },
-        changeLB: function(event){
+        changeLB: async function(event){
             const temp =[];
             temp.push(7);
             temp.push(event.target.value);
-            this.$http.get(`/top_record_combine/${temp}`)
-            .then((response)=>{
-                this.position_value.splice(7,1 ,response.data);
-            })
+            const temp_value = await this.$store.dispatch('searchPositionTop3',{ spidPosition: temp })
+            for(let i=0;i<temp_value.length;i++){
+                const name_temp = await this.$store.dispatch('findPlayerName',{ spid: temp_value[i].spId })
+                temp_value[i].name = name_temp[0].name;
+            }
+            this.position_value.splice(7,1,temp_value);
         },
-        changeLCB: function(event){
+        changeLCB: async function(event){
             const temp =[];
             temp.push(6);
             temp.push(event.target.value);
-            this.$http.get(`/top_record_combine/${temp}`)
-            .then((response)=>{
-                this.position_value.splice(6,1 ,response.data);
-            })
+            const temp_value = await this.$store.dispatch('searchPositionTop3',{ spidPosition: temp })
+            for(let i=0;i<temp_value.length;i++){
+                const name_temp = await this.$store.dispatch('findPlayerName',{ spid: temp_value[i].spId })
+                temp_value[i].name = name_temp[0].name;
+            }
+            this.position_value.splice(6,1,temp_value);
         },
-        changeCB: function(event){
+        changeCB: async function(event){
             const temp =[];
             temp.push(5);
             temp.push(event.target.value);
-            this.$http.get(`/top_record_combine/${temp}`)
-            .then((response)=>{
-                this.position_value.splice(5,1 ,response.data);
-            })
+            const temp_value = await this.$store.dispatch('searchPositionTop3',{ spidPosition: temp })
+            for(let i=0;i<temp_value.length;i++){
+                const name_temp = await this.$store.dispatch('findPlayerName',{ spid: temp_value[i].spId })
+                temp_value[i].name = name_temp[0].name;
+            }
+            this.position_value.splice(5,1,temp_value);
         },
-        changeRCB: function(event){
+        changeRCB: async function(event){
             const temp =[];
             temp.push(4);
             temp.push(event.target.value);
-            this.$http.get(`/top_record_combine/${temp}`)
-            .then((response)=>{
-                this.position_value.splice(4,1 ,response.data);
-            })
+            const temp_value = await this.$store.dispatch('searchPositionTop3',{ spidPosition: temp })
+            for(let i=0;i<temp_value.length;i++){
+                const name_temp = await this.$store.dispatch('findPlayerName',{ spid: temp_value[i].spId })
+                temp_value[i].name = name_temp[0].name;
+            }
+            this.position_value.splice(4,1,temp_value);
         },
-        changeRB: function(event){
+        changeRB: async function(event){
             const temp =[];
             temp.push(3);
             temp.push(event.target.value);
-            this.$http.get(`/top_record_combine/${temp}`)
-            .then((response)=>{
-                this.position_value.splice(3,1 ,response.data);
-            })
+            const temp_value = await this.$store.dispatch('searchPositionTop3',{ spidPosition: temp })
+            for(let i=0;i<temp_value.length;i++){
+                const name_temp = await this.$store.dispatch('findPlayerName',{ spid: temp_value[i].spId })
+                temp_value[i].name = name_temp[0].name;
+            }
+            this.position_value.splice(3,1,temp_value);
         },
-        changeRWB: function(event){
+        changeRWB: async function(event){
             const temp =[];
             temp.push(2);
             temp.push(event.target.value);
-            this.$http.get(`/top_record_combine/${temp}`)
-            .then((response)=>{
-                this.position_value.splice(2,1 ,response.data);
-            })
+            const temp_value = await this.$store.dispatch('searchPositionTop3',{ spidPosition: temp })
+            for(let i=0;i<temp_value.length;i++){
+                const name_temp = await this.$store.dispatch('findPlayerName',{ spid: temp_value[i].spId })
+                temp_value[i].name = name_temp[0].name;
+            }
+            this.position_value.splice(2,1,temp_value);
         }
     }
 }
@@ -708,8 +838,9 @@ export default {
 }
 
 
-.name_cont{
-    color: black;
+.name_font{
+    color: white;
+    font-size: 15px;
 }
 
 .field{

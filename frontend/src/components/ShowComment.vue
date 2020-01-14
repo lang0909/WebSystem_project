@@ -14,23 +14,24 @@
 
 <script>
 export default {
-    created(){
+    async created(){
         const spid = this.$route.params.id.substring(0,9);
         const po = parseInt(this.$route.params.id.substring(9,this.$route.params.id.length),0);
-        this.$http.get(`/top_record/${spid}`)
-        .then((response)=>{
-            const top10000 = response.data;
-            const temp = top10000.filter(function(temp){
-                return temp.spPosition === po
-            })
-            this.top = temp;
-            this.top[0].maxIndex = [];
+        // this.$http.get(`/top_record/${spid}`)
+        // .then((response)=>{
+        //     const top10000 = response.data;
+        const top10000 = await this.$store.dispatch('searchTopRecord',{spid: spid})
+        const temp =  await top10000.filter(function(temp){
+            return temp.spPosition === po
         })
+        this.top = temp;
+        this.top[0].maxIndex = [];
         const id = this.$route.params.id;
-        this.$http.get(`/top_record/${id}/comment`)
-        .then((response)=>{
-            this.comments = response.data;
-        })
+        // this.$http.get(`/top_record/${id}/comment`)
+        // .then((response)=>{
+        //     this.comments = response.data;
+        // })
+        this.comments = await this.$store.dispatch('fetchComment',{spid: id})
     },
     methods:{
         submit_comment(){

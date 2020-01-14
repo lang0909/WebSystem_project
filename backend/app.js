@@ -14,6 +14,11 @@ var spidSchema = mongoose.Schema({
     name: String
 })
 
+var spSchema = mongoose.Schema({
+    id: Number,
+    name: String
+})
+
 var top10000Schema = mongoose.Schema({
     spId: Number,
     spPosition: Number,
@@ -43,14 +48,16 @@ var formationSchema = mongoose.Schema({
     position: [Number]
 })
 
-var conn = mongoose.createConnection('mongodb://localhost/bin', { useUnifiedTopology: true, useNewUrlParser: true });
-var conn2 = mongoose.createConnection('mongodb://localhost/Desktop', { useUnifiedTopology: true, useNewUrlParser: true });
+var conn = mongoose.createConnection('mongodb://localhost/fifaonline-spid', { useUnifiedTopology: true, useNewUrlParser: true });
+var conn2 = mongoose.createConnection('mongodb://localhost/fifaonline-top10000', { useUnifiedTopology: true, useNewUrlParser: true });
 var conn1 = mongoose.createConnection('mongodb://localhost/test', { useUnifiedTopology: true, useNewUrlParser: true });
-var conn3 = mongoose.createConnection('mongodb://localhost/Formation', { useUnifiedTopology: true, useNewUrlParser: true });
+var conn3 = mongoose.createConnection('mongodb://localhost/Desktop', { useUnifiedTopology: true, useNewUrlParser: true });
+var conn4 = mongoose.createConnection('mongodb://localhost/testsp',{ useUnifiedTopology: true, useNewUrlParser: true })
 var spidModel = conn.model('spid', spidSchema, 'spid');
 var top10000Model = conn2.model('topRankerUsingAverage', top10000Schema, 'topRankerUsingAverage');
 var commentModel = conn1.model('comm', commentSchema, 'comment');
 var formationModel = conn3.model('formation', formationSchema, 'formation');
+var spModel = conn4.model('spid', spSchema, 'spid');
 
 
 var app = express();
@@ -145,7 +152,7 @@ app.get('/formation/:fmt', function(req, res, next) {
 })
 
 app.get('/find/:spid', function(req, res, next) {
-    spidModel.find({ id: req.params.spid.toString() }, (err, result) => {
+    spModel.find({ id: req.params.spid }, (err, result) => {
         res.send(result);
     })
 })

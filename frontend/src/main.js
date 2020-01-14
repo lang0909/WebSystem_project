@@ -58,7 +58,7 @@ Vue.component('compare-bar-chart',{
     'RF', 'CF', 'LF', 'RW', 'RS', 'ST', 'LS', 'LW', 'SUB']
     }
   },
-  props: ['data', 'options'],
+  props: ['data', 'options', 'first', 'second'],
   mounted(){
     this.renderBarChart();
   },
@@ -70,13 +70,13 @@ Vue.component('compare-bar-chart',{
       labels: ['슛', '유효슛', '도움', '골', '드리블', '패스시도', '패스성공', '차단', '태클'],
       datasets: [
         {
-          label: this.position[this.data[0].spPosition]+'_'+this.data[0].spId,
+          label: this.position[this.data[0].spPosition]+'_'+Math.floor(this.data[0].spId/1000000)+'_'+this.first,
           data: [this.data[0].status.shoot,this.data[0].status.effectiveshoot,this.data[0].status.assist,this.data[0].status.goal,this.data[0].status.dribble,
           this.data[0].status.passTry,this.data[0].status.passSuccess,this.data[0].status.block,this.data[0].status.tackle],
           backgroundColor: "rgba(54, 162, 235, 0.6)",
         },
         {
-          label: this.position[this.data[1].spPosition]+'_'+this.data[1].spId,
+          label: this.position[this.data[1].spPosition]+'_'+Math.floor(this.data[1].spId/1000000)+'_'+this.second,
           data: [this.data[1].status.shoot,this.data[1].status.effectiveshoot,this.data[1].status.assist,this.data[1].status.goal,this.data[1].status.dribble,
           this.data[1].status.passTry,this.data[1].status.passSuccess,this.data[1].status.block,this.data[1].status.tackle],
           backgroundColor: "rgba(255, 99, 132, 0.6)",
