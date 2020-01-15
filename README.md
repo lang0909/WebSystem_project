@@ -39,11 +39,13 @@ npm start
 [Data](<https://github.com/lang0909/FIFAONLINE_DATA>)
 
 ```bash
-mongoimport --db bin --collection spid --file spid.json --jsonArray
+mongoimport --db fifaonline-spid --collection spid --file spid.json --jsonArray
 
-mongoimport --db Desktop --collection topRankerUsingAverage --file topRankerUsingAverage.json
+mongoimport --db fifaonline-top10000 --collection topRankerUsingAverage --file topRankerUsingAverage.json
 
 mongoimport --db Formation --collection formation --file formation.json
+
+mongoimport --db Name --collection spid --file spid.json --jsonArray
 ```
 
 #### 접속주소

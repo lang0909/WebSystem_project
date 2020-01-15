@@ -4,7 +4,7 @@ import axios from 'axios'
 
 Vue.use(Vuex)
 
-const API_HOST = "http://localhost:3000";
+
 
 export default new Vuex.Store({
   state: {
@@ -13,27 +13,27 @@ export default new Vuex.Store({
   },
   actions: {
     async searchPlayerInfo({},{playerName}){
-      const res = await axios.get(API_HOST+`/api/${playerName}`)
+      const res = await axios.get(`/api/${playerName}`)
       return res.data
     },
 
     async searchTopRecord({},{spid}){
-      const res = await axios.get(API_HOST+`/top_record/${spid}`)
+      const res = await axios.get(`/top_record/${spid}`)
       return res.data
     },
 
     async searchPositionTop3({},{spidPosition}){
-      const res = await axios.get(API_HOST+`/top_record_combine/${spidPosition}`)
+      const res = await axios.get(`/top_record_combine/${spidPosition}`)
       return res.data
     },
 
     async fetchComment({},{spid}){
-      const res = await axios.get(API_HOST+`/top_record/${spid}/comment`)
+      const res = await axios.get(`/top_record/${spid}/comment`)
       return res.data
     },
 
     async findPlayerName({},{spid}){
-      const res = await axios.get(API_HOST+`/find/${spid}`)
+      const res = await axios.get(`/find/${spid}`)
       return res.data
     },
 
