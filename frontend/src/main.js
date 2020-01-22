@@ -36,7 +36,7 @@ Vue.component('bar-chart',{
   methods: {
     renderBarChart: function(){
     this.renderChart({
-      labels: ['슛', '유효슛', '도움', '골', '드리블', '패스시도', '패스성공률', '차단', '태클'],
+      labels: ['슛', '유효슛', '도움', '골', '드리블', '패스성공률', '차단', '태클'],
       datasets: [
         {
           label: this.position[this.name],

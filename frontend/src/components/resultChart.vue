@@ -56,10 +56,10 @@ export default {
                 if(temp.status.passSuccess/temp.status.passTry===temp6){
                     temp.maxIndex.push(5);
                 }
-                if(temp.status.block===temp8){
+                if(temp.status.block===temp7){
                     temp.maxIndex.push(6);
                 }
-                if(temp.status.tackle===temp9){
+                if(temp.status.tackle===temp8){
                     temp.maxIndex.push(7);
                 }
             })
