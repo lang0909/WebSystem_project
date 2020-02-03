@@ -2,6 +2,11 @@
     <div>
         <hr />
         <tr v-for="compare in this.compare_value" class="compare">
+            <div>
+                <img v-bind:src="'/season/'+Math.floor(compare[0].spId/1000000)+'.JPG'" class="img_cont">
+                vs
+                <img v-bind:src="'/season/'+Math.floor(compare[1].spId/1000000)+'.JPG'" class="img_cont">
+            </div>
             <compare-bar-chart :data="compare" :options="{responsive: false, maintainAspectRatio: false}" :first="player_name1[0].name" :second="player_name2[0].name">
             </compare-bar-chart>
             <router-view></router-view>
@@ -35,5 +40,13 @@ export default {
 <style>
 .compare{
     display: inline-block;
+}
+
+.img_cont{
+  width: 32px;
+  height: 32px;
+  vertical-align:middle;
+  padding-bottom: 8px;
+  padding-left: 2px;
 }
 </style>
