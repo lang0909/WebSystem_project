@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="compare">
     <div class="logo_cont">
       <img class="logo" src="../assets/background.jpg">
     </div>
@@ -19,40 +19,85 @@
             </span>
           </div>
           <div>
-            <button type="button" v-bind:value="player.id" v-on:click="player_clicked(player.id)" class="player_btn">선택</button>
+            <button type="button" v-bind:value="player.id" v-on:click="player_keep(player.id)" class="player_btn">담기</button>
           </div>
       </span>
     </div>
-    <div v-if="this.spid">
-      <result :data="this.spid" :key="this.result_change" class="charts"></result>
+    <div v-if="this.playerkeep.length">
+      <hr />
+      <button type="button" v-on:click="player_compare()" class="compare_btn">비교하기</button>
+        <div v-for="player in this.playerkeep" class="ply">
+          <div>
+            <span>
+              <img v-bind:src="'/players/'+player" class="back_img" :style="{'background-image': 'url('+'/season_background/'+player.substring(0,3)+'.png)'}">
+            </span>
+            <span>
+              <img v-bind:src="'/season/'+player.substring(0,3)+'.JPG'" class="img_cont">
+            </span>
+          </div>
+        </div>
+    </div>
+    <div v-if="this.compare_change">
+      <multi :data="this.compare_content" :key="this.compare_change" class="multiChart"></multi>
     </div>
   </div>
 </template>
 
 <script>
-import Result from '../components/resultChart.vue'
+import Multi from '../components/MultiChart.vue'
 
 export default {
   components: {
-    'result': Result
+    'multi': Multi
   },
   data() {
     return{
       playerName: '',
       player_name: [],
-      spid: '',
-      result_change: 0,
+      playerkeep: [],
+      compare_change: 0,
+      compare_content: [],
+      compare_content1: '',
+      compare_content2: '',
     }
   },
   methods: {
     async clicked() {
       this.player_name = await this.$store.dispatch('searchPlayerInfo',{playerName: this.playerName})
     },
-    player_clicked(id){
-      this.spid = id;
-      this.result_change = this.result_change+1;
+    async player_keep(id){
+      if(this.playerkeep.length==2){
+        alert("더 이상 추가할 수 없습니다.");
+      }else if(this.playerkeep.length==1){
+        this.playerkeep.push(id);
+        this.compare_content1 = await this.$store.dispatch('searchTopRecord',{ spid: this.playerkeep[0] })
+        this.compare_content2 = await this.$store.dispatch('searchTopRecord',{ spid: this.playerkeep[1]})
+      }else if(this.playerkeep.length==0){
+        this.playerkeep.push(id);
+      }
+    },
+    player_compare(){
+      var fff = [];
+      this.compare_content = [];
+      for(let i=0;i<this.compare_content1.length;i++){
+        for(let j=0;j<this.compare_content2.length;j++){
+          if(this.compare_content1[i].spPosition === this.compare_content2[j].spPosition){
+            fff.push(this.compare_content1[i]);
+            fff.push(this.compare_content2[j]);                   
+            this.compare_content.push(fff);
+            fff = [];
+          }
+        }
+      }
+      if(this.compare_content.length==0){
+        alert("비교가능한 포지션이 없습니다.");
+      }
+      this.playerkeep=[];
+      this.compare_content1 = '';
+      this.compare_content2 = '';
+      this.compare_change = this.compare_change+1;
     }
-  }
+  },
 }
 </script>
 

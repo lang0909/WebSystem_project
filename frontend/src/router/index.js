@@ -5,7 +5,8 @@ import axios from 'axios'
 import Show from '../components/ShowComment.vue'
 import Recommend from '../views/Recommend.vue'
 import Result from '../components/resultChart.vue'
-import Compare from '../components/MultiChart.vue'
+import Multi from '../components/MultiChart.vue'
+import Compare from '../views/Compare.vue'
 
 Vue.prototype.$http = axios
 
@@ -31,6 +32,11 @@ const routes = [
     path: '/top_record/:id/comment',
     name: 'show',
     component: Show
+  },
+  {
+    path: '/compare/:poandst',
+    name: 'multi',
+    component: Multi
   },
   {
     path: '/compare',

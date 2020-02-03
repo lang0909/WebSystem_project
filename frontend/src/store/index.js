@@ -23,7 +23,7 @@ export default new Vuex.Store({
     },
 
     async searchPositionTop3({},{spidPosition}){
-      const res = await axios.get(`/top_record_combine/${spidPosition}`)
+      const res = await axios.get(`/compare/${spidPosition}`)
       return res.data
     },
 

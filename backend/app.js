@@ -135,7 +135,7 @@ app.post('/top_record/:id/comment', function(req, res, next) {
     })
 })
 
-app.get('/top_record_combine/:poandst', function(req, res, next) {
+app.get('/compare/:poandst', function(req, res, next) {
     const temp = req.params.poandst.split(',');
     const temp1 = 'status.' + temp[1];
     const option = { sort: {
