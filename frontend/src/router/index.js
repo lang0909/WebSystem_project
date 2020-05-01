@@ -7,6 +7,7 @@ import Recommend from '../views/Recommend.vue'
 import Result from '../components/resultChart.vue'
 import Multi from '../components/MultiChart.vue'
 import Compare from '../views/Compare.vue'
+import Record from '../views/Record.vue'
 
 Vue.prototype.$http = axios
 
@@ -22,6 +23,11 @@ const routes = [
     path: '/recommend',
     name: 'recommend',
     component: Recommend
+  },
+  {
+    path: '/record',
+    name: 'record',
+    component: Record
   },
   {
     path: '/top_record/:spid',

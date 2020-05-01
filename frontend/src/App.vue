@@ -3,7 +3,8 @@
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/compare">Compare</router-link> |
-      <router-link to="/recommend">Recommend</router-link>
+      <router-link to="/recommend">Recommend</router-link> |
+      <router-link to="/record">Record</router-link>
     </div>
     <router-view></router-view>
     <footer id="foot">

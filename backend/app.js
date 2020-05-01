@@ -3,10 +3,11 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var fs = require('fs');
+var axios = require('axios');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-
+var api_key = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50X2lkIjoiODIyMjE4NjgzIiwiYXV0aF9pZCI6IjIiLCJ0b2tlbl90eXBlIjoiQWNjZXNzVG9rZW4iLCJzZXJ2aWNlX2lkIjoiNDMwMDExNDgxIiwiWC1BcHAtUmF0ZS1MaW1pdCI6IjIwMDAwOjEwIiwibmJmIjoxNTY3MDkxNjMzLCJleHAiOjE2MzAxNjM2MzMsImlhdCI6MTU2NzA5MTYzM30.rcv7fksQgEq-DElMRcUJAYEndUMjmLQU7OKjGpH5gVE';
 var mongoose = require('mongoose')
 
 var spidSchema = mongoose.Schema({
@@ -154,6 +155,30 @@ app.get('/formation/:fmt', function(req, res, next) {
 app.get('/find/:spid', function(req, res, next) {
     spModel.find({ id: req.params.spid }, (err, result) => {
         res.send(result);
+    })
+})
+
+app.get('/record/:userName', function(req, res, next) {
+    let accessId = '';
+    let accessId_url = `https://api.nexon.co.kr/fifaonline4/v1.0/users?nickname=${encodeURI(req.params.userName)}`;
+    let temp = [];
+    axios.get(accessId_url,{
+        headers: {
+            Authorization: api_key,
+        }
+    }).then(res => {
+        accessId = res.data.accessId;
+    }).then( () =>{
+        let matchId_url = `https://api.nexon.co.kr/fifaonline4/v1.0/users/${accessId}/matches?matchtype=50&offset=0&limit=100`;
+        axios.get(matchId_url,{
+            headers: {
+                Authorization: api_key,
+            }
+        }).then(res => {
+            temp = res.data;
+        }).then(()=>{
+            res.send(temp);
+        })
     })
 })
 
