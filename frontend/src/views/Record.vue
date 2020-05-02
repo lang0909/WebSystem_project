@@ -11,6 +11,8 @@
       <span v-for="user in userRecord" class="user">
           <div>{{user}}</div>
       </span>
+      <br/>
+      <br/>
     </div>
 </template>
 

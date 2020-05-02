@@ -164,6 +164,8 @@ app.get('/record/:userName', function(req, res, next) {
     let temp = [];
     let arr = [];
     let test = [];
+    let test_temp = [];
+    let res_temp = [];
     let formation = [0,0,0,0,0];
     axios.get(accessId_url,{
         headers: {
@@ -187,60 +189,99 @@ app.get('/record/:userName', function(req, res, next) {
                     }
                 }))
             }
+        }).then(() => {
             axios.all(arr).then(response => {
-                for(let j=0;j<response.length;j++){
+                res_temp = response;
+            }).then(() => {
+                for(let j=0;j<res_temp.length;j++){
                     formation = [0,0,0,0,0];
                     let str = '';
-                    for(let k=0;k<response[j].data.matchInfo[0].player.length;k++){
-                        if(response[j].data.matchInfo[0].player[k].spPosition>=1 && response[j].data.matchInfo[0].player[k].spPosition<=8){
-                            formation[0] = formation[0] +1;
+                    if(res_temp[j].data.matchInfo[0].nickname == req.params.userName){
+                        if(typeof(res_temp[j].data.matchInfo[1].player)==undefined){
+                            continue;
                         }
-                        if(response[j].data.matchInfo[0].player[k].spPosition>=9 && response[j].data.matchInfo[0].player[k].spPosition<=11){
-                            formation[1] = formation[1] +1;
+                        for(let k=0;k<res_temp[j].data.matchInfo[1].player.length;k++){
+                            let a = res_temp[j].data.matchInfo[1].player[k].spPosition;
+                            switch(true){
+                                case (a >= 1 && a <= 8):
+                                    formation[0]++;
+                                    break;
+                                case (a >= 9 && a <= 11):
+                                    formation[1]++;
+                                    break;
+                                case (a >= 12 && a <= 16):
+                                    formation[2]++;
+                                    break;
+                                case (a >= 17 && a <= 19):
+                                    formation[3]++;
+                                    break;
+                                case (a >= 20 && a <= 27):
+                                    formation[4]++;
+                                    break;
+                            }
                         }
-                        if(response[j].data.matchInfo[0].player[k].spPosition>=12 && response[j].data.matchInfo[0].player[k].spPosition<=16){
-                            formation[2] = formation[2] +1;
+                        for(let l=0;l<5;l++){
+                            if(formation[l]!=0){
+                                str = str + formation[l];
+                            }
                         }
-                        if(response[j].data.matchInfo[0].player[k].spPosition>=17 && response[j].data.matchInfo[0].player[k].spPosition<=19){
-                            formation[3] = formation[3] +1;
+                        if(str!=''){
+                            test_temp.push(str);
+                            str = str + '__' + res_temp[j].data.matchInfo[0].matchDetail.matchResult;
+                            test.push(str);
                         }
-                        if(response[j].data.matchInfo[0].player[k].spPosition>=20 && response[j].data.matchInfo[0].player[k].spPosition<=27){
-                            formation[4] = formation[4] +1;
+                    }else{
+                        if(typeof(res_temp[j].data.matchInfo[0].player)==undefined){
+                            continue;
+                        }
+                        for(let k=0;k<res_temp[j].data.matchInfo[0].player.length;k++){
+                            let a = res_temp[j].data.matchInfo[0].player[k].spPosition;
+                            switch(true){
+                                case (a >= 1 && a <= 8):
+                                    formation[0]++;
+                                    break;
+                                case (a >= 9 && a <= 11):
+                                    formation[1]++;
+                                    break;
+                                case (a >= 12 && a <= 16):
+                                    formation[2]++;
+                                    break;
+                                case (a >= 17 && a <= 19):
+                                    formation[3]++;
+                                    break;
+                                case (a >= 20 && a <= 27):
+                                    formation[4]++;
+                                    break;
+                            }
+                        }
+                        for(let l=0;l<5;l++){
+                            if(formation[l]!=0){
+                                str = str + formation[l];
+                            }
+                        }
+                        if(str!=''){
+                            test_temp.push(str);
+                            str = str + '__' + res_temp[j].data.matchInfo[1].matchDetail.matchResult;
+                            test.push(str);
                         }
                     }
-                    for(let l=0;l<5;l++){
-                        if(formation[l]!=0){
-                            str = str + formation[l];
-                        }
-                    }
-                    formation = [0,0,0,0,0];
-                    test.push(str);
-                    str = '';
-                    for(let m=0;m<response[j].data.matchInfo[1].player.length;m++){
-                        if(response[j].data.matchInfo[1].player[m].spPosition>=1 && response[j].data.matchInfo[1].player[m].spPosition<=8){
-                            formation[0] = formation[0] +1;
-                        }
-                        if(response[j].data.matchInfo[1].player[m].spPosition>=9 && response[j].data.matchInfo[1].player[m].spPosition<=11){
-                            formation[1] = formation[1] +1;
-                        }
-                        if(response[j].data.matchInfo[1].player[m].spPosition>=12 && response[j].data.matchInfo[1].player[m].spPosition<=16){
-                            formation[2] = formation[2] +1;
-                        }
-                        if(response[j].data.matchInfo[1].player[m].spPosition>=17 && response[j].data.matchInfo[1].player[m].spPosition<=19){
-                            formation[3] = formation[3] +1;
-                        }
-                        if(response[j].data.matchInfo[1].player[m].spPosition>=20 && response[j].data.matchInfo[1].player[m].spPosition<=27){
-                            formation[4] = formation[4] +1;
-                        }
-                    }
-                    for(let l=0;l<5;l++){
-                        if(formation[l]!=0){
-                            str = str + formation[l];
-                        }
-                    }
-                    test.push(str);
                 }
-                res.send(test);
+                let unique = [...new Set(test_temp)];
+                let answer = [];
+                for(let m=0;m<unique.length;m++){
+                    let answer_temp = '';
+                    // let formation_temp = '';
+                    // for(let n=0;n<unique[m].length-1;n++){
+                    //     formation_temp = formation_temp + unique[m].substring(n,n+1) + '-';
+                    // }
+                    // formation_temp = formation_temp + unique[m].substring(unique[m].length-1,unique[m].length);
+                    let win = test.filter(test => test == (unique[m]+'__승')).length;
+                    let lose = test.filter(test => test == (unique[m]+'__패')).length;
+                    let draw = test.filter(test => test == (unique[m]+'__무')).length;
+                    answer_temp = 'vs\t' + unique[m]+ '\t\t\t' + win + '승\t' + draw+ '무\t' + lose + '패\t승률 : ' + (win/(win+lose+draw)*100).toFixed(2) +'%';
+                    answer.push(answer_temp);
+                }
+                res.send(answer);
             })
         })
     })
