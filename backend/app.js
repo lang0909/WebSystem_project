@@ -196,10 +196,10 @@ app.get('/record/:userName', function(req, res, next) {
                 for(let j=0;j<res_temp.length;j++){
                     formation = [0,0,0,0,0];
                     let str = '';
+                    if(res_temp[j].data.matchInfo.length!=2){
+                        continue;
+                    }
                     if(res_temp[j].data.matchInfo[0].nickname == req.params.userName){
-                        if(typeof(res_temp[j].data.matchInfo[1].player)==undefined){
-                            continue;
-                        }
                         for(let k=0;k<res_temp[j].data.matchInfo[1].player.length;k++){
                             let a = res_temp[j].data.matchInfo[1].player[k].spPosition;
                             switch(true){
@@ -231,9 +231,6 @@ app.get('/record/:userName', function(req, res, next) {
                             test.push(str);
                         }
                     }else{
-                        if(typeof(res_temp[j].data.matchInfo[0].player)==undefined){
-                            continue;
-                        }
                         for(let k=0;k<res_temp[j].data.matchInfo[0].player.length;k++){
                             let a = res_temp[j].data.matchInfo[0].player[k].spPosition;
                             switch(true){
