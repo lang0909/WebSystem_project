@@ -162,6 +162,8 @@ app.get('/record/:userName', function(req, res, next) {
     let accessId = '';
     let accessId_url = `https://api.nexon.co.kr/fifaonline4/v1.0/users?nickname=${encodeURI(req.params.userName)}`;
     let temp = [];
+    let arr = [];
+    let test = [];
     axios.get(accessId_url,{
         headers: {
             Authorization: api_key,
@@ -177,7 +179,20 @@ app.get('/record/:userName', function(req, res, next) {
         }).then(res => {
             temp = res.data;
         }).then(()=>{
-            res.send(temp);
+            for(let i=0;i<temp.length;i++){
+                arr.push(axios.get(`https://api.nexon.co.kr/fifaonline4/v1.0/matches/${temp[i]}`,{
+                    headers: {
+                        Authorization: api_key,
+                    }
+                }))
+            }
+            axios.all(arr).then(response => {
+                for(let j=0;j<arr.length;j++){
+                    test.push(response[j].data.matchInfo[0].nickname);
+                    test.push(response[j].data.matchInfo[1].nickname);
+                }
+                res.send(test);
+            })
         })
     })
 })
