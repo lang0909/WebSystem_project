@@ -164,6 +164,7 @@ app.get('/record/:userName', function(req, res, next) {
     let temp = [];
     let arr = [];
     let test = [];
+    let formation = [0,0,0,0,0];
     axios.get(accessId_url,{
         headers: {
             Authorization: api_key,
@@ -187,9 +188,57 @@ app.get('/record/:userName', function(req, res, next) {
                 }))
             }
             axios.all(arr).then(response => {
-                for(let j=0;j<arr.length;j++){
-                    test.push(response[j].data.matchInfo[0].nickname);
-                    test.push(response[j].data.matchInfo[1].nickname);
+                for(let j=0;j<response.length;j++){
+                    formation = [0,0,0,0,0];
+                    let str = '';
+                    for(let k=0;k<response[j].data.matchInfo[0].player.length;k++){
+                        if(response[j].data.matchInfo[0].player[k].spPosition>=1 && response[j].data.matchInfo[0].player[k].spPosition<=8){
+                            formation[0] = formation[0] +1;
+                        }
+                        if(response[j].data.matchInfo[0].player[k].spPosition>=9 && response[j].data.matchInfo[0].player[k].spPosition<=11){
+                            formation[1] = formation[1] +1;
+                        }
+                        if(response[j].data.matchInfo[0].player[k].spPosition>=12 && response[j].data.matchInfo[0].player[k].spPosition<=16){
+                            formation[2] = formation[2] +1;
+                        }
+                        if(response[j].data.matchInfo[0].player[k].spPosition>=17 && response[j].data.matchInfo[0].player[k].spPosition<=19){
+                            formation[3] = formation[3] +1;
+                        }
+                        if(response[j].data.matchInfo[0].player[k].spPosition>=20 && response[j].data.matchInfo[0].player[k].spPosition<=27){
+                            formation[4] = formation[4] +1;
+                        }
+                    }
+                    for(let l=0;l<5;l++){
+                        if(formation[l]!=0){
+                            str = str + formation[l];
+                        }
+                    }
+                    formation = [0,0,0,0,0];
+                    test.push(str);
+                    str = '';
+                    for(let m=0;m<response[j].data.matchInfo[1].player.length;m++){
+                        if(response[j].data.matchInfo[1].player[m].spPosition>=1 && response[j].data.matchInfo[1].player[m].spPosition<=8){
+                            formation[0] = formation[0] +1;
+                        }
+                        if(response[j].data.matchInfo[1].player[m].spPosition>=9 && response[j].data.matchInfo[1].player[m].spPosition<=11){
+                            formation[1] = formation[1] +1;
+                        }
+                        if(response[j].data.matchInfo[1].player[m].spPosition>=12 && response[j].data.matchInfo[1].player[m].spPosition<=16){
+                            formation[2] = formation[2] +1;
+                        }
+                        if(response[j].data.matchInfo[1].player[m].spPosition>=17 && response[j].data.matchInfo[1].player[m].spPosition<=19){
+                            formation[3] = formation[3] +1;
+                        }
+                        if(response[j].data.matchInfo[1].player[m].spPosition>=20 && response[j].data.matchInfo[1].player[m].spPosition<=27){
+                            formation[4] = formation[4] +1;
+                        }
+                    }
+                    for(let l=0;l<5;l++){
+                        if(formation[l]!=0){
+                            str = str + formation[l];
+                        }
+                    }
+                    test.push(str);
                 }
                 res.send(test);
             })
