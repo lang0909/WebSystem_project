@@ -9,7 +9,7 @@
     </div>
     <div v-if="userRecord.length">
       <span v-for="user in userRecord" class="user">
-          <div>{{user}}</div>
+          <div>{{user.split('___')[0]}} &nbsp; &nbsp;{{user.split('___')[2]}}<br/>{{user.split('___')[1]}}</div>
       </span>
       <br/>
       <br/>
@@ -28,7 +28,12 @@ export default {
   },
   methods: {
     async clicked() {
-      this.userRecord = await this.$store.dispatch('searchUserRecord',{userName: this.userName})
+      if(await this.$store.dispatch('searchUserRecord',{userName: this.userName}) == "Error"){
+        this.userRecord = [];
+        alert('존재하지 않는 유저이름입니다. 다시입력해주세요.');
+      }else{
+        this.userRecord = await this.$store.dispatch('searchUserRecord',{userName: this.userName})
+      }
     },
   },
 }

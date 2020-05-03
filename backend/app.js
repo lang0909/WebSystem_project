@@ -158,7 +158,7 @@ app.get('/find/:spid', function(req, res, next) {
     })
 })
 
-app.get('/record/:userName', function(req, res, next) {
+app.get('/record/:userName', function(req, response, next) {
     let accessId = '';
     let accessId_url = `https://api.nexon.co.kr/fifaonline4/v1.0/users?nickname=${encodeURI(req.params.userName)}`;
     let temp = [];
@@ -173,7 +173,6 @@ app.get('/record/:userName', function(req, res, next) {
         }
     }).then(res => {
         accessId = res.data.accessId;
-    }).then( () =>{
         let matchId_url = `https://api.nexon.co.kr/fifaonline4/v1.0/users/${accessId}/matches?matchtype=50&offset=0&limit=100`;
         axios.get(matchId_url,{
             headers: {
@@ -200,6 +199,9 @@ app.get('/record/:userName', function(req, res, next) {
                         continue;
                     }
                     if(res_temp[j].data.matchInfo[0].nickname == req.params.userName){
+                        if(res_temp[j].data.matchInfo[1].player.length!=18){
+                            continue;
+                        }
                         for(let k=0;k<res_temp[j].data.matchInfo[1].player.length;k++){
                             let a = res_temp[j].data.matchInfo[1].player[k].spPosition;
                             switch(true){
@@ -222,15 +224,18 @@ app.get('/record/:userName', function(req, res, next) {
                         }
                         for(let l=0;l<5;l++){
                             if(formation[l]!=0){
-                                str = str + formation[l];
+                                str = str + formation[l]+'-';
                             }
                         }
                         if(str!=''){
-                            test_temp.push(str);
-                            str = str + '__' + res_temp[j].data.matchInfo[0].matchDetail.matchResult;
+                            test_temp.push(str.substring(0,str.length-1));
+                            str = str.substring(0,str.length-1) + '__' + res_temp[j].data.matchInfo[0].matchDetail.matchResult;
                             test.push(str);
                         }
                     }else{
+                        if(res_temp[j].data.matchInfo[0].player.length!=18){
+                            continue;
+                        }
                         for(let k=0;k<res_temp[j].data.matchInfo[0].player.length;k++){
                             let a = res_temp[j].data.matchInfo[0].player[k].spPosition;
                             switch(true){
@@ -253,12 +258,12 @@ app.get('/record/:userName', function(req, res, next) {
                         }
                         for(let l=0;l<5;l++){
                             if(formation[l]!=0){
-                                str = str + formation[l];
+                                str = str + formation[l] + '-';
                             }
                         }
                         if(str!=''){
-                            test_temp.push(str);
-                            str = str + '__' + res_temp[j].data.matchInfo[1].matchDetail.matchResult;
+                            test_temp.push(str.substring(0,str.length-1));
+                            str = str.substring(0,str.length-1) + '__' + res_temp[j].data.matchInfo[1].matchDetail.matchResult;
                             test.push(str);
                         }
                     }
@@ -267,20 +272,17 @@ app.get('/record/:userName', function(req, res, next) {
                 let answer = [];
                 for(let m=0;m<unique.length;m++){
                     let answer_temp = '';
-                    // let formation_temp = '';
-                    // for(let n=0;n<unique[m].length-1;n++){
-                    //     formation_temp = formation_temp + unique[m].substring(n,n+1) + '-';
-                    // }
-                    // formation_temp = formation_temp + unique[m].substring(unique[m].length-1,unique[m].length);
                     let win = test.filter(test => test == (unique[m]+'__승')).length;
                     let lose = test.filter(test => test == (unique[m]+'__패')).length;
                     let draw = test.filter(test => test == (unique[m]+'__무')).length;
-                    answer_temp = 'vs\t' + unique[m]+ '\t\t\t' + win + '승\t' + draw+ '무\t' + lose + '패\t승률 : ' + (win/(win+lose+draw)*100).toFixed(2) +'%';
+                    answer_temp = 'vs ' + unique[m] + '___' + win + '승\t' + draw + '무\t' + lose + '패___승률 : ' + (win/(win+lose+draw)*100).toFixed(2) +'%';
                     answer.push(answer_temp);
                 }
-                res.send(answer);
+                response.send(answer);
             })
         })
+    }).catch(res => {
+        response.send(res.name);
     })
 })
 
