@@ -79,6 +79,10 @@ mongoimport --db Name --collection spid --file spid.json --jsonArray
 - **Recommend**
     - 포메이션을 선택하고 포메이션의 각 포지션마다 원하는 수치로 top3의 정보를 보여줍니다.
 
+- **Record**
+    - 유저이름을 검색하면 1vs1 공식경기 최대 100경기의 상대 포메이션별 승,무,패 승률을 보여줍니다.
+    - 존재하지 않는 유저이름을 검색하면 alert창이 생깁니다.
+
 
 ## 시연 영상
 
