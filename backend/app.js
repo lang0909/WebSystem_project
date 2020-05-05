@@ -166,7 +166,8 @@ app.get('/record/:userName', function(req, response, next) {
     let test = [];
     let test_temp = [];
     let res_temp = [];
-    let formation = [0,0,0,0,0];
+    let my_formation = [0,0,0,0,0];
+    let opponent_formation = [0,0,0,0,0];
     axios.get(accessId_url,{
         headers: {
             Authorization: api_key,
@@ -189,82 +190,132 @@ app.get('/record/:userName', function(req, response, next) {
                 }))
             }
         }).then(() => {
-            axios.all(arr).then(response => {
-                res_temp = response;
-            }).then(() => {
+            axios.all(arr)
+            .then(resp => {
+                res_temp = resp;
                 for(let j=0;j<res_temp.length;j++){
-                    formation = [0,0,0,0,0];
+                    opponent_formation = [0,0,0,0,0];
+                    my_formation = [0,0,0,0,0];
                     let str = '';
+                    let my_str = '';
                     if(res_temp[j].data.matchInfo.length!=2){
                         continue;
                     }
                     if(res_temp[j].data.matchInfo[0].nickname == req.params.userName){
-                        if(res_temp[j].data.matchInfo[1].player.length!=18){
+                        if(res_temp[j].data.matchInfo[1].player.length!=18 || res_temp[j].data.matchInfo[0].player.length!=18){
                             continue;
                         }
                         for(let k=0;k<res_temp[j].data.matchInfo[1].player.length;k++){
                             let a = res_temp[j].data.matchInfo[1].player[k].spPosition;
                             switch(true){
                                 case (a >= 1 && a <= 8):
-                                    formation[0]++;
+                                    opponent_formation[0]++;
                                     break;
                                 case (a >= 9 && a <= 11):
-                                    formation[1]++;
+                                    opponent_formation[1]++;
                                     break;
                                 case (a >= 12 && a <= 16):
-                                    formation[2]++;
+                                    opponent_formation[2]++;
                                     break;
                                 case (a >= 17 && a <= 19):
-                                    formation[3]++;
+                                    opponent_formation[3]++;
                                     break;
                                 case (a >= 20 && a <= 27):
-                                    formation[4]++;
+                                    opponent_formation[4]++;
+                                    break;
+                            }
+                        }
+                        for(let k=0;k<res_temp[j].data.matchInfo[0].player.length;k++){
+                            let a = res_temp[j].data.matchInfo[0].player[k].spPosition;
+                            switch(true){
+                                case (a >=1 && a<= 8):
+                                    my_formation[0]++;
+                                    break;
+                                case (a >= 9 && a <= 11):
+                                    my_formation[1]++;
+                                    break;
+                                case (a >= 12 && a <= 16):
+                                    my_formation[2]++;
+                                    break;
+                                case (a >= 17 && a <= 19):
+                                    my_formation[3]++;
+                                    break;
+                                case (a >= 20 && a <= 27):
+                                    my_formation[4]++;
                                     break;
                             }
                         }
                         for(let l=0;l<5;l++){
-                            if(formation[l]!=0){
-                                str = str + formation[l]+'-';
+                            if(opponent_formation[l]!=0){
+                                str = str + opponent_formation[l]+'-';
                             }
                         }
-                        if(str!=''){
-                            test_temp.push(str.substring(0,str.length-1));
-                            str = str.substring(0,str.length-1) + '__' + res_temp[j].data.matchInfo[0].matchDetail.matchResult;
-                            test.push(str);
+                        for(let l=0;l<5;l++){
+                            if(my_formation[l]!=0){
+                                my_str = my_str + my_formation[l]+'-';
+                            }
+                        }
+                        if(str!='' && my_str!=''){
+                            test_temp.push(my_str.substring(0,my_str.length-1) + 'vs' + str.substring(0,str.length-1));
+                            test.push(my_str.substring(0,my_str.length-1) + 'vs' + str.substring(0,str.length-1)+ '__' + res_temp[j].data.matchInfo[0].matchDetail.matchResult);
                         }
                     }else{
-                        if(res_temp[j].data.matchInfo[0].player.length!=18){
+                        if(res_temp[j].data.matchInfo[0].player.length!=18 || res_temp[j].data.matchInfo[1].player.length!=18){
                             continue;
                         }
                         for(let k=0;k<res_temp[j].data.matchInfo[0].player.length;k++){
                             let a = res_temp[j].data.matchInfo[0].player[k].spPosition;
                             switch(true){
                                 case (a >= 1 && a <= 8):
-                                    formation[0]++;
+                                    opponent_formation[0]++;
                                     break;
                                 case (a >= 9 && a <= 11):
-                                    formation[1]++;
+                                    opponent_formation[1]++;
                                     break;
                                 case (a >= 12 && a <= 16):
-                                    formation[2]++;
+                                    opponent_formation[2]++;
                                     break;
                                 case (a >= 17 && a <= 19):
-                                    formation[3]++;
+                                    opponent_formation[3]++;
                                     break;
                                 case (a >= 20 && a <= 27):
-                                    formation[4]++;
+                                    opponent_formation[4]++;
+                                    break;
+                            }
+                        }
+                        for(let k=0;k<res_temp[j].data.matchInfo[1].player.length;k++){
+                            let a = res_temp[j].data.matchInfo[1].player[k].spPosition;
+                            switch(true){
+                                case (a >=1 && a<= 8):
+                                    my_formation[0]++;
+                                    break;
+                                case (a >= 9 && a <= 11):
+                                    my_formation[1]++;
+                                    break;
+                                case (a >= 12 && a <= 16):
+                                    my_formation[2]++;
+                                    break;
+                                case (a >= 17 && a <= 19):
+                                    my_formation[3]++;
+                                    break;
+                                case (a >= 20 && a <= 27):
+                                    my_formation[4]++;
                                     break;
                             }
                         }
                         for(let l=0;l<5;l++){
-                            if(formation[l]!=0){
-                                str = str + formation[l] + '-';
+                            if(opponent_formation[l]!=0){
+                                str = str + opponent_formation[l] + '-';
                             }
                         }
-                        if(str!=''){
-                            test_temp.push(str.substring(0,str.length-1));
-                            str = str.substring(0,str.length-1) + '__' + res_temp[j].data.matchInfo[1].matchDetail.matchResult;
-                            test.push(str);
+                        for(let l=0;l<5;l++){
+                            if(my_formation[l]!=0){
+                                my_str = my_str + my_formation[l]+'-';
+                            }
+                        }
+                        if(str!='' && my_str!=''){
+                            test_temp.push(my_str.substring(0,my_str.length-1) + 'vs' + str.substring(0,str.length-1));
+                            test.push(my_str.substring(0,my_str.length-1) + 'vs' + str.substring(0,str.length-1)+ '__' + res_temp[j].data.matchInfo[1].matchDetail.matchResult);
                         }
                     }
                 }
@@ -275,10 +326,12 @@ app.get('/record/:userName', function(req, response, next) {
                     let win = test.filter(test => test == (unique[m]+'__승')).length;
                     let lose = test.filter(test => test == (unique[m]+'__패')).length;
                     let draw = test.filter(test => test == (unique[m]+'__무')).length;
-                    answer_temp = 'vs ' + unique[m] + '___' + win + '승\t' + draw + '무\t' + lose + '패___승률 : ' + (win/(win+lose+draw)*100).toFixed(2) +'%';
+                    answer_temp = unique[m] + '___' + win + '승\t' + draw + '무\t' + lose + '패___승률 : ' + (win/(win+lose+draw)*100).toFixed(2) +'%';
                     answer.push(answer_temp);
                 }
                 response.send(answer);
+            }).catch(res => {
+                response.send(res.name);
             })
         })
     }).catch(res => {

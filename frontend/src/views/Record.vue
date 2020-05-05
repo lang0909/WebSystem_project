@@ -8,8 +8,9 @@
       <button type="button" class="search_button" v-on:click="clicked">검색</button>
     </div>
     <div v-if="userRecord.length">
+      <div>본인 vs 상대</div><br/>
       <span v-for="user in userRecord" class="user">
-          <div>{{user.split('___')[0]}} &nbsp; &nbsp;{{user.split('___')[2]}}<br/>{{user.split('___')[1]}}</div>
+          <div>{{user.split('___')[0]}} &nbsp; &nbsp; {{user.split('___')[2]}} &nbsp; &nbsp; {{user.split('___')[1]}}</div>
       </span>
       <br/>
       <br/>
@@ -28,11 +29,10 @@ export default {
   },
   methods: {
     async clicked() {
-      if(await this.$store.dispatch('searchUserRecord',{userName: this.userName}) == "Error"){
-        this.userRecord = [];
+      this.userRecord = await this.$store.dispatch('searchUserRecord',{userName: this.userName})
+      if(this.userRecord[0]=="E"){
         alert('존재하지 않는 유저이름입니다. 다시입력해주세요.');
-      }else{
-        this.userRecord = await this.$store.dispatch('searchUserRecord',{userName: this.userName})
+        this.userRecord = [];
       }
     },
   },
