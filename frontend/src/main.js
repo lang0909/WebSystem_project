@@ -87,6 +87,35 @@ Vue.component('compare-bar-chart',{
   }
 })
 
+Vue.component('record-doughnut-chart',{
+  extends: VueCharts.Doughnut,
+  data(){
+    return{
+      background_color: ["rgba(54, 162, 235, 0.6)","rgba(255, 99, 132, 0.6)","green"]
+    }
+  },
+  props: ['data','option'],
+  mounted(){
+    this.renderDoughnutChart();
+  },
+  computed: {
+  },
+  methods: {
+    renderDoughnutChart: function(){
+      this.renderChart({
+        labels: ['승','무','패'],
+        datasets: [
+          {
+            label: this.data.split('vs')[1].split('___')[0],
+            data: [this.data.split('___')[1], this.data.split('___')[2], this.data.split('___')[3]],
+            backgroundColor: this.background_color,
+          }
+        ],
+      },this.options)
+    }
+  },
+})
+
 
 new Vue({
   router,

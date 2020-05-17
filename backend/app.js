@@ -326,10 +326,27 @@ app.get('/record/:userName', function(req, response, next) {
                     let win = test.filter(test => test == (unique[m]+'__승')).length;
                     let lose = test.filter(test => test == (unique[m]+'__패')).length;
                     let draw = test.filter(test => test == (unique[m]+'__무')).length;
-                    answer_temp = unique[m] + '___' + win + '승\t' + draw + '무\t' + lose + '패___승률 : ' + (win/(win+lose+draw)*100).toFixed(2) +'%';
+                    answer_temp = unique[m] + '___' + win + '___' + draw + '___' + lose;
                     answer.push(answer_temp);
                 }
-                response.send(answer);
+                answer.sort(function(a,b){
+                    return a.split('___')[0] > b.split('___')[0] ? -1 : a.split('___')[0] < b.split('___')[0] ? 1 : 0;
+                })
+                let send_answer = [];
+                let send_temp_store = [];
+                let ans_temp = answer[0].split('vs')[0];
+                for(let z=0;z<answer.length;z++){
+                    if(ans_temp == answer[z].split('vs')[0]){
+                        send_temp_store.push(answer[z]);
+                    }else{
+                        ans_temp = answer[z].split('vs')[0];
+                        send_answer.push(send_temp_store);
+                        send_temp_store = [];
+                        send_temp_store.push(answer[z]);
+                    }
+                }
+                send_answer.push(send_temp_store);
+                response.send(send_answer);
             }).catch(res => {
                 response.send(res.name);
             })

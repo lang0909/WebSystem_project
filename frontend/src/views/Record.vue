@@ -7,14 +7,18 @@
       <input type="text" v-model="userName" class="search_playerName" placeholder="유저이름">
       <button type="button" class="btn btn-primary search_button" v-on:click="clicked">검색</button>
     </div>
-    <div v-if="userRecord.length">
-      <div>본인 vs 상대</div><br/>
-      <span v-for="user in userRecord" class="user">
-          <div>{{user.split('___')[0]}} &nbsp; &nbsp; {{user.split('___')[2]}} &nbsp; &nbsp; {{user.split('___')[1]}}</div>
-      </span>
-      <br/>
-      <br/>
+    <div v-if="this.userRecord.length">
+      <div v-for="record_arr in userRecord" class="card card-primary">
+        <div class="card-header">{{record_arr[0].split('vs')[0]}}</div>
+        <div class="card-body">
+          <div v-for="record in record_arr" class="chart_cont">
+            <record-doughnut-chart :data="record" :options="{responsive: false, maintainAspectRatio: false}"></record-doughnut-chart>
+          </div>
+        </div>
+      </div>
     </div>
+    <br/>
+    <br/>    
 </template>
 
 <script>
@@ -51,52 +55,6 @@ export default {
   height: auto;
 }
 
-.back_img{
-  width:90px;
-  height: 90px;
-  background-size: cover;
-}
-
-.back{
-  width: 50px;
-  height: 50px;
-}
-
-
-.player{
-  width: 150px;
-  height: 200px;
-  margin-bottom: 40px;
-  display: inline-block;
-}
-
-.ply{
-  width: 150px;
-  height: 200px;
-  margin-bottom: 40px;
-  display: inline-block;
-}
-
-.name_cont{
-  vertical-align:middle;
-  font-size: 14px;
-}
-
-.img_cont{
-  width: 32px;
-  height: 32px;
-  vertical-align:middle;
-  padding-bottom: 8px;
-  padding-left: 2px;
-}
-
-.logo{
-  width: 100%;
-  max-width: 650px;
-  max-height: 370px;
-  height: auto;
-}
-
 .search_playerName{
   max-width: 580px;
   min-width: 300px;
@@ -110,12 +68,10 @@ export default {
   margin: 5px;
 }
 
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+.chart_cont{
+  width: 100px;
+  height: 100px;
+  display: inline-block;
 }
 
 /* #nav {
