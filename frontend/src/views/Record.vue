@@ -9,7 +9,7 @@
     </div>
     <div v-if="this.userRecord.length">
       <div v-for="record_arr in userRecord" class="card card-primary">
-        <div class="card-header">{{record_arr[0].split('vs')[0]}}</div>
+        <div class="card-header"><h2>{{record_arr[0].split('vs')[0]}}</h2></div>
         <div class="card-body">
           <div v-for="record in record_arr" class="chart_cont">
             <record-doughnut-chart :data="record" :options="{responsive: false, maintainAspectRatio: false}"></record-doughnut-chart>
@@ -69,8 +69,8 @@ export default {
 }
 
 .chart_cont{
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   display: inline-block;
 }
 
