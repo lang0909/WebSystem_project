@@ -1,7 +1,7 @@
 <template>
     <div>
         <hr />
-        <tr v-for="compare in this.compare_value" class="compare">
+        <tr v-for="compare in this.compare_value" class="compare_aaa">
             <div>
                 <img v-bind:src="'/season/'+Math.floor(compare[0].spId/1000000)+'.JPG'" class="img_cont">
                 vs
@@ -38,7 +38,7 @@ export default {
 </script>
 
 <style>
-.compare{
+.compare_aaa{
     display: inline-block;
 }
 

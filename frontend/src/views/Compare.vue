@@ -153,14 +153,18 @@ export default {
 }
 
 .logo{
-  width: 100%;
   max-width: 650px;
   max-height: 370px;
   height: auto;
 }
 
+/* .search_cont{
+  max-width: auto;
+} */
+
 .search_playerName{
-  width: 580px;
+  max-width: 580px;
+  min-width: 300px;
   height: 30px;
   margin: 10px;
 }

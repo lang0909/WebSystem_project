@@ -62,11 +62,6 @@ export default {
   vertical-align: super;
   width: 50px;
 }
-.logo{
-  max-width: 650px;
-  max-height: 370px;
-  height: auto;
-}
 
 .back_img{
   width:90px;
@@ -115,7 +110,8 @@ export default {
 }
 
 .search_playerName{
-  width: 580px;
+  max-width: 580px;
+  min-width: 300px;
   height: 30px;
   margin: 10px;
 }
@@ -124,10 +120,6 @@ export default {
   width: 50px;
   height: 30px;
   margin: 5px;
-}
-.compare_btn{
-  display: inline-block;
-  vertical-align: super;
 }
 
 #app {
