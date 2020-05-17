@@ -5,7 +5,7 @@
     </div>
     <div class="search_cont">
       <input type="text" v-model="userName" class="search_playerName" placeholder="유저이름">
-      <button type="button" class="search_button" v-on:click="clicked">검색</button>
+      <button type="button" class="btn btn-primary search_button" v-on:click="clicked">검색</button>
     </div>
     <div v-if="userRecord.length">
       <div>본인 vs 상대</div><br/>
@@ -121,7 +121,7 @@ export default {
   color: #2c3e50;
 }
 
-#nav {
+/* #nav {
   padding: 30px;
 }
 
@@ -132,5 +132,5 @@ export default {
 
 #nav a.router-link-exact-active {
   color: #42b983;
-}
+} */
 </style>

@@ -19,7 +19,7 @@
             </span>
           </div>
           <div>
-            <button type="button" v-bind:value="player.id" v-on:click="player_clicked(player.id)" class="player_btn">선택</button>
+            <button type="button" v-bind:value="player.id" v-on:click="player_clicked(player.id)" class="btn btn-primary player_btn">선택</button>
           </div>
       </span>
     </div>
@@ -138,7 +138,7 @@ export default {
   color: #2c3e50;
 }
 
-#nav {
+/* #nav {
   padding: 30px;
 }
 
@@ -149,5 +149,5 @@ export default {
 
 #nav a.router-link-exact-active {
   color: #42b983;
-}
+} */
 </style>

@@ -5,7 +5,7 @@
     </div>
     <div class="search_cont">
       <input type="text" v-model="playerName" class="search_playerName" placeholder="선수이름">
-      <button type="button" class="search_button" v-on:click="clicked">검색</button>
+      <button type="button" class="btn btn-primary search_button" v-on:click="clicked">검색</button>
     </div>
     <div v-if="player_name.length">
       <span v-for="player in player_name" class="player">
@@ -19,13 +19,13 @@
             </span>
           </div>
           <div>
-            <button type="button" v-bind:value="player.id" v-on:click="player_keep(player.id)" class="player_btn">담기</button>
+            <button type="button" v-bind:value="player.id" v-on:click="player_keep(player.id)" class="btn btn-primary player_btn">담기</button>
           </div>
       </span>
     </div>
     <div v-if="this.playerkeep.length">
       <hr />
-      <button type="button" v-on:click="player_compare()" class="compare_btn">비교하기</button>
+      <button type="button" v-on:click="player_compare()" class="btn btn-primary compare_btn">비교하기</button>
         <div v-for="player in this.playerkeep" class="ply">
           <div>
             <span>
@@ -183,7 +183,7 @@ export default {
   color: #2c3e50;
 }
 
-#nav {
+/* #nav {
   padding: 30px;
 }
 
@@ -194,5 +194,5 @@ export default {
 
 #nav a.router-link-exact-active {
   color: #42b983;
-}
+} */
 </style>
