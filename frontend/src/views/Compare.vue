@@ -163,8 +163,7 @@ export default {
 } */
 
 .search_playerName{
-  max-width: 580px;
-  min-width: 300px;
+  min-width: 330px;
   height: 30px;
   margin: 10px;
 }

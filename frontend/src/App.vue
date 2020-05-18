@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand">
         <router-link to="/">MYFO4</router-link>
       </a>
@@ -62,7 +62,7 @@ export default {
 }
 
 .navbar {
-  height: 70px;
+  height: 80px;
   left: 0px;
   right: 0px;
 }
