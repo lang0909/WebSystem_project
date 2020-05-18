@@ -102,24 +102,24 @@ Vue.component('record-doughnut-chart',{
   },
   methods: {
     renderDoughnutChart: function(){
-      this.renderChart({
-        labels: ['승','무','패'],
-        datasets: [
-          {
-            data: [this.data.split('___')[1], this.data.split('___')[2], this.data.split('___')[3]],
-            backgroundColor: this.background_color,
-          }
-        ],
-        options: {
-          legend: {
-            position: top
-          },
+      this.renderChart(
+        {
+          labels: ['승','무','패'],
+          datasets: [
+            {
+              data: [this.data.split('___')[1], this.data.split('___')[2], this.data.split('___')[3]],
+              backgroundColor: this.background_color,
+            }
+          ],
+       },
+       {
+          legend: {display: false},
           title: {
             display: true,
-            text: 'vs'+this.data.split('vs')[1].split('___')[0],
+            text: 'vs '+this.data.split('vs')[1].split('___')[0],
           }
-        }
-      })
+       }
+      )
     }
   },
 })

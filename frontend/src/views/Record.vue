@@ -7,12 +7,16 @@
       <input type="text" v-model="userName" class="search_playerName" placeholder="유저이름">
       <button type="button" class="btn btn-primary search_button" v-on:click="clicked">검색</button>
     </div>
-    <div v-if="this.userRecord.length">
+    <div v-if="this.userRecord.length" class="card-cont">
       <div v-for="record_arr in userRecord" class="card card-primary">
-        <div class="card-header"><h2>{{record_arr[0].split('vs')[0]}}</h2></div>
+        <div class="card-header"><h4>{{record_arr[0].split('vs')[0]}}</h4></div>
         <div class="card-body">
           <div v-for="record in record_arr" class="chart_cont">
             <record-doughnut-chart :data="record" :options="{responsive: false, maintainAspectRatio: false}"></record-doughnut-chart>
+            <div class="chart-inner text-center">
+              <p>{{total(record)}}</p>
+              <p>{{percent(record)}}</p>
+            </div>
           </div>
         </div>
       </div>
@@ -39,11 +43,27 @@ export default {
         this.userRecord = [];
       }
     },
+    total(val) {
+      let win = parseInt(val.split('___')[1]);
+      let draw = parseInt(val.split('___')[2]);
+      let lose = parseInt(val.split('___')[3]);
+      return win+'승'+draw+'무'+lose+'패';      
+    },
+    percent(val){
+      let win = parseInt(val.split('___')[1]);
+      let draw = parseInt(val.split('___')[2]);
+      let lose = parseInt(val.split('___')[3]);
+      return ((win/(win+draw+lose))*100).toFixed(2)+'%';
+    }
   },
 }
 </script>
 
 <style>
+.card-cont{
+  max-width: 650px;
+  margin: 0 auto;
+}
 
 .player_btn{
   vertical-align: super;
@@ -72,6 +92,23 @@ export default {
   width: 200px;
   height: 200px;
   display: inline-block;
+  position: relative;
+}
+
+.chart-inner {
+  position:absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -35%);
+}
+
+.text-center{
+  text-align: center;
+}
+
+p{
+  font-size: 10px;
+  margin-bottom: 3px;
 }
 
 /* #nav {
