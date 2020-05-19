@@ -25,7 +25,7 @@
     </div>
     <div v-if="this.playerkeep.length">
       <hr />
-      <button type="button" v-on:click="player_compare()" class="btn btn-primary compare_btn">비교하기</button>
+      <button type="button" v-on:click="player_compare()" class="btn btn-warning compare_btn">비교하기</button>
         <div v-for="player in this.playerkeep" class="ply">
           <div>
             <span>

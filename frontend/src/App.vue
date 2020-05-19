@@ -67,6 +67,10 @@ export default {
   right: 0px;
 }
 
+a {
+  color: white;
+}
+
 
 /* #nav a {
   font-weight: bold;

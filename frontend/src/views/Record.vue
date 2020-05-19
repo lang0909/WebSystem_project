@@ -8,6 +8,15 @@
       <button type="button" class="btn btn-primary search_button" v-on:click="clicked">검색</button>
     </div>
     <div v-if="this.userRecord.length" class="card-cont">
+      <div style="align-items: center;">
+              <!-- background_color: ["rgba(54, 162, 235, 0.6)","#BBBBBB","rgba(255, 99, 132, 0.6)"] -->
+        <div style="background-color: rgba(54, 162, 235, 0.6); width: 30px; height: 10px; display: inline-block; margin-left: 5px;"></div>
+        <span>승</span>
+        <div style="background-color: #BBBBBB; width: 30px; height: 10px; display: inline-block; margin-left: 5px;"></div>
+        <span>무</span>
+        <div style="background-color: rgba(255, 99, 132, 0.6); width: 30px; height: 10px; display: inline-block; margin-left: 5px;"></div>
+        <span>패</span>                
+      </div>
       <div v-for="record_arr in userRecord" class="card card-primary">
         <div class="card-header"><h4>{{record_arr[0].split('vs')[0]}}</h4></div>
         <div class="card-body">
@@ -95,6 +104,7 @@ export default {
 }
 
 .chart-inner {
+  font-weight: bold;
   position:absolute;
   top: 50%;
   left: 50%;
@@ -108,6 +118,10 @@ export default {
 p{
   font-size: 10px;
   margin-bottom: 3px;
+}
+
+.card .card-header{
+  border-bottom-color: #dee2e6;
 }
 
 /* #nav {
