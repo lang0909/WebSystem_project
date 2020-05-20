@@ -54,8 +54,6 @@ export default {
       this.result_change = this.result_change+1;
     },
     search_playername(id){
-      console.log(id);
-      console.log(this.player_name);
       for(let i=0;i<this.player_name.length;i++){
         if(id==this.player_name[i].id){
           return this.player_name[i].name;
