@@ -97,8 +97,8 @@ export default {
 }
 
 .chart_cont{
-  width: 200px;
-  height: 200px;
+  width: 175px;
+  height: 175px;
   display: inline-block;
   position: relative;
 }

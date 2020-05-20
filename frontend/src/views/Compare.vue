@@ -74,6 +74,7 @@ export default {
         this.compare_content2 = await this.$store.dispatch('searchTopRecord',{ spid: this.playerkeep[1]})
       }else if(this.playerkeep.length==0){
         this.playerkeep.push(id);
+        this.compare_change = 0;
       }
     },
     player_compare(){

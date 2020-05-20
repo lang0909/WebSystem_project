@@ -1,6 +1,14 @@
 <template>
     <div>
         <hr />
+        <div v-if="top10000.length">
+            <span>
+                <img v-bind:src="'/season/'+this.data.substring(0,3)+'.JPG'" class="img_cont">
+                {{this.player_name}}
+            </span>
+        </div>
+        <br/>
+        <br/>
         <tr v-for="top in top10000" class="top10000">
             <router-link :to="{name: 'show', params:{ id: String(top.spId)+String(top.spPosition)}}">
                 <bar-chart :data="[top.status.shoot, top.status.effectiveShoot, 
@@ -68,7 +76,7 @@ export default {
             })
         })
     },
-    props: ['data'],
+    props: ['data','player_name'],
     data(){
         return{
             top10000: '',

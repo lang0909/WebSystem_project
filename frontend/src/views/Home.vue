@@ -24,7 +24,7 @@
       </span>
     </div>
     <div v-if="this.spid">
-      <result :data="this.spid" :key="this.result_change" class="charts"></result>
+      <result :data="this.spid" :key="this.result_change" :player_name="this.search_playername(this.spid)" class="charts"></result>
     </div>
   </div>
 </template>
@@ -47,10 +47,20 @@ export default {
   methods: {
     async clicked() {
       this.player_name = await this.$store.dispatch('searchPlayerInfo',{playerName: this.playerName})
+      this.spid = '';
     },
     player_clicked(id){
       this.spid = id;
       this.result_change = this.result_change+1;
+    },
+    search_playername(id){
+      console.log(id);
+      console.log(this.player_name);
+      for(let i=0;i<this.player_name.length;i++){
+        if(id==this.player_name[i].id){
+          return this.player_name[i].name;
+        }
+      }
     }
   }
 }
