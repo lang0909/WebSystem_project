@@ -7,6 +7,9 @@
       <input type="text" v-model="playerName" class="search_playerName" placeholder="선수이름">
       <button type="button" class="btn btn-primary search_button" v-on:click="clicked">검색</button>
     </div>
+    <div>
+      <button type="button"  v-on:click="test()" class="btn btn-primary player_btn">연습</button>
+    </div>
     <div v-if="player_name.length">
       <span v-for="player in player_name" class="player">
           <span>
@@ -45,6 +48,19 @@ export default {
     }
   },
   methods: {
+    test(){
+      let RTCPeerConnection = window.RTCPeerConnection || window.webkitRTCPeerConnection || window.mozRTCPeerConnection || window.msRTCPeerConnection;
+      let rtc = new RTCPeerConnection();
+
+      rtc.createDataChannel("TEMP");
+
+      rtc.onicecandidate = function(iceevent) {
+        if(iceevent && iceevent.candidate && iceevent.candidate.candidate){
+          alert(iceevent.candidate.foundation);
+        }
+      }
+      rtc.createOffer().then(offer => rtc.setLocalDescription(offer));
+    },
     async clicked() {
       this.player_name = await this.$store.dispatch('searchPlayerInfo',{playerName: this.playerName})
       this.spid = '';
