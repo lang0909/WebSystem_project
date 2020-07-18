@@ -2,9 +2,10 @@
     <div v-if="this.data.length" class="cont_field">
         <div class="field">
             <div class="lw">
-                <select v-on:change="changeLW($event)">
-                    <option>LW</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
-                    <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
+                <select class="form-control-sm" v-on:change="changePosition($event,27)">
+                    <option>LW</option>
+                    <option value="shoot">슛</option><option value="effectiveShoot">유효슛</option><option value="assist">도움</option><option value="goal">골</option>
+                    <option value="passSuccess">패스성공률</option><option value="block">차단</option><option value="tackle">태클</option>
                 </select>
                 <div v-for="player in this.position_value[27]">
                     <div>
@@ -21,9 +22,10 @@
                 </div>        
             </div>
             <div class="ls">
-                <select v-on:change="changeLS($event)">
-                    <option>LS</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
-                    <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
+                <select class="form-control-sm" v-on:change="changePosition($event,26)">
+                    <option>LS</option>
+                    <option value="shoot">슛</option><option value="effectiveShoot">유효슛</option><option value="assist">도움</option><option value="goal">골</option>
+                    <option value="passSuccess">패스성공률</option><option value="block">차단</option><option value="tackle">태클</option>
                 </select>
                 <div v-for="player in this.position_value[26]">
                     <div>
@@ -40,9 +42,10 @@
                 </div>
             </div>
             <div class="st">
-                <select v-on:change="changeST($event)">
-                    <option>ST</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
-                    <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
+                <select class="form-control-sm" v-on:change="changePosition($event,25)">
+                    <option>ST</option>
+                    <option value="shoot">슛</option><option value="effectiveShoot">유효슛</option><option value="assist">도움</option><option value="goal">골</option>
+                    <option value="passSuccess">패스성공률</option><option value="block">차단</option><option value="tackle">태클</option>
                 </select>
                 <div v-for="player in this.position_value[25]">
                     <div>
@@ -59,9 +62,10 @@
                 </div>
             </div>
             <div class="rs">
-                <select v-on:change="changeRS($event)">
-                    <option>RS</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
-                    <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
+                <select class="form-control-sm" v-on:change="changePosition($event,24)">
+                    <option>RS</option>
+                    <option value="shoot">슛</option><option value="effectiveShoot">유효슛</option><option value="assist">도움</option><option value="goal">골</option>
+                    <option value="passSuccess">패스성공률</option><option value="block">차단</option><option value="tackle">태클</option>
                 </select>
                 <div v-for="player in this.position_value[24]">
                     <div>
@@ -78,9 +82,10 @@
                 </div>
             </div>
             <div class="rw">
-                <select v-on:change="changeRW($event)">
-                    <option>RW</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
-                    <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
+                <select class="form-control-sm" v-on:change="changePosition($event,23)">
+                    <option>RW</option>
+                    <option value="shoot">슛</option><option value="effectiveShoot">유효슛</option><option value="assist">도움</option><option value="goal">골</option>
+                    <option value="passSuccess">패스성공률</option><option value="block">차단</option><option value="tackle">태클</option>
                 </select>
                 <div v-for="player in this.position_value[23]">
                     <div>
@@ -97,9 +102,10 @@
                 </div>
             </div>
             <div class="lf">
-                <select v-on:change="changeLF($event)">
-                    <option>LF</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
-                    <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
+                <select class="form-control-sm" v-on:change="changePosition($event,22)">
+                    <option>LF</option>
+                    <option value="shoot">슛</option><option value="effectiveShoot">유효슛</option><option value="assist">도움</option><option value="goal">골</option>
+                    <option value="passSuccess">패스성공률</option><option value="block">차단</option><option value="tackle">태클</option>
                 </select>
                 <div v-for="player in this.position_value[22]">
                     <div>
@@ -116,9 +122,10 @@
                 </div>
             </div>
             <div class="cf">
-                <select v-on:change="changeCF($event)">
-                    <option>CF</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
-                    <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
+                <select class="form-control-sm" v-on:change="changePosition($event,21)">
+                    <option>CF</option>
+                    <option value="shoot">슛</option><option value="effectiveShoot">유효슛</option><option value="assist">도움</option><option value="goal">골</option>
+                    <option value="passSuccess">패스성공률</option><option value="block">차단</option><option value="tackle">태클</option>
                 </select>
                 <div v-for="player in this.position_value[21]">
                     <div>
@@ -135,9 +142,10 @@
                 </div>
             </div>
             <div class="rf">
-                <select v-on:change="changeRF($event)">
-                    <option>RF</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
-                    <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
+                <select class="form-control-sm" v-on:change="changePosition($event,20)">
+                    <option>RF</option>
+                    <option value="shoot">슛</option><option value="effectiveShoot">유효슛</option><option value="assist">도움</option><option value="goal">골</option>
+                    <option value="passSuccess">패스성공률</option><option value="block">차단</option><option value="tackle">태클</option>
                 </select>
                 <div v-for="player in this.position_value[20]">
                     <div>
@@ -154,9 +162,10 @@
                 </div>
             </div>
             <div class="lam">
-                <select v-on:change="changeLAM($event)">
-                    <option>LAM</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
-                    <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
+                <select class="form-control-sm" v-on:change="changePosition($event,19)">
+                    <option>LAM</option>
+                    <option value="shoot">슛</option><option value="effectiveShoot">유효슛</option><option value="assist">도움</option><option value="goal">골</option>
+                    <option value="passSuccess">패스성공률</option><option value="block">차단</option><option value="tackle">태클</option>
                 </select>
                 <div v-for="player in this.position_value[19]">
                     <div>
@@ -173,9 +182,10 @@
                 </div>
             </div>
             <div class="cam">
-                <select v-on:change="changeCAM($event)">
-                    <option>CAM</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
-                    <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
+                <select class="form-control-sm" v-on:change="changePosition($event,18)">
+                    <option>CAM</option>
+                    <option value="shoot">슛</option><option value="effectiveShoot">유효슛</option><option value="assist">도움</option><option value="goal">골</option>
+                    <option value="passSuccess">패스성공률</option><option value="block">차단</option><option value="tackle">태클</option>
                 </select>
                 <div v-for="player in this.position_value[18]">
                     <div>
@@ -192,9 +202,10 @@
                 </div>
             </div>
             <div class="ram">
-                <select v-on:change="changeRAM($event)">
-                    <option>RAM</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
-                    <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
+                <select class="form-control-sm" v-on:change="changePosition($event,17)">
+                    <option>RAM</option>
+                    <option value="shoot">슛</option><option value="effectiveShoot">유효슛</option><option value="assist">도움</option><option value="goal">골</option>
+                    <option value="passSuccess">패스성공률</option><option value="block">차단</option><option value="tackle">태클</option>
                 </select>
                 <div v-for="player in this.position_value[17]">
                     <div>
@@ -211,9 +222,10 @@
                 </div>
             </div>
             <div class="lm">
-                <select v-on:change="changeLM($event)">
-                    <option>LM</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
-                    <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
+                <select class="form-control-sm" v-on:change="changePosition($event,16)">
+                    <option>LM</option>
+                    <option value="shoot">슛</option><option value="effectiveShoot">유효슛</option><option value="assist">도움</option><option value="goal">골</option>
+                    <option value="passSuccess">패스성공률</option><option value="block">차단</option><option value="tackle">태클</option>
                 </select>
                 <div v-for="player in this.position_value[16]">
                     <div>
@@ -230,9 +242,10 @@
                 </div>
             </div>
             <div class="lcm">
-                <select v-on:change="changeLCM($event)">
-                    <option>LCM</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
-                    <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
+                <select class="form-control-sm" v-on:change="changePosition($event,15)">
+                    <option>LCM</option>
+                    <option value="shoot">슛</option><option value="effectiveShoot">유효슛</option><option value="assist">도움</option><option value="goal">골</option>
+                    <option value="passSuccess">패스성공률</option><option value="block">차단</option><option value="tackle">태클</option>
                 </select>
                 <div v-for="player in this.position_value[15]">
                     <div>
@@ -249,9 +262,10 @@
                 </div>
             </div>
             <div class="cm">
-                <select v-on:change="changeCM($event)">
-                    <option>CM</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
-                    <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
+                <select class="form-control-sm" v-on:change="changePosition($event,14)">
+                    <option>CM</option>
+                    <option value="shoot">슛</option><option value="effectiveShoot">유효슛</option><option value="assist">도움</option><option value="goal">골</option>
+                    <option value="passSuccess">패스성공률</option><option value="block">차단</option><option value="tackle">태클</option>
                 </select>
                 <div v-for="player in this.position_value[14]">
                     <div>
@@ -268,9 +282,10 @@
                 </div>
             </div>
             <div class="rcm">
-                <select v-on:change="changeRCM($event)">
-                    <option>RCM</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
-                    <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
+                <select class="form-control-sm" v-on:change="changePosition($event,13)">
+                    <option>RCM</option>
+                    <option value="shoot">슛</option><option value="effectiveShoot">유효슛</option><option value="assist">도움</option><option value="goal">골</option>
+                    <option value="passSuccess">패스성공률</option><option value="block">차단</option><option value="tackle">태클</option>
                 </select>
                 <div v-for="player in this.position_value[13]">
                     <div>
@@ -287,9 +302,10 @@
                 </div>
             </div>
             <div class="rm">
-                <select v-on:change="changeRM($event)">
-                    <option>RM</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
-                    <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
+                <select class="form-control-sm" v-on:change="changePosition($event,12)">
+                    <option>RM</option>
+                    <option value="shoot">슛</option><option value="effectiveShoot">유효슛</option><option value="assist">도움</option><option value="goal">골</option>
+                    <option value="passSuccess">패스성공률</option><option value="block">차단</option><option value="tackle">태클</option>
                 </select>
                 <div v-for="player in this.position_value[12]">
                     <div>
@@ -306,9 +322,10 @@
                 </div>
             </div>
             <div class="ldm">
-                <select v-on:change="changeLDM($event)">
-                    <option>LDM</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
-                    <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
+                <select class="form-control-sm" v-on:change="changePosition($event,11)">
+                    <option>LDM</option>
+                    <option value="shoot">슛</option><option value="effectiveShoot">유효슛</option><option value="assist">도움</option><option value="goal">골</option>
+                    <option value="passSuccess">패스성공률</option><option value="block">차단</option><option value="tackle">태클</option>
                 </select>
                 <div v-for="player in this.position_value[11]">
                     <div>
@@ -325,9 +342,10 @@
                 </div>
             </div>
             <div class="cdm">
-                <select v-on:change="changeCDM($event)">
-                    <option>CDM</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
-                    <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
+                <select class="form-control-sm" v-on:change="changePosition($event,10)">
+                    <option>CDM</option>
+                    <option value="shoot">슛</option><option value="effectiveShoot">유효슛</option><option value="assist">도움</option><option value="goal">골</option>
+                    <option value="passSuccess">패스성공률</option><option value="block">차단</option><option value="tackle">태클</option>
                 </select>
                 <div v-for="player in this.position_value[10]">
                     <div>
@@ -344,9 +362,10 @@
                 </div>
             </div>
             <div class="rdm">
-                <select v-on:change="changeRDM($event)">
-                    <option>RDM</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
-                    <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
+                <select class="form-control-sm" v-on:change="changePosition($event,9)">
+                    <option>RDM</option>
+                    <option value="shoot">슛</option><option value="effectiveShoot">유효슛</option><option value="assist">도움</option><option value="goal">골</option>
+                    <option value="passSuccess">패스성공률</option><option value="block">차단</option><option value="tackle">태클</option>
                 </select>
                 <div v-for="player in this.position_value[9]">
                     <div>
@@ -363,9 +382,10 @@
                 </div>
             </div>
             <div class="lwb">
-                <select v-on:change="changeLWB($event)">
-                    <option>LWB</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
-                    <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
+                <select class="form-control-sm" v-on:change="changePostion($event,8)">
+                    <option>LWB</option>
+                    <option value="shoot">슛</option><option value="effectiveShoot">유효슛</option><option value="assist">도움</option><option value="goal">골</option>
+                    <option value="passSuccess">패스성공률</option><option value="block">차단</option><option value="tackle">태클</option>
                 </select>
                 <div v-for="player in this.position_value[8]">
                     <div>
@@ -382,9 +402,10 @@
                 </div>
             </div>
             <div class="lb">
-                <select v-on:change="changeLB($event)">
-                    <option>LB</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
-                    <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
+                <select class="form-control-sm" v-on:change="changePosition($event,7)">
+                    <option>LB</option>
+                    <option value="shoot">슛</option><option value="effectiveShoot">유효슛</option><option value="assist">도움</option><option value="goal">골</option>
+                    <option value="passSuccess">패스성공률</option><option value="block">차단</option><option value="tackle">태클</option>
                 </select>
                 <div v-for="player in this.position_value[7]">
                     <div>
@@ -401,9 +422,10 @@
                 </div>
             </div>
             <div class="lcb">
-                <select v-on:change="changeLCB($event)">
-                    <option>LCB</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
-                    <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
+                <select class="form-control-sm" v-on:change="changePosition($event,6)">
+                    <option>LCB</option>
+                    <option value="shoot">슛</option><option value="effectiveShoot">유효슛</option><option value="assist">도움</option><option value="goal">골</option>
+                    <option value="passSuccess">패스성공률</option><option value="block">차단</option><option value="tackle">태클</option>
                 </select>
                 <div v-for="player in this.position_value[6]">
                     <div>
@@ -420,9 +442,10 @@
                 </div>
             </div>
             <div class="cb">
-                <select v-on:change="changeCB($event)">
-                    <option>CB</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
-                    <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
+                <select class="form-control-sm" v-on:change="changePosition($event,5)">
+                    <option>CB</option>
+                    <option value="shoot">슛</option><option value="effectiveShoot">유효슛</option><option value="assist">도움</option><option value="goal">골</option>
+                    <option value="passSuccess">패스성공률</option><option value="block">차단</option><option value="tackle">태클</option>
                 </select>
                 <div v-for="player in this.position_value[5]">
                     <div>
@@ -439,9 +462,10 @@
                 </div>
             </div>
             <div class="rcb">
-                <select v-on:change="changeRCB($event)">
-                    <option>RCB</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
-                    <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
+                <select class="form-control-sm" v-on:change="changePosition($event,4)">
+                    <option>RCB</option>
+                    <option value="shoot">슛</option><option value="effectiveShoot">유효슛</option><option value="assist">도움</option><option value="goal">골</option>
+                    <option value="passSuccess">패스성공률</option><option value="block">차단</option><option value="tackle">태클</option>
                 </select>
                 <div v-for="player in this.position_value[4]">
                     <div>
@@ -458,9 +482,10 @@
                 </div>
             </div>
             <div class="rb">
-                <select v-on:change="changeRB($event)">
-                    <option>RB</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
-                    <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
+                <select class="form-control-sm" v-on:change="changePosition($event,3)">
+                    <option>RB</option>
+                    <option value="shoot">슛</option><option value="effectiveShoot">유효슛</option><option value="assist">도움</option><option value="goal">골</option>
+                    <option value="passSuccess">패스성공률</option><option value="block">차단</option><option value="tackle">태클</option>
                 </select>
                 <div v-for="player in this.position_value[3]">
                     <div>
@@ -477,9 +502,10 @@
                 </div>
             </div>
             <div class="rwb">
-                <select v-on:change="changeRWB($event)">
-                    <option>RWB</option><option value="shoot">shoot</option><option value="effectiveShoot">effectiveShoot</option><option value="assist">assist</option><option value="goal">goal</option>
-                    <option value="dribble">dribble</option><option value="passTry">passTry</option><option value="passSuccess">passSuccess</option><option value="block">block</option><option value="tackle">tackle</option>
+                <select class="form-control-sm" v-on:change="changePosition($event,2)">
+                    <option>RWB</option>
+                    <option value="shoot">슛</option><option value="effectiveShoot">유효슛</option><option value="assist">도움</option><option value="goal">골</option>
+                    <option value="passSuccess">패스성공률</option><option value="block">차단</option><option value="tackle">태클</option>
                 </select>
                 <div v-for="player in this.position_value[2]">
                     <div>
@@ -523,291 +549,16 @@ export default {
         }
     },
     methods:{
-        changeLW: async function(event){
-            const temp =[];
-            temp.push(27);
+        changePosition: async function(event, num){
+            const temp = [];
+            temp.push(num);
             temp.push(event.target.value);
-            const temp_value = await this.$store.dispatch('searchPositionTop3',{ spidPosition: temp })
+            const temp_value = await this.$store.dispatch('searchPositionTop3', { spidPosition: temp })
             for(let i=0;i<temp_value.length;i++){
-                const name_temp = await this.$store.dispatch('findPlayerName',{ spid: temp_value[i].spId })
+                const name_temp = await this.$store.dispatch('findPlayerName', { spid: temp_value[i].spId })
                 temp_value[i].name = name_temp[0].name;
             }
-            this.position_value.splice(27,1,temp_value);
-        },
-        changeLS: async function(event){
-            const temp =[];
-            temp.push(26);
-            temp.push(event.target.value);
-            const temp_value = await this.$store.dispatch('searchPositionTop3',{ spidPosition: temp })
-            for(let i=0;i<temp_value.length;i++){
-                const name_temp = await this.$store.dispatch('findPlayerName',{ spid: temp_value[i].spId })
-                temp_value[i].name = name_temp[0].name;
-            }
-            this.position_value.splice(26,1,temp_value);
-        },
-        changeST: async function(event){
-            const temp =[];
-            temp.push(25);
-            temp.push(event.target.value);
-            const temp_value = await this.$store.dispatch('searchPositionTop3',{ spidPosition: temp })
-            for(let i=0;i<temp_value.length;i++){
-                const name_temp = await this.$store.dispatch('findPlayerName',{ spid: temp_value[i].spId })
-                temp_value[i].name = name_temp[0].name;
-            }
-            this.position_value.splice(25,1,temp_value);
-        },
-        changeRS: async function(event){
-            const temp =[];
-            temp.push(24);
-            temp.push(event.target.value);
-            const temp_value = await this.$store.dispatch('searchPositionTop3',{ spidPosition: temp })
-            for(let i=0;i<temp_value.length;i++){
-                const name_temp = await this.$store.dispatch('findPlayerName',{ spid: temp_value[i].spId })
-                temp_value[i].name = name_temp[0].name;
-            }
-            this.position_value.splice(24,1,temp_value);
-        },
-        changeRW: async function(event){
-            const temp =[];
-            temp.push(23);
-            temp.push(event.target.value);
-            const temp_value = await this.$store.dispatch('searchPositionTop3',{ spidPosition: temp })
-            for(let i=0;i<temp_value.length;i++){
-                const name_temp = await this.$store.dispatch('findPlayerName',{ spid: temp_value[i].spId })
-                temp_value[i].name = name_temp[0].name;
-            }
-            this.position_value.splice(23,1,temp_value);
-        },
-        changeLF: async function(event){
-            const temp =[];
-            temp.push(22);
-            temp.push(event.target.value);
-            const temp_value = await this.$store.dispatch('searchPositionTop3',{ spidPosition: temp })
-            for(let i=0;i<temp_value.length;i++){
-                const name_temp = await this.$store.dispatch('findPlayerName',{ spid: temp_value[i].spId })
-                temp_value[i].name = name_temp[0].name;
-            }
-            this.position_value.splice(22,1,temp_value);
-        },
-        changeCF: async function(event){
-            const temp =[];
-            temp.push(21);
-            temp.push(event.target.value);
-            const temp_value = await this.$store.dispatch('searchPositionTop3',{ spidPosition: temp })
-            for(let i=0;i<temp_value.length;i++){
-                const name_temp = await this.$store.dispatch('findPlayerName',{ spid: temp_value[i].spId })
-                temp_value[i].name = name_temp[0].name;
-            }
-            this.position_value.splice(21,1,temp_value);
-        },
-        changeRF: async function(event){
-            const temp =[];
-            temp.push(20);
-            temp.push(event.target.value);
-            const temp_value = await this.$store.dispatch('searchPositionTop3',{ spidPosition: temp })
-            for(let i=0;i<temp_value.length;i++){
-                const name_temp = await this.$store.dispatch('findPlayerName',{ spid: temp_value[i].spId })
-                temp_value[i].name = name_temp[0].name;
-            }
-            this.position_value.splice(20,1,temp_value);
-        },
-        changeLAM: async function(event){
-            const temp =[];
-            temp.push(19);
-            temp.push(event.target.value);
-            const temp_value = await this.$store.dispatch('searchPositionTop3',{ spidPosition: temp })
-            for(let i=0;i<temp_value.length;i++){
-                const name_temp = await this.$store.dispatch('findPlayerName',{ spid: temp_value[i].spId })
-                temp_value[i].name = name_temp[0].name;
-            }
-            this.position_value.splice(19,1,temp_value);
-        },
-        changeCAM: async function(event){
-            const temp =[];
-            temp.push(18);
-            temp.push(event.target.value);
-            const temp_value = await this.$store.dispatch('searchPositionTop3',{ spidPosition: temp })
-            for(let i=0;i<temp_value.length;i++){
-                const name_temp = await this.$store.dispatch('findPlayerName',{ spid: temp_value[i].spId })
-                temp_value[i].name = name_temp[0].name;
-            }
-            this.position_value.splice(18,1,temp_value);
-        },
-        changeRAM: async function(event){
-            const temp =[];
-            temp.push(17);
-            temp.push(event.target.value);
-            const temp_value = await this.$store.dispatch('searchPositionTop3',{ spidPosition: temp })
-            for(let i=0;i<temp_value.length;i++){
-                const name_temp = await this.$store.dispatch('findPlayerName',{ spid: temp_value[i].spId })
-                temp_value[i].name = name_temp[0].name;
-            }
-            this.position_value.splice(17,1,temp_value);
-        },
-        changeLM: async function(event){
-            const temp =[];
-            temp.push(16);
-            temp.push(event.target.value);
-            const temp_value = await this.$store.dispatch('searchPositionTop3',{ spidPosition: temp })
-            for(let i=0;i<temp_value.length;i++){
-                const name_temp = await this.$store.dispatch('findPlayerName',{ spid: temp_value[i].spId })
-                temp_value[i].name = name_temp[0].name;
-            }
-            this.position_value.splice(16,1,temp_value);
-        },
-        changeLCM: async function(event){
-            const temp =[];
-            temp.push(15);
-            temp.push(event.target.value);
-            const temp_value = await this.$store.dispatch('searchPositionTop3',{ spidPosition: temp })
-            for(let i=0;i<temp_value.length;i++){
-                const name_temp = await this.$store.dispatch('findPlayerName',{ spid: temp_value[i].spId })
-                temp_value[i].name = name_temp[0].name;
-            }
-            this.position_value.splice(15,1,temp_value);
-        },
-        changeCM: async function(event){
-            const temp =[];
-            temp.push(14);
-            temp.push(event.target.value);
-            const temp_value = await this.$store.dispatch('searchPositionTop3',{ spidPosition: temp })
-            for(let i=0;i<temp_value.length;i++){
-                const name_temp = await this.$store.dispatch('findPlayerName',{ spid: temp_value[i].spId })
-                temp_value[i].name = name_temp[0].name;
-            }
-            this.position_value.splice(14,1,temp_value);
-        },
-        changeRCM: async function(event){
-            const temp =[];
-            temp.push(13);
-            temp.push(event.target.value);
-            const temp_value = await this.$store.dispatch('searchPositionTop3',{ spidPosition: temp })
-            for(let i=0;i<temp_value.length;i++){
-                const name_temp = await this.$store.dispatch('findPlayerName',{ spid: temp_value[i].spId })
-                temp_value[i].name = name_temp[0].name;
-            }
-            this.position_value.splice(13,1,temp_value);
-        },
-        changeRM: async function(event){
-            const temp =[];
-            temp.push(12);
-            temp.push(event.target.value);
-            const temp_value = await this.$store.dispatch('searchPositionTop3',{ spidPosition: temp })
-            for(let i=0;i<temp_value.length;i++){
-                const name_temp = await this.$store.dispatch('findPlayerName',{ spid: temp_value[i].spId })
-                temp_value[i].name = name_temp[0].name;
-            }
-            this.position_value.splice(12,1,temp_value);
-        },
-        changeLDM: async function(event){
-            const temp =[];
-            temp.push(11);
-            temp.push(event.target.value);
-            const temp_value = await this.$store.dispatch('searchPositionTop3',{ spidPosition: temp })
-            for(let i=0;i<temp_value.length;i++){
-                const name_temp = await this.$store.dispatch('findPlayerName',{ spid: temp_value[i].spId })
-                temp_value[i].name = name_temp[0].name;
-            }
-            this.position_value.splice(11,1,temp_value);
-        },
-        changeCDM: async function(event){
-            const temp =[];
-            temp.push(10);
-            temp.push(event.target.value);
-            const temp_value = await this.$store.dispatch('searchPositionTop3',{ spidPosition: temp })
-            for(let i=0;i<temp_value.length;i++){
-                const name_temp = await this.$store.dispatch('findPlayerName',{ spid: temp_value[i].spId })
-                temp_value[i].name = name_temp[0].name;
-            }
-            this.position_value.splice(10,1,temp_value);
-        },
-        changeRDM: async function(event){
-            const temp =[];
-            temp.push(9);
-            temp.push(event.target.value);
-            const temp_value = await this.$store.dispatch('searchPositionTop3',{ spidPosition: temp })
-            for(let i=0;i<temp_value.length;i++){
-                const name_temp = await this.$store.dispatch('findPlayerName',{ spid: temp_value[i].spId })
-                temp_value[i].name = name_temp[0].name;
-            }
-            this.position_value.splice(9,1,temp_value);
-        },
-        changeLWB: async function(event){
-            const temp =[];
-            temp.push(8);
-            temp.push(event.target.value);
-            const temp_value = await this.$store.dispatch('searchPositionTop3',{ spidPosition: temp })
-            for(let i=0;i<temp_value.length;i++){
-                const name_temp = await this.$store.dispatch('findPlayerName',{ spid: temp_value[i].spId })
-                temp_value[i].name = name_temp[0].name;
-            }
-            this.position_value.splice(8,1,temp_value);
-        },
-        changeLB: async function(event){
-            const temp =[];
-            temp.push(7);
-            temp.push(event.target.value);
-            const temp_value = await this.$store.dispatch('searchPositionTop3',{ spidPosition: temp })
-            for(let i=0;i<temp_value.length;i++){
-                const name_temp = await this.$store.dispatch('findPlayerName',{ spid: temp_value[i].spId })
-                temp_value[i].name = name_temp[0].name;
-            }
-            this.position_value.splice(7,1,temp_value);
-        },
-        changeLCB: async function(event){
-            const temp =[];
-            temp.push(6);
-            temp.push(event.target.value);
-            const temp_value = await this.$store.dispatch('searchPositionTop3',{ spidPosition: temp })
-            for(let i=0;i<temp_value.length;i++){
-                const name_temp = await this.$store.dispatch('findPlayerName',{ spid: temp_value[i].spId })
-                temp_value[i].name = name_temp[0].name;
-            }
-            this.position_value.splice(6,1,temp_value);
-        },
-        changeCB: async function(event){
-            const temp =[];
-            temp.push(5);
-            temp.push(event.target.value);
-            const temp_value = await this.$store.dispatch('searchPositionTop3',{ spidPosition: temp })
-            for(let i=0;i<temp_value.length;i++){
-                const name_temp = await this.$store.dispatch('findPlayerName',{ spid: temp_value[i].spId })
-                temp_value[i].name = name_temp[0].name;
-            }
-            this.position_value.splice(5,1,temp_value);
-        },
-        changeRCB: async function(event){
-            const temp =[];
-            temp.push(4);
-            temp.push(event.target.value);
-            const temp_value = await this.$store.dispatch('searchPositionTop3',{ spidPosition: temp })
-            for(let i=0;i<temp_value.length;i++){
-                const name_temp = await this.$store.dispatch('findPlayerName',{ spid: temp_value[i].spId })
-                temp_value[i].name = name_temp[0].name;
-            }
-            this.position_value.splice(4,1,temp_value);
-        },
-        changeRB: async function(event){
-            const temp =[];
-            temp.push(3);
-            temp.push(event.target.value);
-            const temp_value = await this.$store.dispatch('searchPositionTop3',{ spidPosition: temp })
-            for(let i=0;i<temp_value.length;i++){
-                const name_temp = await this.$store.dispatch('findPlayerName',{ spid: temp_value[i].spId })
-                temp_value[i].name = name_temp[0].name;
-            }
-            this.position_value.splice(3,1,temp_value);
-        },
-        changeRWB: async function(event){
-            const temp =[];
-            temp.push(2);
-            temp.push(event.target.value);
-            const temp_value = await this.$store.dispatch('searchPositionTop3',{ spidPosition: temp })
-            for(let i=0;i<temp_value.length;i++){
-                const name_temp = await this.$store.dispatch('findPlayerName',{ spid: temp_value[i].spId })
-                temp_value[i].name = name_temp[0].name;
-            }
-            this.position_value.splice(2,1,temp_value);
+            this.position_value.splice(num,1,temp_value);
         }
     }
 }
@@ -877,7 +628,7 @@ export default {
 
 .cm{
     left: 283px;
-    top: 283px;
+    top: 240px;
     z-index: 40;
     position: absolute;
     display: none;
@@ -949,7 +700,7 @@ export default {
 
 .cam{
     left: 283px;
-    top: 160px;
+    top: 140px;
     z-index: 40;
     position: absolute;
     display: none;
@@ -1013,7 +764,7 @@ export default {
 
 .st {
     left: 278px;
-    top: 38px;
+    top: 20px;
     z-index: 40;
     position: absolute;
     display: none;

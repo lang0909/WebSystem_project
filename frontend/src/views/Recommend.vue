@@ -2,7 +2,7 @@
   <div class="recommend">
     <div class="entire">
       포메이션:
-      <select v-on:change="changeFormation($event)">
+      <select class="form-control-sm" v-on:change="changeFormation($event)">
           <option>select formation</option><option value="343">3-4-3</option><option value="3412">3-4-1-2</option><option value="32212">3-2-2-1-2</option><option value="31213">3-1-2-1-3</option>
           <option value="3142">3-1-4-2</option><option value="3232">3-2-3-2</option><option value="41212">4-1-2-1-2</option><option value="4123">4-1-2-3</option><option value="4132">4-1-3-2</option>
           <option value="4213">4-2-1-3</option><option value="4222">4-2-2-2</option><option value="4231">4-2-3-1</option><option value="4312">4-3-1-2</option><option value="433">4-3-3</option>
