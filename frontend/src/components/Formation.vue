@@ -628,7 +628,7 @@ export default {
 
 .cm{
     left: 283px;
-    top: 240px;
+    top: 260px;
     z-index: 40;
     position: absolute;
     display: none;
@@ -644,7 +644,7 @@ export default {
 
 .cdm{
     left: 278px;
-    top: 360px;
+    top: 380px;
     z-index: 40;
     position: absolute;
     display: none;
