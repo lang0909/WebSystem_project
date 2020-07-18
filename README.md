@@ -1,8 +1,5 @@
 # WebSystem_project
-웹시스템설계 14조
-
-이안규, 박지민, 권태성 - 총 3명
-
+FIFAONLINE4_PLAYER_SEARCH_SYSTEM
 
 ## 개요
 넥슨의 피파온라인4 OPEN API를 이용하여 실제적인 선수의 경기 수치를 이용하여 사용자에게 웹으로 보여주는 Application입니다.
@@ -13,7 +10,7 @@
 - nodejs v10.16.0
 - express 4.16.1
 - mongodb 4.0.10
-- [FIFAONLINE4 API Spring boot Server](<https://github.com/lang0909/FifaOnline4Api>)
+- [FIFAONLINE4 API Spring boot Server](<https://github.com/lang0909/FifaOnline4Api>) (실제 데이터 업데이트를 위한 spring boot시스템)
 
 ## 사용 시 주의사항
 #### npm install 필요
@@ -80,7 +77,7 @@ mongoimport --db Name --collection spid --file spid.json --jsonArray
     - 포메이션을 선택하고 포메이션의 각 포지션마다 원하는 수치로 top3의 정보를 보여줍니다.
 
 - **Record**
-    - 유저이름을 검색하면 1vs1 공식경기 최대 100경기의 상대 포메이션별 승,무,패 승률을 보여줍니다.
+    - 유저이름을 입력하고 1vs1 공식경기 유형을 선택하고 검색하게 되면 최대 100경기의 상대 포메이션별 승,무,패 승률을 보여줍니다.
     - 존재하지 않는 유저이름을 검색하면 alert창이 생깁니다.
 
 

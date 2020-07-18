@@ -36,11 +36,11 @@ Vue.component('bar-chart',{
   methods: {
     renderBarChart: function(){
     this.renderChart({
-      labels: ['슛', '유효슛', '도움', '골', '드리블', '패스성공률', '차단', '태클'],
+      labels: ['슛', '유효슛', '도움', '골', '패스성공률', '차단', '태클'],
       datasets: [
         {
           label: this.position[this.name],
-          data: [this.data[0],this.data[1],this.data[2],this.data[3],this.data[4]/10,this.data[6]/this.data[5],this.data[7],this.data[8]],
+          data: [this.data[0],this.data[1],this.data[2],this.data[3],this.data[6]/this.data[5],this.data[7],this.data[8]],
           backgroundColor: this.chart_bg,
         }
       ],
