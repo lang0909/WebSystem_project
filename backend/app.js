@@ -138,9 +138,14 @@ app.post('/top_record/:id/comment', function(req, res, next) {
 
 app.get('/compare/:poandst', function(req, res, next) {
     const temp = req.params.poandst.split(',');
-    const temp1 = 'status.' + temp[1];
-    const option = { sort: {
-            [temp1]: -1 }, limit: 3 };
+    let temp1 = 'status.' + temp[1];
+    let option;
+    if(temp[1]=='passSuccess'){
+        let temp2 = 'status.passTry';
+        option = { sort: { [temp1/temp2]: -1 }, limit: 3 };   
+    }else{
+        option = { sort: { [temp1]: -1 }, limit: 3};
+    }
     top10000Model.find({ spPosition: temp[0], "status.matchCount": { $gt: 300 } }, null, option, (err, result) => {
         res.send(result);
     })
