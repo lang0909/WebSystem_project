@@ -5,11 +5,11 @@
     </div>
     <div class="search_cont">
       <input type="text" v-model="userName" class="search_playerName" placeholder="유저이름">
+      <select v-on:change="changeMatchType($event)" class="form-control-sm"><option value=50>공식경기</option><option value=52>감독모드</option></select>
       <button type="button" class="btn btn-primary search_button" v-on:click="clicked">검색</button>
     </div>
     <div v-if="this.userRecord.length" class="card-cont">
       <div style="align-items: center;">
-              <!-- background_color: ["rgba(54, 162, 235, 0.6)","#BBBBBB","rgba(255, 99, 132, 0.6)"] -->
         <div style="background-color: rgba(54, 162, 235, 0.6); width: 30px; height: 10px; display: inline-block; margin-left: 5px;"></div>
         <span>승</span>
         <div style="background-color: #BBBBBB; width: 30px; height: 10px; display: inline-block; margin-left: 5px;"></div>
@@ -43,15 +43,19 @@ export default {
     return{
       userName: '',
       userRecord: [],
+      matchType: 50,
     }
   },
   methods: {
     async clicked() {
-      this.userRecord = await this.$store.dispatch('searchUserRecord',{userName: this.userName})
+      this.userRecord = await this.$store.dispatch('searchUserRecord',{userName: this.userName, matchType: this.matchType})
       if(this.userRecord[0]=="E"){
         alert('존재하지 않는 유저이름입니다. 다시입력해주세요.');
         this.userRecord = [];
       }
+    },
+    changeMatchType(event) {
+      this.matchType = event.target.value;
     },
     total(val) {
       let win = parseInt(val.split('___')[1]);

@@ -4,7 +4,7 @@
       <img class="logo" src="../assets/background.jpg">
     </div>
     <div class="search_cont">
-      <input type="text" v-model="playerName" class="search_playerName" placeholder="선수이름">
+      <input type="text" v-model="playerName" class="search_playerName" placeholder="선수이름" v-on:keyup.enter="clicked">
       <button type="button" class="btn btn-primary search_button" v-on:click="clicked">검색</button>
     </div>
     <div v-if="player_name.length">

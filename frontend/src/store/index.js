@@ -37,8 +37,8 @@ export default new Vuex.Store({
       return res.data
     },
 
-    async searchUserRecord({}, {userName}){
-      const res = await axios.get(`/record/${userName}`)
+    async searchUserRecord({}, {userName, matchType}){
+      const res = await axios.get(`/record/${userName}/${matchType}`)
       return res.data
     }
 

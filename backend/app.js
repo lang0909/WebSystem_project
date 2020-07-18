@@ -163,7 +163,7 @@ app.get('/find/:spid', function(req, res, next) {
     })
 })
 
-app.get('/record/:userName', function(req, response, next) {
+app.get('/record/:userName/:matchType', function(req, response, next) {
     let accessId = '';
     let accessId_url = `https://api.nexon.co.kr/fifaonline4/v1.0/users?nickname=${encodeURI(req.params.userName)}`;
     let temp = [];
@@ -179,7 +179,7 @@ app.get('/record/:userName', function(req, response, next) {
         }
     }).then(res => {
         accessId = res.data.accessId;
-        let matchId_url = `https://api.nexon.co.kr/fifaonline4/v1.0/users/${accessId}/matches?matchtype=50&offset=0&limit=100`;
+        let matchId_url = `https://api.nexon.co.kr/fifaonline4/v1.0/users/${accessId}/matches?matchtype=${req.params.matchType}&offset=0&limit=100`;
         axios.get(matchId_url,{
             headers: {
                 Authorization: api_key,
