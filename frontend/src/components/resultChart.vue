@@ -12,7 +12,7 @@
         <tr v-for="top in top10000" class="top10000">
             <router-link :to="{name: 'show', params:{ id: String(top.spId)+String(top.spPosition)}}">
                 <bar-chart :data="[top.status.shoot, top.status.effectiveShoot, 
-                top.status.assist, top.status.goal, top.status.dribble, top.status.passTry, top.status.passSuccess, top.status.block, top.status.tackle]" :name="top.spPosition" :options="{responsive: false, maintainAspectRatio: false}" :background_value="top.maxIndex">
+                top.status.assist, top.status.goal, top.status.passTry, top.status.passSuccess, top.status.block, top.status.tackle]" :name="top.spPosition" :options="{responsive: false, maintainAspectRatio: false}" :background_value="top.maxIndex">
                 </bar-chart>
             </router-link>
             <br>
@@ -41,7 +41,6 @@ export default {
             const temp2 = Math.max.apply(Math, this.top10000.map(function(o) { return o.status.effectiveShoot; }));
             const temp3 = Math.max.apply(Math, this.top10000.map(function(o) { return o.status.assist; }));
             const temp4 = Math.max.apply(Math, this.top10000.map(function(o) { return o.status.goal; }));
-            const temp5 = Math.max.apply(Math, this.top10000.map(function(o) { return o.status.dribble; }));
             const temp6 = Math.max.apply(Math, this.top10000.map(function(o) { return o.status.passSuccess/o.status.passTry; }));
             const temp7 = Math.max.apply(Math, this.top10000.map(function(o) { return o.status.block; }));
             const temp8 = Math.max.apply(Math, this.top10000.map(function(o) { return o.status.tackle; }));
@@ -58,17 +57,14 @@ export default {
                 if(temp.status.goal===temp4){
                     temp.maxIndex.push(3);
                 }
-                if(temp.status.dribble===temp5){
+                if(temp.status.passSuccess/temp.status.passTry===temp6){
                     temp.maxIndex.push(4);
                 }
-                if(temp.status.passSuccess/temp.status.passTry===temp6){
+                if(temp.status.block===temp7){
                     temp.maxIndex.push(5);
                 }
-                if(temp.status.block===temp7){
-                    temp.maxIndex.push(6);
-                }
                 if(temp.status.tackle===temp8){
-                    temp.maxIndex.push(7);
+                    temp.maxIndex.push(6);
                 }
             })
             this.top10000.sort(function(a,b){

@@ -40,7 +40,7 @@ Vue.component('bar-chart',{
       datasets: [
         {
           label: this.position[this.name],
-          data: [this.data[0],this.data[1],this.data[2],this.data[3],this.data[6]/this.data[5],this.data[7],this.data[8]],
+          data: [this.data[0],this.data[1],this.data[2],this.data[3],this.data[5]/this.data[4],this.data[6],this.data[7]],
           backgroundColor: this.chart_bg,
         }
       ],
