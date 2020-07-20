@@ -1,9 +1,9 @@
 <template>
     <div class="cont">
-        <bar-chart :data="[this.top[0].status.shoot, this.top[0].status.effectiveShoot,this.top[0].status.assist, this.top[0].status.goal, this.top[0].status.dribble, this.top[0].status.passTry, this.top[0].status.passSuccess, this.top[0].status.block, this.top[0].status.tackle]" :name="this.top[0].spPosition" :options="{responsive: false, maintainAspectRatio: false}" :background_value="this.top[0].maxIndex">
+        <bar-chart :data="[this.top[0].status.shoot, this.top[0].status.effectiveShoot,this.top[0].status.assist, this.top[0].status.goal, this.top[0].status.passTry, this.top[0].status.passSuccess, this.top[0].status.block, this.top[0].status.tackle]" :name="this.top[0].spPosition" :options="{responsive: false, maintainAspectRatio: false}" :background_value="this.top[0].maxIndex">
         </bar-chart>
-        <input type="text" placeholder="Please Input Comment" v-model="comment_value" class="input_comment"><br>
-        <button v-on:click="submit_comment" style="margin : 3px;">Apply comment</button>
+        <input class="form-control" type="text" placeholder="Please Input Comment" v-model="comment_value" class="input_comment"><br>
+        <button class="btn btn-primary" v-on:click="submit_comment" style="margin : 3px;">Apply comment</button>
         <div v-if="comments.length" class="mylist">
             <div v-for="comment in comments" class="comment">
                 {{comment.content}}
