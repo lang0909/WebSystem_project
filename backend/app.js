@@ -7,7 +7,7 @@ var axios = require('axios');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var api_key = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50X2lkIjoiODIyMjE4NjgzIiwiYXV0aF9pZCI6IjQiLCJ0b2tlbl90eXBlIjoiQWNjZXNzVG9rZW4iLCJzZXJ2aWNlX2lkIjoiNDMwMDExNDgxIiwiWC1BcHAtUmF0ZS1MaW1pdCI6IjIwMDAwOjEwIiwibmJmIjoxNTk0OTA3NzQwLCJleHAiOjE2NTc5Nzk3NDAsImlhdCI6MTU5NDkwNzc0MH0.fLAciexZOYdlTlu2v8tHwYoY7ZuhWq5xTqgeXXNzdcs';
+var api_key = '';
 var mongoose = require('mongoose')
 
 var spidSchema = mongoose.Schema({
@@ -52,8 +52,8 @@ var formationSchema = mongoose.Schema({
 var conn = mongoose.createConnection('mongodb://localhost/fifaonline-spid', { useUnifiedTopology: true, useNewUrlParser: true });
 var conn2 = mongoose.createConnection('mongodb://localhost/fifaonline-top10000', { useUnifiedTopology: true, useNewUrlParser: true });
 var conn1 = mongoose.createConnection('mongodb://localhost/test', { useUnifiedTopology: true, useNewUrlParser: true });
-var conn3 = mongoose.createConnection('mongodb://localhost/Formation', { useUnifiedTopology: true, useNewUrlParser: true });
-var conn4 = mongoose.createConnection('mongodb://localhost/Name',{ useUnifiedTopology: true, useNewUrlParser: true })
+var conn3 = mongoose.createConnection('mongodb://localhost/Desktop', { useUnifiedTopology: true, useNewUrlParser: true });
+var conn4 = mongoose.createConnection('mongodb://localhost/testsp',{ useUnifiedTopology: true, useNewUrlParser: true })
 var spidModel = conn.model('spid', spidSchema, 'spid');
 var top10000Model = conn2.model('topRankerUsingAverage', top10000Schema, 'topRankerUsingAverage');
 var commentModel = conn1.model('comm', commentSchema, 'comment');
@@ -142,7 +142,7 @@ app.get('/compare/:poandst', function(req, res, next) {
     let option;
     if(temp[1]=='passSuccess'){
         let temp2 = 'status.passTry';
-        option = { sort: { [temp1/temp2]: -1 }, limit: 3 };   
+        option = { sort: { [temp2]: -1 }, limit: 3 };
     }else{
         option = { sort: { [temp1]: -1 }, limit: 3};
     }
