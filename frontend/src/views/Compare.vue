@@ -1,7 +1,7 @@
 <template>
   <div class="compare">
     <div class="logo_cont">
-      <img class="logo" src="../assets/background.jpg">
+      <img class="logo" src="../assets/my_background.jpg">
     </div>
     <div class="search_cont">
       <input type="text" v-model="playerName" class="search_playerName" placeholder="선수이름" v-on:keyup.enter="clicked">

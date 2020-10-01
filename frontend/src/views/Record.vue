@@ -1,11 +1,16 @@
 <template>
   <div class="record">
     <div class="logo_cont">
-      <img class="logo" src="../assets/background.jpg">
+      <img class="logo" src="../assets/my_background.jpg">
     </div>
     <div class="search_cont">
       <input type="text" v-model="userName" class="search_playerName" placeholder="유저이름">
-      <select v-on:change="changeMatchType($event)" class="form-control-sm"><option value=50>공식경기</option><option value=52>감독모드</option></select>
+      <select v-on:change="changeMatchType($event)" class="form-control-sm">
+        <option value=50>공식경기</option>
+        <option value=60>공식 친선</option>
+        <option value=52>감독모드</option>
+        <option value=40>클래식 1on1</option>
+      </select>
       <button type="button" class="btn btn-primary search_button" v-on:click="clicked">검색</button>
     </div>
     <div v-if="this.userRecord.length" class="card-cont">
