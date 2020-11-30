@@ -46,7 +46,7 @@ mongoimport --db Name --collection spid --file spid.json --jsonArray
 ```
 
 #### 접속주소
-[FIFAONLINE_COMPARE](<http://ec2-54-180-32-236.ap-northeast-2.compute.amazonaws.com:3000/>)
+[FIFAONLINE_COMPARE](<http://ec2-13-209-80-204.ap-northeast-2.compute.amazonaws.com:3000/>)
 
 #### 기능 설명
 
